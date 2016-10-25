@@ -1,0 +1,21 @@
+//
+//  DFHUtil.h
+//  大富豪
+//
+//  Created by Louis on 2016/10/24.
+//  Copyright © 2016年 Louis. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@interface DFHUtil : NSObject
++ (NSString *)getUUID;
+
++ (BOOL)isPureNumandCharacters:(NSString *)string; //字符串是否为正数字
+
++ (NSString *)getIPAddress:(BOOL)preferIPv4;  //获取
+
++ (NSString *)getDateSinceToday:(int)intervalDays;
+
+@end

@@ -284,7 +284,6 @@
     if(diff > 0)
     {
         newSize = dataLength + diff;
-        NSLog(@"diff is %d",diff);
     }
     
     char dataPtr[newSize];
@@ -342,7 +341,6 @@
     if(diff > 0)
     {
         newSize = dataLength + diff;
-        NSLog(@"diff is %d",diff);
     }
     
     char dataPtr[newSize];

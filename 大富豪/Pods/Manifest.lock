@@ -1,0 +1,66 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Cordova (3.9.1)
+  - HMSegmentedControl (1.5.3)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - Masonry (1.0.2)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.12)
+  - PureLayout (3.0.2)
+  - Reachability (3.2)
+  - SBJson (4.0.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - UMengAnalyticsSDK (3.6.7.0)
+  - UMengSocial (5.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Cordova
+  - HMSegmentedControl (~> 1.5.2)
+  - Mantle (~> 2.0.6)
+  - Masonry (~> 1.0.0)
+  - MBProgressHUD (~> 0.9.2)
+  - MJRefresh
+  - PureLayout
+  - Reachability
+  - SBJson
+  - SDWebImage
+  - UMengAnalyticsSDK (~> 3.6.7.0)
+  - UMengSocial (~> 5.0)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Cordova: f8142a2cb0072f5225e865fc5660f174cc0674a5
+  HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SBJson: c18691cc18375b14664ff0fec841f8c4faef1934
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  UMengAnalyticsSDK: 995da0b94da156de77da7ec6666b3801f3db20a4
+  UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
+
+PODFILE CHECKSUM: 1b3a6139b59595225d611d7628bd5f0e96ed53fc
+
+COCOAPODS: 1.0.1

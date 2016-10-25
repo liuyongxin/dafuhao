@@ -1,4 +1,6 @@
 
+#import <UIKit/UIKit.h>
+
 #define kNotifyProgressTimeOut @"kNotifyProgressTimeOut"
 #define kDefaultTimeoutTime 7
 @class MBProgressHUD;

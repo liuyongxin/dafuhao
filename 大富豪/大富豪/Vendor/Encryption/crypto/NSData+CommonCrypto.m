@@ -481,7 +481,6 @@ static void FixKeyLengths( CCAlgorithm algorithm, NSMutableData * keyData, NSMut
 		ivData = [[iv dataUsingEncoding: NSUTF8StringEncoding] mutableCopy];
 	else
 		ivData = (NSMutableData *) [iv mutableCopy];	// data or nil
-
 	
 	// ensure correct lengths for key and iv data, based on algorithms
 	FixKeyLengths( algorithm, keyData, ivData );
