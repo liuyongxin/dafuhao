@@ -39,7 +39,7 @@ void WriteCinLog(const char *file, const char* function, int lineNumber, CinLogL
     
     if (manager.logLevel <= level || manager.logLevel <= LogLevel_ALL) // 先检查当前程序设置的日志输出级别。如果这条日志不需要输出，就不用做字符串格式化
     {
-        if (MNLogToConsole) {
+        if (DFHLogToConsole) {
             //log to console
             va_list args;
             va_start(args, format);
@@ -93,7 +93,7 @@ NSString* getAppInfo()
     if (self)
     {
         //默认日志输出等级
-        self.logLevel = MNDefaultLogLevel;
+        self.logLevel = DFHDefaultLogLevel;
         self.df = [[NSDateFormatter alloc]init];
         [self.df setDateFormat:@"HH:mm:ss"];
     }

@@ -18,4 +18,9 @@
 
 + (NSString *)getDateSinceToday:(int)intervalDays;
 
++ (NSString *)decimalTOBinary:(uint16_t)tmpid backLength:(int)length;
++(NSString *)getBinaryByhex:(NSString *)hex;
++ (NSString *)stringFromHexString:(NSString *)hexString;
++ (NSString *)hexStringFromString:(NSString *)string;
+
 @end

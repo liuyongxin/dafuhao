@@ -8,6 +8,8 @@
 
 #ifndef DFHDataUrl_h
 #define DFHDataUrl_h
+
+#define Decryption_AESSecretKey @"f695cbaa22634ed6"    //aes解密秘钥@"28d897af4fd64a3d987ffa1d8b8fcc15"//
 //----------------------------接口-------------------------------------//
 #define DFH_BaseURL @"http://114.55.253.199:81/game/"  //基础接口
 #define DFH_MemberRegister @"http://114.55.253.199:81/game/member/register"  //会员注册

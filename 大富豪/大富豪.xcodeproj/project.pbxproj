@@ -18,8 +18,13 @@
 		171E72B51DBEF3E30089D5F6 /* DFHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72B41DBEF3E30089D5F6 /* DFHRegisterViewController.m */; };
 		171E72B81DBEF4020089D5F6 /* DFHMachineSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72B71DBEF4020089D5F6 /* DFHMachineSelectionController.m */; };
 		171E72BB1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72BA1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m */; };
-		171E72BF1DBF2ECB0089D5F6 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72BE1DBF2ECB0089D5F6 /* AESCrypt.m */; };
 		171E72C31DBF338D0089D5F6 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72C21DBF338D0089D5F6 /* NSData+CommonCrypto.m */; };
+		173E4A361DC1A3F10015B33D /* PositionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A351DC1A3F10015B33D /* PositionButton.m */; };
+		173E4A401DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A391DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m */; };
+		173E4A411DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3B1DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m */; };
+		173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */; };
+		173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
 		17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */; };
 		17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794B71DBDA4EC00A73B4F /* DFHDataManager.m */; };
@@ -92,10 +97,20 @@
 		171E72B71DBEF4020089D5F6 /* DFHMachineSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHMachineSelectionController.m; sourceTree = "<group>"; };
 		171E72B91DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHMachineSelectionCollectionCell.h; sourceTree = "<group>"; };
 		171E72BA1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHMachineSelectionCollectionCell.m; sourceTree = "<group>"; };
-		171E72BD1DBF2ECB0089D5F6 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
-		171E72BE1DBF2ECB0089D5F6 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
 		171E72C11DBF338D0089D5F6 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
 		171E72C21DBF338D0089D5F6 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		173E4A341DC1A3F10015B33D /* PositionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionButton.h; sourceTree = "<group>"; };
+		173E4A351DC1A3F10015B33D /* PositionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionButton.m; sourceTree = "<group>"; };
+		173E4A381DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		173E4A391DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		173E4A3A1DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		173E4A3B1DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		173E4A3C1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		173E4A3E1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		173E4A441DC1FDA00015B33D /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
+		173E4A451DC1FDA00015B33D /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
 		17CFD74D1DBDE7AA00911455 /* DFHEnterOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHEnterOptionViewController.h; sourceTree = "<group>"; };
 		17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHEnterOptionViewController.m; sourceTree = "<group>"; };
@@ -309,15 +324,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		171E72BC1DBF2ECB0089D5F6 /* AES */ = {
-			isa = PBXGroup;
-			children = (
-				171E72BD1DBF2ECB0089D5F6 /* AESCrypt.h */,
-				171E72BE1DBF2ECB0089D5F6 /* AESCrypt.m */,
-			);
-			path = AES;
-			sourceTree = "<group>";
-		};
 		171E72C01DBF338D0089D5F6 /* crypto */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +331,30 @@
 				171E72C21DBF338D0089D5F6 /* NSData+CommonCrypto.m */,
 			);
 			path = crypto;
+			sourceTree = "<group>";
+		};
+		173E4A331DC1A3D00015B33D /* PositionButton */ = {
+			isa = PBXGroup;
+			children = (
+				173E4A341DC1A3F10015B33D /* PositionButton.h */,
+				173E4A351DC1A3F10015B33D /* PositionButton.m */,
+			);
+			path = PositionButton;
+			sourceTree = "<group>";
+		};
+		173E4A371DC1D2DE0015B33D /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				173E4A381DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.h */,
+				173E4A391DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m */,
+				173E4A3A1DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.h */,
+				173E4A3B1DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m */,
+				173E4A3C1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.h */,
+				173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */,
+				173E4A3E1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		17CFD7441DBDE15500911455 /* Resource */ = {
@@ -488,6 +518,8 @@
 				17F794E21DBDCFEA00A73B4F /* DFHDefine.h */,
 				17F794E51DBDCFEA00A73B4F /* DFHUtil.h */,
 				17F794E61DBDCFEA00A73B4F /* DFHUtil.m */,
+				173E4A441DC1FDA00015B33D /* AES.h */,
+				173E4A451DC1FDA00015B33D /* AES.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -673,7 +705,6 @@
 			isa = PBXGroup;
 			children = (
 				171E72C01DBF338D0089D5F6 /* crypto */,
-				171E72BC1DBF2ECB0089D5F6 /* AES */,
 				17F794F01DBDD8F600A73B4F /* Des */,
 				17F794F31DBDD8F600A73B4F /* MD5 */,
 				3C6A3F901DBCCFAD00377929 /* Base64 */,
@@ -806,6 +837,8 @@
 		3C6A3FF91DBCCFAD00377929 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				173E4A371DC1D2DE0015B33D /* TPKeyboardAvoiding */,
+				173E4A331DC1A3D00015B33D /* PositionButton */,
 				3C6A3FFA1DBCCFAD00377929 /* Calendar */,
 			);
 			path = Views;
@@ -1048,6 +1081,7 @@
 				3C6A40141DBCCFAD00377929 /* UIViewController+KeyboardButton.m in Sources */,
 				17F794F61DBDD8F600A73B4F /* DESEncryption.m in Sources */,
 				171E72C31DBF338D0089D5F6 /* NSData+CommonCrypto.m in Sources */,
+				173E4A361DC1A3F10015B33D /* PositionButton.m in Sources */,
 				171E72B51DBEF3E30089D5F6 /* DFHRegisterViewController.m in Sources */,
 				3C6A408A1DBCCFAD00377929 /* GRKPageViewController.m in Sources */,
 				3C6A408D1DBCCFAD00377929 /* CKCalendarView.m in Sources */,
@@ -1056,19 +1090,22 @@
 				3C6A408C1DBCCFAD00377929 /* KILabel.m in Sources */,
 				17F794BF1DBDA88600A73B4F /* DFHLogManagement.m in Sources */,
 				3C6A40951DBCD18A00377929 /* DFHAppDelegate.m in Sources */,
+				173E4A461DC1FDA00015B33D /* AES.m in Sources */,
 				17F794DD1DBDB06B00A73B4F /* DFHHttpRequest.m in Sources */,
+				173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */,
 				17F794EF1DBDD6BF00A73B4F /* DFHSmartUtility.m in Sources */,
 				17F794EA1DBDCFEA00A73B4F /* DFHUtil.m in Sources */,
 				171E72B81DBEF4020089D5F6 /* DFHMachineSelectionController.m in Sources */,
 				3C6A40891DBCCFAD00377929 /* SSKeychain.m in Sources */,
 				17F794E01DBDB06B00A73B4F /* DFHResponsePackageDataDefine.m in Sources */,
-				171E72BF1DBF2ECB0089D5F6 /* AESCrypt.m in Sources */,
 				171E72BB1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m in Sources */,
+				173E4A401DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3C6A40131DBCCFAD00377929 /* UIViewController+HUD.m in Sources */,
 				3C6A409B1DBCD3AF00377929 /* DFHNavigationController.m in Sources */,
 				17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */,
 				171E72B21DBEF3A70089D5F6 /* DFHLoginViewController.m in Sources */,
 				3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */,
+				173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */,
 				3C6A40101DBCCFAD00377929 /* UIImage+Util.m in Sources */,
 				17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */,
@@ -1076,6 +1113,7 @@
 				3C6A40831DBCCFAD00377929 /* NSData+Base64.m in Sources */,
 				3C6A40841DBCCFAD00377929 /* NSString+Base64.m in Sources */,
 				3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */,
+				173E4A411DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m in Sources */,
 				17F794DE1DBDB06B00A73B4F /* DFHRequestBaseInterface.m in Sources */,
 				17F794DF1DBDB06B00A73B4F /* DFHRequestDataInterface.m in Sources */,
 			);

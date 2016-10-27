@@ -20,9 +20,16 @@
 {
     self = [super init];
     if (self) {
+        _maxConcurrentOperationCount = 5;
+        _timeoutInterval = 10;
         _manager = [AFHTTPSessionManager manager];
     }
     return self;
+}
+
+ - (void)cancelAllTargets
+{
+    [_manager.operationQueue cancelAllOperations];
 }
 
 #pragma mark -- GET请求 --
@@ -39,11 +46,11 @@
     /**
      *  请求队列的最大并发数
      */
-    self.manager.operationQueue.maxConcurrentOperationCount = 5;
+    self.manager.operationQueue.maxConcurrentOperationCount = _maxConcurrentOperationCount;
     /**
      *  请求超时的时间
      */
-    self. manager.requestSerializer.timeoutInterval = 10;
+    self. manager.requestSerializer.timeoutInterval = _timeoutInterval;
     [self.manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);

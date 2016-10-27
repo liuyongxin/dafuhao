@@ -10,6 +10,11 @@
 #import "DFHRequestBaseInterface.h"
 
 @interface DFHRequestDataInterface : DFHRequestBaseInterface
+
+#pragma mark - 用户注册 member/register
+
++ (NSMutableDictionary *)makeRequestMemberRegister:(NSString *)telephone password:(NSString *)password code:(NSString *)code inviteName:(NSString *)inviteName;
+
 #pragma mark - 用户登录 cos_passport_clogin
 /**
  *  用户登录

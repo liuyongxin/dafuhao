@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "DFHDataUrl.h"
-
 #import "AFNetworking.h"
+
 /**
  *  网络请求类型
  */
@@ -45,6 +45,12 @@ typedef NS_ENUM(NSUInteger,HttpRequestType) {
 @end
 
 @interface DFHHttpRequest : NSObject
+
+@property(nonatomic,assign)NSInteger maxConcurrentOperationCount;  //请求队列的最大并发数
+@property(nonatomic,assign)CGFloat timeoutInterval;  //请求超时的时间
+
+- (void)cancelAllTargets;
+
 /**
  *  发送get请求
  *

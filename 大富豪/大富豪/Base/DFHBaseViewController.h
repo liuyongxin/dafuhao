@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+HUD.h"
 
 @interface DFHBaseViewController : UIViewController
+
 
 @end

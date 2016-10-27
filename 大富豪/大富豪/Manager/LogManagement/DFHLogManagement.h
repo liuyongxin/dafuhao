@@ -23,16 +23,16 @@ typedef enum CinLogLevel_
     LogLevel_OFF        = 6,        // 关闭所有日志记录
 }CinLogLevel;
 
-#define MNLogDebug(format, ...)         WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_DEBUG, format, ##__VA_ARGS__)
-#define MNLogInfo(format, ...)          WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_INFO, format, ##__VA_ARGS__)
-#define MNLogWarn(format, ...)          WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_WARN, format, ##__VA_ARGS__)
-#define MNLogError(format, ...)         WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_ERR, format, ##__VA_ARGS__)
-#define MNLogFatal(format, ...)         WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_FATAL, format, ##__VA_ARGS__)
+#define DFHLogDebug(format, ...)         WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_DEBUG, format, ##__VA_ARGS__)
+#define DFHLogInfo(format, ...)          WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_INFO, format, ##__VA_ARGS__)
+#define DFHLogWarn(format, ...)          WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_WARN, format, ##__VA_ARGS__)
+#define DFHLogError(format, ...)         WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_ERR, format, ##__VA_ARGS__)
+#define DFHLogFatal(format, ...)         WriteCinLog(__FILE__, __FUNCTION__, __LINE__, LogLevel_FATAL, format, ##__VA_ARGS__)
 
-#define MNLogToConsole 1
+#define DFHLogToConsole 1
 
 //系统默认日志输出等级
-#define MNDefaultLogLevel LogLevel_INFO
+#define DFHDefaultLogLevel LogLevel_INFO
 
 /**************************************************************************
  FunctionName:  WriteCinLog

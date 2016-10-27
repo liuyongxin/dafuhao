@@ -116,4 +116,98 @@
     return result;
 }
 
+//将十进制转化为二进制,设置返回NSString 长度
++ (NSString *)decimalTOBinary:(uint16_t)tmpid backLength:(int)length
+{
+    NSString *a = @"";
+    while (tmpid)
+    {
+        a = [[NSString stringWithFormat:@"%d",tmpid%2] stringByAppendingString:a];
+        if (tmpid/2 < 1)
+        {
+            break;
+        }
+        tmpid = tmpid/2 ;
+    }
+    if (a.length <= length)
+    {
+        NSMutableString *b = [[NSMutableString alloc]init];;
+        for (int i = 0; i < length - a.length; i++)
+        {
+            [b appendString:@"0"];
+        }
+        a = [b stringByAppendingString:a];
+    }
+    return a;
+}
+
+//将16进制转化为二进制
++(NSString *)getBinaryByhex:(NSString *)hex
+{
+    NSMutableDictionary  *hexDic = [[NSMutableDictionary alloc] init];
+    hexDic = [[NSMutableDictionary alloc] initWithCapacity:16];
+    [hexDic setObject:@"0000" forKey:@"0"];
+    [hexDic setObject:@"0001" forKey:@"1"];
+    [hexDic setObject:@"0010" forKey:@"2"];
+    [hexDic setObject:@"0011" forKey:@"3"];
+    [hexDic setObject:@"0100" forKey:@"4"];
+    [hexDic setObject:@"0101" forKey:@"5"];
+    [hexDic setObject:@"0110" forKey:@"6"];
+    [hexDic setObject:@"0111" forKey:@"7"];
+    [hexDic setObject:@"1000" forKey:@"8"];
+    [hexDic setObject:@"1001" forKey:@"9"];
+    [hexDic setObject:@"1010" forKey:@"A"];
+    [hexDic setObject:@"1011" forKey:@"B"];
+    [hexDic setObject:@"1100" forKey:@"C"];
+    [hexDic setObject:@"1101" forKey:@"D"];
+    [hexDic setObject:@"1110" forKey:@"E"];
+    [hexDic setObject:@"1111" forKey:@"F"];
+    NSMutableString *binaryString=[[NSMutableString alloc] init];
+    for (int i=0; i<[hex length]; i++) {
+        NSRange rage;
+        rage.length = 1;
+        rage.location = i;
+        NSString *key = [hex substringWithRange:rage];
+        binaryString = [NSString stringWithFormat:@"%@%@",binaryString,[NSString stringWithFormat:@"%@",[hexDic objectForKey:key]]];
+    }
+    return binaryString;
+}
+
+// 十六进制转换为普通字符串的。
++ (NSString *)stringFromHexString:(NSString *)hexString { //
+    char *myBuffer = (char *)malloc((int)[hexString length] / 2 + 1);
+    bzero(myBuffer, [hexString length] / 2 + 1);
+    for (int i = 0; i < [hexString length] - 1; i += 2) {
+        unsigned int anInt;
+        NSString * hexCharStr = [hexString substringWithRange:NSMakeRange(i, 2)];
+        NSScanner * scanner = [[NSScanner alloc] initWithString:hexCharStr];
+        [scanner scanHexInt:&anInt];
+        myBuffer[i / 2] = (char)anInt;
+    }
+    NSString *unicodeString = [NSString stringWithCString:myBuffer encoding:4];
+    return unicodeString;
+}
+
+//普通字符串转换为十六进制的。
++ (NSString *)hexStringFromString:(NSString *)string{
+    NSData *myD = [string dataUsingEncoding:NSUTF8StringEncoding];
+    Byte *bytes = (Byte *)[myD bytes];
+    //下面是Byte 转换为16进制。
+    NSString *hexStr=@"";
+    for(int i=0;i<[myD length];i++)
+    {
+        NSString *newHexStr = [NSString stringWithFormat:@"%x",bytes[i]&0xff];///16进制数
+        
+        if([newHexStr length]==1)
+        {
+            hexStr = [NSString stringWithFormat:@"%@0%@",hexStr,newHexStr];
+        }
+        else 
+        {
+            hexStr = [NSString stringWithFormat:@"%@%@",hexStr,newHexStr];
+        }
+    }
+    return hexStr; 
+} 
+
 @end

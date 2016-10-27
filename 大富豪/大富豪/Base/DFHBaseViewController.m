@@ -12,10 +12,16 @@
 
 @end
 
+
 @implementation DFHBaseViewController
 
+-(void)dealloc
+{
+   [self destroyHUD];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initHUD];
     // Do any additional setup after loading the view.
 }
 
