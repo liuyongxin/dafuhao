@@ -9,10 +9,7 @@
 #import "DFHRegisterViewController.h"
 #import "PositionButton.h"
 #import "TPKeyboardAvoidingScrollView.h"
-#import "DFHHttpRequest.h"
-#import "DFHRequestDataInterface.h"
-#import "DFHDataUrl.h"
-#import "AES.h"
+    #import "DFHMachineSelectionController.h"
 
 @interface DFHRegisterViewController ()
 {
@@ -22,6 +19,7 @@
 @property(nonatomic,retain)UIImageView *bgImageView;        //背景框419*300
 @property(nonatomic,retain)UITextField *accountTextField;                  //账号
 @property(nonatomic,retain)UITextField *passwordTextField;               //密码
+@property(nonatomic,retain)UILabel *confirmPasswordLabel;
 @property(nonatomic,retain)UITextField *confirmPasswordTextField;  //确认密码
 @property(nonatomic,retain)PositionButton  *oldyMemberBtn;  //旧会员登陆
 @property(nonatomic,retain)PositionButton  *newlyMemberBtn;  //新会员注册
@@ -31,6 +29,16 @@
 @end
 
 @implementation DFHRegisterViewController
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self clearData];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self defaultSeting:self.type];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -91,12 +99,12 @@
     
     yAxis +=space +labelHeight;
     xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
-    UILabel *confirmPasswordLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, labelWidth, labelHeight)];
-    confirmPasswordLabel.text = @"确认密码:";
-    confirmPasswordLabel.adjustsFontSizeToFitWidth = YES;
-    confirmPasswordLabel.textAlignment = NSTextAlignmentRight;
-    confirmPasswordLabel.textColor = [UIColor whiteColor];
-    [_bgImageView addSubview:confirmPasswordLabel];
+    _confirmPasswordLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, labelWidth, labelHeight)];
+    _confirmPasswordLabel.text = @"确认密码:";
+    _confirmPasswordLabel.adjustsFontSizeToFitWidth = YES;
+    _confirmPasswordLabel.textAlignment = NSTextAlignmentRight;
+    _confirmPasswordLabel.textColor = [UIColor whiteColor];
+    [_bgImageView addSubview:_confirmPasswordLabel];
     xAxis  += space+labelWidth;
     _confirmPasswordTextField = [[UITextField alloc]initWithFrame:CGRectMake(xAxis, yAxis, textFieldWidth, labelHeight)];
     _confirmPasswordTextField.borderStyle = UITextBorderStyleRoundedRect;
@@ -149,7 +157,6 @@
     _invitationCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
     [_bgImageView addSubview:_invitationCodeTextField];
     
-    
     yAxis +=space +labelHeight + space;
     xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
     CGFloat confirmBtnWidth = 125;
@@ -171,25 +178,58 @@
     [backBtn setBackgroundImage:[UIImage imageNamed:@"login_registBtn_select.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateSelected];
     [backBtn addTarget:self action:@selector(backBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bgImageView addSubview:backBtn];
-    
-    //设置默认选中登陆
-    _oldyMemberBtn.selected = NO;
-    _newlyMemberBtn.selected = YES;
+   
+}
+
+- (void)defaultSeting:(ListType )type
+{
+    if (type == LoginListType) {
+        //设置默认选中登陆
+        _oldyMemberBtn.selected = YES;
+        _newlyMemberBtn.selected = NO;
+        _confirmPasswordLabel.hidden = YES;
+        _confirmPasswordTextField.hidden = YES;
+        _invitationCodeLabel.hidden = YES;
+        _invitationCodeTextField.hidden = YES;
+    }
+    else if (type == RegisterListType)
+    {
+        //设置默认选中登陆
+        _oldyMemberBtn.selected = NO;
+        _newlyMemberBtn.selected = YES;
+        _confirmPasswordLabel.hidden = NO;
+        _confirmPasswordTextField.hidden = NO;
+        _invitationCodeLabel.hidden = NO;
+        _invitationCodeTextField.hidden = NO;
+    }
+
+}
+
+ - (void)clearData
+{
+    _accountTextField.text = nil;
+    _passwordTextField.text = nil;
+    _confirmPasswordTextField.text = nil;
+    _invitationCodeTextField.text = nil;
 }
 
 - (void)selectedBtnAction:(UIButton *)btn
 {
+    [self clearData];
     if (btn == _oldyMemberBtn && btn.selected == NO) {
         _newlyMemberBtn.selected = _oldyMemberBtn.selected;
         _oldyMemberBtn.selected = !_oldyMemberBtn.selected;
+        _confirmPasswordLabel.hidden = YES;
+        _confirmPasswordTextField.hidden = YES;
         _invitationCodeLabel.hidden = YES;
         _invitationCodeTextField.hidden = YES;
-        _invitationCodeTextField.text = nil;
     }
     else if (btn == _newlyMemberBtn && btn.selected == NO)
     {
         _oldyMemberBtn.selected = _newlyMemberBtn.selected;
         _newlyMemberBtn.selected = !_newlyMemberBtn.selected;
+        _confirmPasswordLabel.hidden = NO;
+        _confirmPasswordTextField.hidden = NO;
         _invitationCodeLabel.hidden = NO;
         _invitationCodeTextField.hidden = NO;
     }
@@ -212,22 +252,61 @@
 
  - (void)requestMemberLogin
 {
-    NSDictionary *param = [DFHRequestDataInterface makeRequestMemberRegister:_accountTextField.text password:_passwordTextField.text code:@"" inviteName:@""];
-    [_httpRequest getWithURLString:DFH_MemberLogin parameters:param success:^(id responseObject) {
-        NSData *dataStr = responseObject;
-        NSData *data = [AES DataAES128Decrypt:[[NSString alloc]initWithData:dataStr encoding:NSUTF8StringEncoding] key:Decryption_AESSecretKey];
+    __weak typeof(self) weakSelf = self;
+    NSString*urlStr = [DFHRequestDataInterface makeRequestMemberLogin:_accountTextField.text password:_passwordTextField.text];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        [weakSelf hideHudDefault];
+        NSDictionary *dataDic = [JSONFormatFunc convertDictionary:responseObject];
+        if ([dataDic isValidDictionary]) {
+            NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:dataDic];
+            if ([code isEqualToString:@"1"]) {
+                NSDictionary *result = [JSONFormatFunc dictionaryValueForKey:@"result" ofDict:dataDic];
+                if ([result isValidDictionary]) {
+                    [DFHDataManager sharedInstance].loginInfo = [DFHLoginInfo analyticalDataWithDictionary:result];
+                    DFHMachineSelectionController *controller = [[DFHMachineSelectionController alloc]init];
+                    controller.type = MembersIntoType;
+                    controller.code = [DFHDataManager sharedInstance].loginInfo.code;
+                    [weakSelf presentViewController:controller animated:NO completion:nil];
+                }
+            }
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示信息" message:[JSONFormatFunc strValueForKey:@"msg" ofDict:dataDic] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+                [alert show];
+            }
+        }
     } failure:^(NSError *error) {
-        NSString *str = error.localizedDescription;
+
     }];
+    [self showHudWithAnimation:YES];
 }
 
 - (void)requestMemberRegister
 {
-    NSDictionary *param = [DFHRequestDataInterface makeRequestMemberRegister:_accountTextField.text password:_passwordTextField.text code:_invitationCodeTextField.text inviteName:@""];
-    [_httpRequest getWithURLString:DFH_MemberRegister parameters:param success:^(id responseObject) {
+    __weak typeof(self) weakSelf = self;
+    NSString *urlStr = [DFHRequestDataInterface makeRequestMemberRegister:_accountTextField.text password:_passwordTextField.text code:_invitationCodeTextField.text inviteName:@""];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        [weakSelf hideHudDefault];
+        NSDictionary *dataDic = [JSONFormatFunc convertDictionary:responseObject];
+        if ([dataDic isValidDictionary]) {
+            NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:dataDic];
+            if ([code isEqualToString:@"1"]) {
+//                NSDictionary *result = [JSONFormatFunc dictionaryValueForKey:@"result" ofDict:dataDic];
+//                if ([result isValidDictionary]) {
+//                    [DFHDataManager sharedInstance].loginInfo = [DFHLoginInfo analyticalDataWithDictionary:result];
+//                    DFHMachineSelectionController *controller = [[DFHMachineSelectionController alloc]init];
+//                    controller.type = MembersIntoType;
+//                    controller.code = [DFHDataManager sharedInstance].loginInfo.code;
+//                    [weakSelf presentViewController:controller animated:NO completion:nil];
+//                }
+            }
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示信息" message:[JSONFormatFunc strValueForKey:@"msg" ofDict:dataDic] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+                [alert show];
+        }
     } failure:^(NSError *error) {
-        NSString *str = error.localizedDescription;
+
     }];
+    [self showHudWithAnimation:YES];
 }
  - (BOOL)detectionOfLegitimacy
 {
@@ -239,13 +318,16 @@
     {
         msg = @"密码不能为空";
     }
-    else if (_confirmPasswordTextField.text.length == 0)
+    else if (_newlyMemberBtn.selected)
     {
-        msg = @"确认密码不能为空";
-    }
-    else if (![_passwordTextField.text isEqualToString:_confirmPasswordTextField.text])
-    {
-       msg = @"确认密码与密码不匹配";
+        if (_confirmPasswordTextField.text.length == 0)
+        {
+            msg = @"确认密码不能为空";
+        }
+        else if (![_passwordTextField.text isEqualToString:_confirmPasswordTextField.text])
+        {
+             msg = @"确认密码与密码不匹配";
+        }
     }
     else if(_newlyMemberBtn.selected)
     {
@@ -270,10 +352,4 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-   NSString *str =  [AES AES128Encrypt:@"123" key:Decryption_AESSecretKey];
-   NSString *str2 = [AES AES128Decrypt:str key:Decryption_AESSecretKey];
-}
 @end

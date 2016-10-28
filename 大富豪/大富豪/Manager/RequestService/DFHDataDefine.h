@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#pragma mark -- 登陆账号信息
+@interface DFHBaseInfo : NSObject
+
+
+@end
 
 #pragma mark -- 登陆账号信息
-@interface DFHAccountInfo : NSObject<NSCoding>
+@interface DFHAccountInfo : DFHBaseInfo
 
 @property(nonatomic,copy)NSString  *userid; //用户名
 @property(nonatomic,copy)NSString  *passkey; //用户登录密钥
@@ -17,12 +22,18 @@
 @end
 
 #pragma mark -- 登陆返回信息
-@interface DFHLoginInfo : NSObject<NSCoding>
+@interface DFHLoginInfo : DFHBaseInfo
 
-@property(nonatomic,copy)NSString *cNO;
-@property(nonatomic,copy)NSString *cName;
-@property(nonatomic,copy)NSString *token;
+@property(nonatomic,copy)NSString *codeId;
+@property(nonatomic,copy)NSString *lastLoginTime;
+@property(nonatomic,copy)NSString *password;
+@property(nonatomic,copy)NSString *id;
+@property(nonatomic,copy)NSString *loginStatus;
+@property(nonatomic,copy)NSString *lastLoginIp;
+@property(nonatomic,copy)NSString *telephone;
+@property(nonatomic,copy)NSString *createTime;  //注册时间
+@property(nonatomic,copy)NSString *code;  //邀请码
 
-- (void)analyticalDataWithDictionary:(NSDictionary *)dic;
++ (DFHLoginInfo *)analyticalDataWithDictionary:(NSDictionary *)dic;
 
 @end

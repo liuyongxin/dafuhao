@@ -27,6 +27,7 @@
 		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
 		17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */; };
+		17E7B4FD1DC31D7000EAD823 /* DFHGameMainInterFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */; };
 		17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794B71DBDA4EC00A73B4F /* DFHDataManager.m */; };
 		17F794BF1DBDA88600A73B4F /* DFHLogManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794BE1DBDA88600A73B4F /* DFHLogManagement.m */; };
 		17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794D21DBDB06B00A73B4F /* DFHDataDefine.m */; };
@@ -114,6 +115,8 @@
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
 		17CFD74D1DBDE7AA00911455 /* DFHEnterOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHEnterOptionViewController.h; sourceTree = "<group>"; };
 		17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHEnterOptionViewController.m; sourceTree = "<group>"; };
+		17E7B4FB1DC31D7000EAD823 /* DFHGameMainInterFaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHGameMainInterFaceController.h; sourceTree = "<group>"; };
+		17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHGameMainInterFaceController.m; sourceTree = "<group>"; };
 		17F794B61DBDA4EC00A73B4F /* DFHDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHDataManager.h; sourceTree = "<group>"; };
 		17F794B71DBDA4EC00A73B4F /* DFHDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHDataManager.m; sourceTree = "<group>"; };
 		17F794BD1DBDA88600A73B4F /* DFHLogManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHLogManagement.h; sourceTree = "<group>"; };
@@ -375,6 +378,7 @@
 		17CFD74A1DBDE7AA00911455 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				17E7B4F71DC31D3E00EAD823 /* GameMainInterface */,
 				171E72AC1DBEF1720089D5F6 /* MachineSelection */,
 				17CFD74B1DBDE7AA00911455 /* EnterOption */,
 				17CFD7511DBDE7AA00911455 /* Login */,
@@ -476,6 +480,39 @@
 			sourceTree = "<group>";
 		};
 		17CFD7581DBDE7AA00911455 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17E7B4F71DC31D3E00EAD823 /* GameMainInterface */ = {
+			isa = PBXGroup;
+			children = (
+				17E7B4F81DC31D3E00EAD823 /* Controller */,
+				17E7B4F91DC31D3E00EAD823 /* Model */,
+				17E7B4FA1DC31D3E00EAD823 /* View */,
+			);
+			path = GameMainInterface;
+			sourceTree = "<group>";
+		};
+		17E7B4F81DC31D3E00EAD823 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17E7B4FB1DC31D7000EAD823 /* DFHGameMainInterFaceController.h */,
+				17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17E7B4F91DC31D3E00EAD823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17E7B4FA1DC31D3E00EAD823 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1096,6 +1133,7 @@
 				17F794EF1DBDD6BF00A73B4F /* DFHSmartUtility.m in Sources */,
 				17F794EA1DBDCFEA00A73B4F /* DFHUtil.m in Sources */,
 				171E72B81DBEF4020089D5F6 /* DFHMachineSelectionController.m in Sources */,
+				17E7B4FD1DC31D7000EAD823 /* DFHGameMainInterFaceController.m in Sources */,
 				3C6A40891DBCCFAD00377929 /* SSKeychain.m in Sources */,
 				17F794E01DBDB06B00A73B4F /* DFHResponsePackageDataDefine.m in Sources */,
 				171E72BB1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m in Sources */,

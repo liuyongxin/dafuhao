@@ -66,13 +66,15 @@
 
  - (void)tapBtnAction:(UIButton *)btn
 {
+    DFHRegisterViewController *controller = [[DFHRegisterViewController alloc]init];
     if (btn.tag == 10) {
-        [self presentViewController:[DFHMachineSelectionController new] animated:NO completion:nil];
+        controller.type = LoginListType;
     }
     else if (btn.tag ==11)
     {
-        [self presentViewController:[DFHRegisterViewController new] animated:NO completion:nil];
+        controller.type =  RegisterListType;
     }
+    [self presentViewController:controller animated:NO completion:nil];
 }
 
 @end

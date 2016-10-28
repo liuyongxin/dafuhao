@@ -10,9 +10,12 @@ static NSString *collectionCellID = @"collectionCellID";
 
 #import "DFHMachineSelectionController.h"
 #import "DFHMachineSelectionCollectionCell.h"
+#import "DFHGameMainInterFaceController.h"
 
 @interface DFHMachineSelectionController ()<UICollectionViewDelegate,UICollectionViewDataSource>
-
+{
+    DFHHttpRequest *_httpRequest;
+}
 @property(nonatomic,retain)UILabel *playerTypeLabel;
 @property(nonatomic,retain)UIImageView *bgImageView;
 @property(nonatomic,retain)UICollectionView *collectionView;
@@ -21,6 +24,34 @@ static NSString *collectionCellID = @"collectionCellID";
 @end
 
 @implementation DFHMachineSelectionController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    __weak typeof(self) weakSelf = self;
+    [_httpRequest postWithURLString:[DFHRequestDataInterface makeRequestMembersMachineList:@"731M"] parameters:nil success:^(id responseObject) {
+        NSDictionary *dataDic = [JSONFormatFunc convertDictionary:responseObject];
+        if ([dataDic isValidDictionary]) {
+            NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:dataDic];
+            if ([code isEqualToString:@"0"]) {
+                NSArray*result = [JSONFormatFunc arrayValueForKey:@"result" ofDict:dataDic];
+                if ([result isValidArray]) {
+                   [weakSelf.dataArray removeAllObjects];
+                    [weakSelf.dataArray addObjectsFromArray:result];
+                    [weakSelf.collectionView reloadData];
+                    [weakSelf resetCollectViewFrame];
+                }
+            }
+            else if([code isEqualToString:@"-1"])
+            {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示信息" message:[JSONFormatFunc strValueForKey:@"msg" ofDict:dataDic] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            [alert show];
+            }
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,11 +62,8 @@ static NSString *collectionCellID = @"collectionCellID";
 
 - (void)preperaData
 {
+    _httpRequest = [[DFHHttpRequest alloc]init];
     _dataArray = [[NSMutableArray alloc]init];
-    for (int i=0; i<10; i++) {
-        NSDictionary *dic = @{@"num":@(i*1000),@"name":[NSString stringWithFormat:@"机台%d",i],@"scale":@(i)};
-        [_dataArray addObject:dic];
-    }
 }
 
 -(void)configUI
@@ -81,6 +109,27 @@ static NSString *collectionCellID = @"collectionCellID";
     [backHomeBtn addTarget:self action:@selector(backHomeAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bgImageView addSubview:backHomeBtn];
     
+}
+
+ - (void)resetCollectViewFrame
+{
+    if ([_dataArray isValidArray]) {
+        CGFloat bgW = 428;
+        CGFloat btnW = 121;
+        CGFloat space = 15;
+        CGRect rect = _collectionView.frame;
+        if (_dataArray.count < 3) {
+           UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
+            rect.size.width = layout.minimumLineSpacing*(_dataArray.count - 1) + btnW*_dataArray.count;
+            rect.origin.x = bgW - rect.size.width + space;
+        }
+        else
+        {
+          rect.origin.x = space;
+           rect.size.width= bgW - 2*space;
+        }
+        _collectionView.frame = rect;
+    }
 }
 
 - (void)backHomeAction:(UIButton *)btn

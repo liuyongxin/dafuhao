@@ -14,8 +14,12 @@
 #import "DFHUtil.h"
 #import "DFHDataManager.h"
 #import "Log.h"
+#import "AES.h"
 #import "DFHLogManagement.h"
 #import "JSONFormatFunc.h"
+#import "DFHRequestDataInterface.h"
+#import "DFHHttpRequest.h"
+#import "DFHDataUrl.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

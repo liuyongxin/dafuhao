@@ -94,9 +94,11 @@
 
 - (void)fillDataWithDic:(NSDictionary *)dataDic
 {
-    _numLabel.text = [NSString stringWithFormat:@"%@",[dataDic objectForKey:@"num"]];
-    _nameLabel.text = [dataDic objectForKey:@"name"];
-    _scaleLabel.text =[NSString stringWithFormat:@"%@", [dataDic objectForKey:@"scale"]];
+    NSDictionary *machineInfoDic = [JSONFormatFunc dictionaryValueForKey:@"machineInfo" ofDict:dataDic];
+    NSDictionary *machineSetDic = [JSONFormatFunc dictionaryValueForKey:@"machineSet" ofDict:dataDic];
+    _numLabel.text = [NSString stringWithFormat:@"%@",[JSONFormatFunc strValueForKey:@"maxMember" ofDict:machineSetDic]];
+    _nameLabel.text =  [NSString stringWithFormat:@"%@",[JSONFormatFunc strValueForKey:@"areaName" ofDict:machineInfoDic]];
+    _scaleLabel.text = [NSString stringWithFormat:@"1:%@",[JSONFormatFunc strValueForKey:@"currencyRatio" ofDict:machineSetDic]];
 }
 
 

@@ -42,7 +42,7 @@
      *  可以接受的类型
      */
     self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
+    [self.manager.requestSerializer setValue:@"application/json;charset=utf-8"forHTTPHeaderField:@"Content-Type"];
     /**
      *  请求队列的最大并发数
      */

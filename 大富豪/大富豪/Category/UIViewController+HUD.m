@@ -27,6 +27,7 @@
         self.timeOutVal = kDefaultTimeoutTime;
         MBProgressHUD *hud=[[MBProgressHUD alloc] initWithView:view];
         hud.labelText = @"正在加载...";
+        hud.color = [UIColor grayColor];
         hud.opacity=.5;
         hud.labelFont = [UIFont systemFontOfSize:14.];
         [view addSubview:hud];
