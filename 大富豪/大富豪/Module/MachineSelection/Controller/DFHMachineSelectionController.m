@@ -29,7 +29,7 @@ static NSString *collectionCellID = @"collectionCellID";
 {
     [super viewWillAppear:animated];
     __weak typeof(self) weakSelf = self;
-    [_httpRequest postWithURLString:[DFHRequestDataInterface makeRequestMembersMachineList:@"731M"] parameters:nil success:^(id responseObject) {
+    [_httpRequest postWithURLString:[DFHRequestDataInterface makeRequestMemberMachineList:@"731M"] parameters:nil success:^(id responseObject) {
         NSDictionary *dataDic = [JSONFormatFunc convertDictionary:responseObject];
         if ([dataDic isValidDictionary]) {
             NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:dataDic];
@@ -121,7 +121,7 @@ static NSString *collectionCellID = @"collectionCellID";
         if (_dataArray.count < 3) {
            UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
             rect.size.width = layout.minimumLineSpacing*(_dataArray.count - 1) + btnW*_dataArray.count;
-            rect.origin.x = bgW - rect.size.width + space;
+            rect.origin.x = (bgW - rect.size.width)/2;
         }
         else
         {
@@ -153,7 +153,8 @@ static NSString *collectionCellID = @"collectionCellID";
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
+    [self presentViewController:controller animated:NO completion:nil];
 }
 
 @end

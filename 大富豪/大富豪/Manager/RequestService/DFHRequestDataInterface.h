@@ -26,7 +26,7 @@
 
 #pragma mark - 根据邀请码获取机器列表接口
 //code	邀请码	必填
-+ (NSString *)makeRequestMembersMachineList:(NSString *)code;
++ (NSString *)makeRequestMemberMachineList:(NSString *)code;
 
 #pragma mark - 会员选择机台接口
 //memberId	会员id	必填
@@ -56,9 +56,6 @@
 //machineId	机台id	必填
 + (NSString *)makeRequestModifyProfit:(NSString *)memberId profit:(NSString *)profit machineId:(NSString *)machineId;
 
-#pragma mark - 会员修改机台接口(手游版)
-//memberId	会员id	必填
-//machineId	机台id	必填
-+ (NSString *)makeRequestMembersChooseMachine:(NSString *)memberId  machineId:(NSString *)machineId;
+
 
 @end

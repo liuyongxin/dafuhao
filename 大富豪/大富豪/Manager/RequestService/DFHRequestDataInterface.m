@@ -27,7 +27,7 @@
     return urlStr;
 }
 
-+ (NSString *)makeRequestMembersMachineList:(NSString *)code
++ (NSString *)makeRequestMemberMachineList:(NSString *)code
 {
     NSString *url = DFH_MachineSelectBycode;
     NSString *urlStr = [NSString stringWithFormat:@"%@?code=%@",url,code];
@@ -45,6 +45,20 @@
 {
     NSString *url = DFH_MachinesetGetById;
     NSString *urlStr = [NSString stringWithFormat:@"%@?machineId=%@",url,machineId];
+    return urlStr;
+}
+
++ (NSString *)makeRequestModifyPoints:(NSString *)memberId score:(NSString *)score machineId:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bounts color:(NSString *)color;
+{
+    NSString *url = DFH_ModifyPoints;
+    NSString *urlStr = [NSString stringWithFormat:@"%@?memberId=%@&score=%@&machineId=%@&rounds=%@&bounds=%@&color=%@",url,memberId,score,machineId,rounds,bounts,color];
+    return urlStr;
+}
+
++ (NSString *)makeRequestModifyProfit:(NSString *)memberId profit:(NSString *)profit machineId:(NSString *)machineId
+{
+    NSString *url = DFH_ModifyProfit;
+    NSString *urlStr = [NSString stringWithFormat:@"%@?mamberId=%@&profit=%@&machineId=%@",url,memberId,profit,machineId];
     return urlStr;
 }
 

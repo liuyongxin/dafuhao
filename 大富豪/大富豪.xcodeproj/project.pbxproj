@@ -25,6 +25,7 @@
 		173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */; };
 		173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
+		1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1790B4151DC715B800AAFF1D /* VideoDisplayView.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
 		17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */; };
 		17E7B4FD1DC31D7000EAD823 /* DFHGameMainInterFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */; };
@@ -112,6 +113,8 @@
 		173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		173E4A441DC1FDA00015B33D /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		173E4A451DC1FDA00015B33D /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
+		1790B4141DC715B800AAFF1D /* VideoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDisplayView.h; sourceTree = "<group>"; };
+		1790B4151DC715B800AAFF1D /* VideoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDisplayView.m; sourceTree = "<group>"; };
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
 		17CFD74D1DBDE7AA00911455 /* DFHEnterOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHEnterOptionViewController.h; sourceTree = "<group>"; };
 		17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHEnterOptionViewController.m; sourceTree = "<group>"; };
@@ -360,7 +363,7 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
-		17CFD7441DBDE15500911455 /* Resource */ = {
+		1790B4171DC73BD200AAFF1D /* Default */ = {
 			isa = PBXGroup;
 			children = (
 				17193B2F1DBE09AE0012C2C5 /* Default_6@2x.png */,
@@ -370,6 +373,14 @@
 				17193B331DBE09AE0012C2C5 /* Default.png */,
 				17193B341DBE09AE0012C2C5 /* Default@2x-1.png */,
 				17193B351DBE09AE0012C2C5 /* Default@2x.png */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		17CFD7441DBDE15500911455 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1790B4171DC73BD200AAFF1D /* Default */,
 				17CFD7451DBDE18400911455 /* DFHImageResource.bundle */,
 			);
 			path = Resource;
@@ -515,6 +526,8 @@
 		17E7B4FA1DC31D3E00EAD823 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1790B4141DC715B800AAFF1D /* VideoDisplayView.h */,
+				1790B4151DC715B800AAFF1D /* VideoDisplayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,8 +622,6 @@
 				3C6A3E7E1DBCCFAD00377929 /* Base */,
 				3C6A3E8C1DBCCFAD00377929 /* Category */,
 				3C6A3EA61DBCCFAD00377929 /* Common */,
-				3C6A3EAF1DBCCFAD00377929 /* Controller */,
-				3C6A3F681DBCCFAD00377929 /* Global */,
 				3C6A3F6A1DBCCFAD00377929 /* Manager */,
 				3C6A3F8B1DBCCFAD00377929 /* Vendor */,
 				3C6A3FF91DBCCFAD00377929 /* Views */,
@@ -693,20 +704,6 @@
 				3C6A3EA91DBCCFAD00377929 /* JSONFormatFunc.m */,
 			);
 			path = JSONFormatFunc;
-			sourceTree = "<group>";
-		};
-		3C6A3EAF1DBCCFAD00377929 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		3C6A3F681DBCCFAD00377929 /* Global */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Global;
 			sourceTree = "<group>";
 		};
 		3C6A3F6A1DBCCFAD00377929 /* Manager */ = {
@@ -1144,6 +1141,7 @@
 				171E72B21DBEF3A70089D5F6 /* DFHLoginViewController.m in Sources */,
 				3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */,
 				173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */,
 				17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */,
 				3C6A40101DBCCFAD00377929 /* UIImage+Util.m in Sources */,
 				17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */,

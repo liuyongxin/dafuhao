@@ -18,6 +18,8 @@
 #define DFH_MemberChoiceMachine @"http://114.55.253.199:81/game/member/choiceMachine"  //会员选择机台接口
 #define DFH_MachinesetGetById @"http://114.55.253.199:81/game/machineset/getById"  //根据机器 id 获取机器设置
 
+#define DFH_ModifyPoints @"http://114.55.253.199:81/game/machine/updateStake"  //修改押分
+#define DFH_ModifyProfit @"http://114.55.253.199:81/game/machine/updateProfit"  //修改盈利
 
 //----------------------------接口-------------------------------------//
 

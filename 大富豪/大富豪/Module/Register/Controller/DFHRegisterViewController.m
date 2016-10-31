@@ -264,7 +264,7 @@
                 if ([result isValidDictionary]) {
                     [DFHDataManager sharedInstance].loginInfo = [DFHLoginInfo analyticalDataWithDictionary:result];
                     DFHMachineSelectionController *controller = [[DFHMachineSelectionController alloc]init];
-                    controller.type = MembersIntoType;
+                    controller.type = MemberIntoType;
                     controller.code = [DFHDataManager sharedInstance].loginInfo.code;
                     [weakSelf presentViewController:controller animated:NO completion:nil];
                 }
@@ -295,7 +295,7 @@
 //                if ([result isValidDictionary]) {
 //                    [DFHDataManager sharedInstance].loginInfo = [DFHLoginInfo analyticalDataWithDictionary:result];
 //                    DFHMachineSelectionController *controller = [[DFHMachineSelectionController alloc]init];
-//                    controller.type = MembersIntoType;
+//                    controller.type = MemberIntoType;
 //                    controller.code = [DFHDataManager sharedInstance].loginInfo.code;
 //                    [weakSelf presentViewController:controller animated:NO completion:nil];
 //                }

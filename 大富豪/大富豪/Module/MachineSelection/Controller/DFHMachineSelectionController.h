@@ -7,7 +7,7 @@
 //
 typedef NS_ENUM(NSInteger,IntoType)
 {
-    MembersIntoType = 1,
+    MemberIntoType = 1,
     TouristsIntoType
 };
 #import "DFHBaseViewController.h"
@@ -15,6 +15,6 @@ typedef NS_ENUM(NSInteger,IntoType)
 @interface DFHMachineSelectionController : DFHBaseViewController
 
 @property(nonatomic,assign)IntoType type;
-@property(nonatomic,assign)NSString *code;  //邀请码
+@property(nonatomic,copy)NSString *code;  //邀请码
 
 @end

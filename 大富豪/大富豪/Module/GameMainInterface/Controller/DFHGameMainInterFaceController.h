@@ -10,4 +10,6 @@
 
 @interface DFHGameMainInterFaceController : DFHBaseViewController
 
+@property(nonatomic,copy)NSString *decid;
+
 @end
