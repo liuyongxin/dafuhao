@@ -81,6 +81,7 @@
     [_bgImageView addSubview:accountLabel];
     _accountTextField = [[UITextField alloc]initWithFrame:CGRectMake(xAxis, yAxis, textFieldWidth, labelHeight)];
     _accountTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _accountTextField.keyboardType = UIKeyboardTypeNumberPad;
     [_bgImageView addSubview:_accountTextField];
     
     yAxis +=space +labelHeight;

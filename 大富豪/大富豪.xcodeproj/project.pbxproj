@@ -25,6 +25,8 @@
 		173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */; };
 		173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
+		175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */; };
+		176D25C11DC8416D00B9CF57 /* RoundInningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 176D25C01DC8416D00B9CF57 /* RoundInningView.m */; };
 		1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1790B4151DC715B800AAFF1D /* VideoDisplayView.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
 		17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */; };
@@ -113,6 +115,10 @@
 		173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		173E4A441DC1FDA00015B33D /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		173E4A451DC1FDA00015B33D /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
+		175B8C3F1DC824DF00061D79 /* ScoreStatisticsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreStatisticsView.h; sourceTree = "<group>"; };
+		175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreStatisticsView.m; sourceTree = "<group>"; };
+		176D25BF1DC8416D00B9CF57 /* RoundInningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundInningView.h; sourceTree = "<group>"; };
+		176D25C01DC8416D00B9CF57 /* RoundInningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundInningView.m; sourceTree = "<group>"; };
 		1790B4141DC715B800AAFF1D /* VideoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDisplayView.h; sourceTree = "<group>"; };
 		1790B4151DC715B800AAFF1D /* VideoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDisplayView.m; sourceTree = "<group>"; };
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
@@ -528,6 +534,10 @@
 			children = (
 				1790B4141DC715B800AAFF1D /* VideoDisplayView.h */,
 				1790B4151DC715B800AAFF1D /* VideoDisplayView.m */,
+				175B8C3F1DC824DF00061D79 /* ScoreStatisticsView.h */,
+				175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */,
+				176D25BF1DC8416D00B9CF57 /* RoundInningView.h */,
+				176D25C01DC8416D00B9CF57 /* RoundInningView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1142,6 +1152,7 @@
 				3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */,
 				173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */,
+				175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */,
 				17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */,
 				3C6A40101DBCCFAD00377929 /* UIImage+Util.m in Sources */,
 				17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */,
@@ -1151,6 +1162,7 @@
 				3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */,
 				173E4A411DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m in Sources */,
 				17F794DE1DBDB06B00A73B4F /* DFHRequestBaseInterface.m in Sources */,
+				176D25C11DC8416D00B9CF57 /* RoundInningView.m in Sources */,
 				17F794DF1DBDB06B00A73B4F /* DFHRequestDataInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
