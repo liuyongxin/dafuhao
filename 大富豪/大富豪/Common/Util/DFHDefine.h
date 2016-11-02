@@ -29,5 +29,7 @@
 
 #define DFHScreenW    [UIScreen mainScreen].bounds.size.width
 #define DFHScreenH    [UIScreen mainScreen].bounds.size.height
-
+#define DFHSizeWidthRatio   ([UIScreen mainScreen].bounds.size.width/480)
+#define DFHSizeHeightRatio   ([UIScreen mainScreen].bounds.size.height/320)
+#define DFHSizeMinRatio ((DFHSizeWidthRatio < DFHSizeHeightRatio) ? DFHSizeWidthRatio : DFHSizeHeightRatio)
 #endif /* DFHDefine_h */

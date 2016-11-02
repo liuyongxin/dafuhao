@@ -42,24 +42,28 @@
 
 - (void)configSubImageViews
 {
-    CGFloat width = 34.75;
-    CGFloat height = 14; //.75
-    CGFloat space =  5;
-    CGFloat yAxis = space + 5;
-    NSArray *imagesArray = @[[
-                              UIImage imageNamed:@"Main_Balance_Balance.png" bundle:DFHImageResourceBundle_Main_Balance],
-                             [UIImage imageNamed:@"Main_Balance_SignPoints.png" bundle:DFHImageResourceBundle_Main_Balance],
-                             [UIImage imageNamed:@"Main_Balance_WinPoints.png" bundle:DFHImageResourceBundle_Main_Balance],
-                             [UIImage imageNamed:@"Main_Balance_LastWinPoints.png" bundle:DFHImageResourceBundle_Main_Balance]];
+    CGFloat width = 40;
+    CGFloat height = 14;
+
+    CGFloat xStart = 10;
+    CGFloat yStart = 10;
+    CGFloat xAxis = xStart;
+    CGFloat yAxis = yStart;
+    CGFloat space =  3;
+    NSArray *imagesArray = @[@"余    额",@"本次押分",@"本次赢分",@"上次赢分"];
     for (int i = 0; i<imagesArray.count; i++) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(space, yAxis, width, height)];
-        imageView.userInteractionEnabled = YES;
-        imageView.image = imagesArray[i];
-        [_bgImageView addSubview:imageView];
+        xAxis = xStart;
+        UILabel *view = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, width, height)];
+        view.textColor = [UIColor colorWithRed:1.00 green:0.99 blue:0.25 alpha:1.00];
+        view.text = imagesArray[i];
+        view.adjustsFontSizeToFitWidth = YES;
+        view.font = [UIFont boldSystemFontOfSize:10];
+        [_bgImageView addSubview:view];
         
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(space + width + space, yAxis,self.frame.size.width - width - 3* space, height)];
+        xAxis += width + space;
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis,self.frame.size.width - xAxis - 2*space, height)];
         label.adjustsFontSizeToFitWidth = YES;
-        label.font = [UIFont boldSystemFontOfSize:16];
+        label.font = [UIFont boldSystemFontOfSize:10];
         label.textAlignment = NSTextAlignmentRight;
         label.textColor = [UIColor whiteColor];
         label.text = @"0";

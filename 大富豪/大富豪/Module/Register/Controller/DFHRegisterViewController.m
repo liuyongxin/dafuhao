@@ -9,7 +9,7 @@
 #import "DFHRegisterViewController.h"
 #import "PositionButton.h"
 #import "TPKeyboardAvoidingScrollView.h"
-    #import "DFHMachineSelectionController.h"
+#import "DFHMachineSelectionController.h"
 
 @interface DFHRegisterViewController ()
 {
@@ -180,6 +180,7 @@
     [backBtn addTarget:self action:@selector(backBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bgImageView addSubview:backBtn];
    
+    [self addCloseButtonToKeyboard:_bgImageView];
 }
 
 - (void)defaultSeting:(ListType )type

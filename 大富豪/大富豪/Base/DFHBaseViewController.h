@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+HUD.h"
+#import "UIViewController+KeyboardButton.h"
 
 @interface DFHBaseViewController : UIViewController
 

@@ -38,6 +38,7 @@ static NSString *collectionCellID = @"collectionCellID";
                 if ([result isValidArray]) {
                    [weakSelf.dataArray removeAllObjects];
                     [weakSelf.dataArray addObjectsFromArray:result];
+                    [weakSelf.dataArray addObjectsFromArray:result];
                     [weakSelf.collectionView reloadData];
                     [weakSelf resetCollectViewFrame];
                 }
@@ -68,9 +69,9 @@ static NSString *collectionCellID = @"collectionCellID";
 
 -(void)configUI
 {
-    CGFloat bgW = 428;
-    CGFloat bgH = 254;
-    CGFloat btnW = 121;
+    CGFloat bgW = 400 * DFHSizeMinRatio;
+    CGFloat bgH = 208 * DFHSizeMinRatio;
+    CGFloat btnW = 100;
     _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgW, bgH)];
     _bgImageView.userInteractionEnabled = YES;
     _bgImageView.center = self.view.center;
@@ -79,24 +80,25 @@ static NSString *collectionCellID = @"collectionCellID";
     
     CGFloat space = 15;
     CGFloat yAxis = space;
-    _playerTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, yAxis, bgW/2, 30)];
+    _playerTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(space, yAxis, bgW/2 - 2*space, 30)];
     _playerTypeLabel.text = @"体验玩家";
     _playerTypeLabel.textAlignment = NSTextAlignmentCenter;
     _playerTypeLabel.textColor = [UIColor redColor];
     [_bgImageView addSubview:_playerTypeLabel];
     
-    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(bgW/2, yAxis, bgW/2, 30)];
+    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(space + bgW/2, yAxis, bgW/2 - 2*space, 30)];
     tipLabel.text = @"请选择机台";
     tipLabel.textAlignment = NSTextAlignmentCenter;
     tipLabel.textColor = [UIColor redColor];
     [_bgImageView addSubview:tipLabel];
     yAxis += (30 + space);
     
+    CGFloat xSpace = 30;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.minimumLineSpacing =  (bgW - btnW*3 - space*2)/2;
+    layout.minimumLineSpacing =  (bgW - btnW*3 - xSpace*2)/2;
     layout.itemSize = CGSizeMake(btnW   , btnW);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(space, yAxis, bgW - 2*space,btnW) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(xSpace, yAxis, bgW - 2*xSpace,btnW) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor clearColor];
@@ -105,7 +107,8 @@ static NSString *collectionCellID = @"collectionCellID";
     yAxis += (btnW + space);
     UIButton *backHomeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backHomeBtn.frame = CGRectMake((bgW - 158.5)/2, yAxis,158.5, 42);
-    [backHomeBtn setImage:[UIImage imageNamed:@"login_back.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateNormal];
+    [backHomeBtn setImage:[UIImage imageNamed:@"login_backNormal.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateNormal];
+        [backHomeBtn setImage:[UIImage imageNamed:@"login_backSelected.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateSelected];
     [backHomeBtn addTarget:self action:@selector(backHomeAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bgImageView addSubview:backHomeBtn];
     
@@ -114,9 +117,9 @@ static NSString *collectionCellID = @"collectionCellID";
  - (void)resetCollectViewFrame
 {
     if ([_dataArray isValidArray]) {
-        CGFloat bgW = 428;
-        CGFloat btnW = 121;
-        CGFloat space = 15;
+        CGFloat bgW = 400 * DFHSizeMinRatio;
+        CGFloat btnW = 100;
+        CGFloat xSpace = 30;
         CGRect rect = _collectionView.frame;
         if (_dataArray.count < 3) {
            UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
@@ -125,8 +128,8 @@ static NSString *collectionCellID = @"collectionCellID";
         }
         else
         {
-          rect.origin.x = space;
-           rect.size.width= bgW - 2*space;
+          rect.origin.x = xSpace;
+           rect.size.width= bgW - 2*xSpace;
         }
         _collectionView.frame = rect;
     }

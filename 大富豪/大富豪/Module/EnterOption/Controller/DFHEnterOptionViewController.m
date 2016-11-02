@@ -27,9 +27,9 @@
 
 - (void)configUI
 {
-    CGFloat bgW = 428;
-    CGFloat bgH = 254;
-    CGFloat btnW = 121;
+    CGFloat bgW = 400 * DFHSizeMinRatio;
+    CGFloat bgH = 208 * DFHSizeMinRatio;
+    CGFloat btnW = 100;
     _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgW, bgH)];
     _bgImageView.userInteractionEnabled = YES;
     _bgImageView.center = self.view.center;

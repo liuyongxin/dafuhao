@@ -27,6 +27,12 @@
 		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
 		175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */; };
 		176D25C11DC8416D00B9CF57 /* RoundInningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 176D25C01DC8416D00B9CF57 /* RoundInningView.m */; };
+		1784F7ED1DC9C65A00452B36 /* MachineStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7EC1DC9C65A00452B36 /* MachineStatusView.m */; };
+		1784F7F01DC9D16300452B36 /* LotteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7EF1DC9D16300452B36 /* LotteryView.m */; };
+		1784F7F31DC9DEED00452B36 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7F21DC9DEED00452B36 /* RecordView.m */; };
+		1784F7F61DC9DF0A00452B36 /* SingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7F51DC9DF0A00452B36 /* SingleView.m */; };
+		1784F7F91DC9E68A00452B36 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7F81DC9E68A00452B36 /* SettingView.m */; };
+		1784F7FC1DC9E6B800452B36 /* BetPointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7FB1DC9E6B800452B36 /* BetPointsView.m */; };
 		1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1790B4151DC715B800AAFF1D /* VideoDisplayView.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
 		17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */; };
@@ -119,6 +125,18 @@
 		175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreStatisticsView.m; sourceTree = "<group>"; };
 		176D25BF1DC8416D00B9CF57 /* RoundInningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundInningView.h; sourceTree = "<group>"; };
 		176D25C01DC8416D00B9CF57 /* RoundInningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundInningView.m; sourceTree = "<group>"; };
+		1784F7EB1DC9C65A00452B36 /* MachineStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineStatusView.h; sourceTree = "<group>"; };
+		1784F7EC1DC9C65A00452B36 /* MachineStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineStatusView.m; sourceTree = "<group>"; };
+		1784F7EE1DC9D16300452B36 /* LotteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryView.h; sourceTree = "<group>"; };
+		1784F7EF1DC9D16300452B36 /* LotteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryView.m; sourceTree = "<group>"; };
+		1784F7F11DC9DEED00452B36 /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
+		1784F7F21DC9DEED00452B36 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
+		1784F7F41DC9DF0A00452B36 /* SingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleView.h; sourceTree = "<group>"; };
+		1784F7F51DC9DF0A00452B36 /* SingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleView.m; sourceTree = "<group>"; };
+		1784F7F71DC9E68A00452B36 /* SettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
+		1784F7F81DC9E68A00452B36 /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
+		1784F7FA1DC9E6B800452B36 /* BetPointsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetPointsView.h; sourceTree = "<group>"; };
+		1784F7FB1DC9E6B800452B36 /* BetPointsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetPointsView.m; sourceTree = "<group>"; };
 		1790B4141DC715B800AAFF1D /* VideoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDisplayView.h; sourceTree = "<group>"; };
 		1790B4151DC715B800AAFF1D /* VideoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDisplayView.m; sourceTree = "<group>"; };
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
@@ -538,6 +556,18 @@
 				175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */,
 				176D25BF1DC8416D00B9CF57 /* RoundInningView.h */,
 				176D25C01DC8416D00B9CF57 /* RoundInningView.m */,
+				1784F7EB1DC9C65A00452B36 /* MachineStatusView.h */,
+				1784F7EC1DC9C65A00452B36 /* MachineStatusView.m */,
+				1784F7EE1DC9D16300452B36 /* LotteryView.h */,
+				1784F7EF1DC9D16300452B36 /* LotteryView.m */,
+				1784F7F11DC9DEED00452B36 /* RecordView.h */,
+				1784F7F21DC9DEED00452B36 /* RecordView.m */,
+				1784F7F41DC9DF0A00452B36 /* SingleView.h */,
+				1784F7F51DC9DF0A00452B36 /* SingleView.m */,
+				1784F7F71DC9E68A00452B36 /* SettingView.h */,
+				1784F7F81DC9E68A00452B36 /* SettingView.m */,
+				1784F7FA1DC9E6B800452B36 /* BetPointsView.h */,
+				1784F7FB1DC9E6B800452B36 /* BetPointsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1128,6 +1158,8 @@
 				173E4A361DC1A3F10015B33D /* PositionButton.m in Sources */,
 				171E72B51DBEF3E30089D5F6 /* DFHRegisterViewController.m in Sources */,
 				3C6A408A1DBCCFAD00377929 /* GRKPageViewController.m in Sources */,
+				1784F7F61DC9DF0A00452B36 /* SingleView.m in Sources */,
+				1784F7F01DC9D16300452B36 /* LotteryView.m in Sources */,
 				3C6A408D1DBCCFAD00377929 /* CKCalendarView.m in Sources */,
 				3C6A40151DBCCFAD00377929 /* JSONFormatFunc.m in Sources */,
 				17F794F71DBDD8F600A73B4F /* NSString+MD5.m in Sources */,
@@ -1149,15 +1181,19 @@
 				3C6A409B1DBCD3AF00377929 /* DFHNavigationController.m in Sources */,
 				17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */,
 				171E72B21DBEF3A70089D5F6 /* DFHLoginViewController.m in Sources */,
+				1784F7FC1DC9E6B800452B36 /* BetPointsView.m in Sources */,
 				3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */,
+				1784F7ED1DC9C65A00452B36 /* MachineStatusView.m in Sources */,
 				173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */,
 				175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */,
 				17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */,
 				3C6A40101DBCCFAD00377929 /* UIImage+Util.m in Sources */,
 				17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */,
+				1784F7F91DC9E68A00452B36 /* SettingView.m in Sources */,
 				3C6A3E4D1DBCCF1700377929 /* main.m in Sources */,
 				3C6A40831DBCCFAD00377929 /* NSData+Base64.m in Sources */,
+				1784F7F31DC9DEED00452B36 /* RecordView.m in Sources */,
 				3C6A40841DBCCFAD00377929 /* NSString+Base64.m in Sources */,
 				3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */,
 				173E4A411DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m in Sources */,
