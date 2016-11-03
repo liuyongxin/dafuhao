@@ -8,7 +8,9 @@
 
 #import "RoundInningView.h"
 @interface RoundInningView()
-
+{
+    CGFloat _space;
+}
 @property(nonatomic,retain)UIImageView *roundBgView;
 @property(nonatomic,retain)UIImageView *inningBgView;
 
@@ -20,6 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _space = 3;
         [self settingNum:0 targetView:self.roundBgView];
         [self settingNum:0 targetView:self.inningBgView];
     }
@@ -29,12 +32,12 @@
 - (UIImageView *)roundBgView //277,116
 {
     if (!_roundBgView) {
-        _roundBgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height/2)];
+        _roundBgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, (self.frame.size.height - _space)/2)];
         _roundBgView.image = [UIImage imageNamed:@"Main_Inning_Rounds.png" bundle:DFHImageResourceBundle_Main_Inning];
         _roundBgView.userInteractionEnabled = YES;
         [self addSubview:_roundBgView];
         CGFloat btnWidth = 16;
-        CGFloat itemSpace = 5;
+        CGFloat itemSpace = 3;
         CGFloat space = (self.frame.size.width - btnWidth*3 - itemSpace)/2;
         CGFloat xAxis = space;
         CGFloat yAxis = 7*(_roundBgView.frame.size.height - btnWidth)/9;
@@ -51,7 +54,7 @@
 - (UIImageView *)inningBgView
 {
     if (!_inningBgView) {
-        _inningBgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/2, self.frame.size.width, self.frame.size.height/2)];
+        _inningBgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/2 + _space, self.frame.size.width, (self.frame.size.height - _space)/2)];
         _inningBgView.image = [UIImage imageNamed:@"Main_Inning_Inning.png" bundle:DFHImageResourceBundle_Main_Inning];
         _inningBgView.userInteractionEnabled = YES;
         [self addSubview:_inningBgView];
@@ -78,7 +81,7 @@
 
 //    NSString *numStr = [NSString stringWithFormat:@"%03d",num];
     int n = 3;
-    NSString *numStr = [NSString stringWithFormat:@"%0*d",n,num];
+    NSString *numStr = [NSString stringWithFormat:@"%0*ld",n,(long)num];
     if (numStr.length == 3) {
         NSString *str1 = [numStr substringWithRange:NSMakeRange(0, 1)];
         [btn1 setTitle:str1 forState:UIControlStateNormal];
@@ -93,7 +96,6 @@
         [btn2 setTitle:@"0" forState:UIControlStateNormal];
         [btn3 setTitle:@"0" forState:UIControlStateNormal];
     }
-
 }
 
 - (UIButton *)createNumButtonRect:(CGRect )frame
@@ -107,4 +109,15 @@
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     return btn;
 }
+
+- (void)assignmentRound:(NSInteger )num
+{
+    [self settingNum:0 targetView:self.roundBgView];
+}
+
+- (void)assignmentInning:(NSInteger )num
+{
+    [self settingNum:0 targetView:self.inningBgView];
+}
+
 @end

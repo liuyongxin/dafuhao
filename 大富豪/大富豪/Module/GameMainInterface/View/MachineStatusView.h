@@ -10,4 +10,8 @@
 
 @interface MachineStatusView : UIView
 
+- (void)assignmentLimitRed:(NSString *)text;
+- (void)assignmentMachineName:(NSString *)text;
+- (void)assignmentPlayerType:(NSString *)text;
+
 @end

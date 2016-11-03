@@ -85,6 +85,22 @@
         }
         yAxis += height + space;
     }
+}
 
+- (void)assignmentBalance:(NSString *)text
+{
+    _balanceLabel.text = text;
+}
+- (void)assignmentSignPoints:(NSString *)text
+{
+    _signPointsLabel.text = text;
+}
+- (void)assignmentWinPoints:(NSString *)text
+{
+    _winPointsLabel.text = text;
+}
+- (void)assignmentLastWinPoints:(NSString *)text
+{
+    _lastWinPointsLabel.text = text;
 }
 @end

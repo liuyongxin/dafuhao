@@ -18,8 +18,14 @@
 #define DFH_MemberChoiceMachine @"http://114.55.253.199:81/game/member/choiceMachine"  //会员选择机台接口
 #define DFH_MachinesetGetById @"http://114.55.253.199:81/game/machineset/getById"  //根据机器 id 获取机器设置
 
-#define DFH_ModifyPoints @"http://114.55.253.199:81/game/machine/updateStake"  //修改押分
-#define DFH_ModifyProfit @"http://114.55.253.199:81/game/machine/updateProfit"  //修改盈利
+#define DFH_MachineUpdateStake @"http://114.55.253.199:81/game/machine/updateStake"  //修改押分
+#define DFH_MachineUpdateProfit @"http://114.55.253.199:81/game/machine/updateProfit"  //修改盈利
+
+#define DFH_PokerGetPoker @"http://114.55.253.199:81/game/poker/getPoker"                 //获取单个牌路
+#define DFH_PokerUpdateStatus  @"http://114.55.253.199:81/game/poker/updateStatus" //修改某局状态
+#define DFH_PokerGetHistory        @"http://114.55.253.199:81/game/poker/getHistory"      //获取历史牌路
+#define DFH_PokerGenerate         @"http://114.55.253.199:81/game/poker/generate"         //生成牌路
+
 
 //----------------------------接口-------------------------------------//
 

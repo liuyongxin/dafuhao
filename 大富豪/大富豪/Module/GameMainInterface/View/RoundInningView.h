@@ -10,4 +10,7 @@
 
 @interface RoundInningView : UIView
 
+- (void)assignmentRound:(NSInteger )num;
+- (void)assignmentInning:(NSInteger )num;
+
 @end

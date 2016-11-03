@@ -60,8 +60,8 @@
 
 - (UIButton *)eyeBtn{
     if (!_eyeBtn) { //420,470
-        CGFloat eyeBtnWidth = 123/4;
-        CGFloat eyeBtnHeight = 126/4;
+        CGFloat eyeBtnWidth = 30;
+        CGFloat eyeBtnHeight = 31;
         _eyeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _eyeBtn.adjustsImageWhenHighlighted = NO;
         _eyeBtn.frame = CGRectMake(self.frame.size.width - eyeBtnWidth, self.frame.size.height - eyeBtnHeight, eyeBtnWidth, eyeBtnHeight);

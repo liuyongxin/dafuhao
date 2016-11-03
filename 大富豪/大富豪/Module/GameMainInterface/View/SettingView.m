@@ -23,6 +23,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.frame = CGRectMake(0, 0, DFHScreenW, DFHScreenH);
+        UIView *view = [[UIView alloc]initWithFrame:self.frame];
+        view.backgroundColor = [UIColor whiteColor];
+        view.alpha = 0.5;
+        [self addSubview:view];
         [self configUI];
     }
     return self;
@@ -30,16 +34,23 @@
 
 - (void)configUI
 {
-    CGFloat bgWidth = 480;
-    CGFloat bgHeight = 270;
-    _alertView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 480, 270)];
+    CGFloat bgWidth = 377;
+    CGFloat bgHeight = 196.5;
+    _alertView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, bgWidth, bgHeight)];
     _alertView.center = self.center;
     [self addSubview:_alertView];
-    _backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 480, 270)];
+    _backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgWidth, bgHeight)];
     _backgroundView.userInteractionEnabled = YES;
     _backgroundView.image = [UIImage imageNamed:@"Main_Setting_Bg.png" bundle:DFHImageResourceBundle_Main_Setting];
     [_alertView addSubview:_backgroundView];
     //270,110
+    CGFloat xStart = (bgWidth - 270)/2;
+    CGFloat yStart = (bgHeight - 110)/2;
+    CGFloat xAxis = xStart;
+    CGFloat space = 1;
+    for (int i = 0;i < 5; i++) {
+        
+    }
     
 }
 

@@ -38,5 +38,46 @@
     return _lotteryImageView;
 }
 
+- (void)assignmentColour:(NSString *)colour  number:(NSString *)number
+{
+    //color	所押花色	S：黑
+    //C：梅
+    //H：红
+    //D：方
+    //O：王
+    if (self.type == LotteryTypeColor) {
+        NSMutableString *str = [NSMutableString string];
+        if ([colour isEqualToString:@"O"])//王
+        {
+                [str appendString:@"King"];
+                [str appendString:number];
+        }
+        else
+        {
+            if ([colour isEqualToString:@"S"]) { //黑桃♠️
+                [str appendString:@"Spade"];
+            }
+            else if ([colour isEqualToString:@"C"]) //梅花♣️
+            {
+                [str appendString:@"Club"];
+            }
+            else if ([colour isEqualToString:@"H"])//红桃♥️
+            {
+                [str appendString:@"Heart"];
+            }
+            else if ([colour isEqualToString:@"D"]) //方片♦️
+            {
+                [str appendString:@"Diamond"];
+            }
+            [str appendString:number];
+        }
+        
+    }
+    else
+    {
+    
+    }
+
+}
 
 @end

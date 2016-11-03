@@ -11,3 +11,8 @@
 @interface SingleView : UIView
 
 @end
+
+
+@interface SingleViewCell : UITableViewCell
+
+@end

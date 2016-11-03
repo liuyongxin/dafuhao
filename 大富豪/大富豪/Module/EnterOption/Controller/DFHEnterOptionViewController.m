@@ -9,6 +9,7 @@
 #import "DFHEnterOptionViewController.h"
 #import "DFHMachineSelectionController.h"
 #import "DFHRegisterViewController.h"
+#import "DFHGameMainInterFaceController.h"
 
 @interface DFHEnterOptionViewController ()
 

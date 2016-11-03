@@ -56,6 +56,25 @@
 //machineId	机台id	必填
 + (NSString *)makeRequestModifyProfit:(NSString *)memberId profit:(NSString *)profit machineId:(NSString *)machineId;
 
+#pragma mark - 获取单个牌路(请求返回为 aes 加密字符串)
+//machineId	机台id	必填
+//rounds	轮	必填，数字类型
+//bouts	局	必填，数字类型
++ (NSString *)makeRequestObtainSingleCard:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bouts;
 
+#pragma mark - 修改某局状态接口(请求返回为 aes 加密字符串)
+//machineId	机台id	必填
+//rounds	轮	必填，数字类型
+//bouts	局	必填，数字类型
+//status	当前状态	1初始化，2押分中，3准备中，4已开球
++ (NSString *)makeRequestModifyBureauState:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bouts status:(NSString *)status;
+
+#pragma mark - 获取历史牌路接口(请求返回为 aes 加密字符串)
+//machineId	机器id	必填
++ (NSString *)makeRequestHistoryBrandRoad:(NSString *)machineId;
+
+#pragma mark - 生成牌路接口
+//machineId	机器id	必填
++ (NSString *)makeRequestGenerateBrandRoad:(NSString *)machineId;
 
 @end

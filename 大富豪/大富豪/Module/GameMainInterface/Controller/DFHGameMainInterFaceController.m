@@ -15,6 +15,7 @@
 #import "RecordView.h"
 #import "SingleView.h"
 #import "SettingView.h"
+#import "BetPointsView.h"
 
 @interface DFHGameMainInterFaceController ()
 
@@ -29,7 +30,7 @@
 @property(nonatomic,retain)LotteryView *lotteryView;
 @property(nonatomic,retain)RecordView *recordView;
 @property(nonatomic,retain)SingleView *singleView;
-
+@property(nonatomic,retain)BetPointsView *betPointsView;
 
 @end
 
@@ -49,69 +50,72 @@
     [self.view addSubview:_mainBGImageView];
     
     CGFloat VideoDisplayViewWidth = 105;
-    CGFloat VideoDisplayViewHeight = 117.5;
+    CGFloat VideoDisplayViewHeight = 120;
     CGFloat ScoreStatisticsViewWidth = 105;
     CGFloat ScoreStatisticsViewHeight = 85;
-    CGFloat RoundInningViewWidth = 105*0.7;
-    CGFloat RoundInningViewHeight = 84*0.7;
+    CGFloat RoundInningViewWidth = 70;
+    CGFloat RoundInningViewHeight = 55;
+    CGFloat TimingLabelHeight = 20;
 
-    CGFloat startY = 10;
-    CGFloat startX = 10;
-    CGFloat ySpace = (320 - VideoDisplayViewHeight - ScoreStatisticsViewHeight - RoundInningViewHeight - startY - 25)/4 * DFHSizeWidthRatio;
+    CGFloat MachineStatusViewWidth = 315;
+    CGFloat  MachineStatusViewHeight = 40;
+    CGFloat LotteryViewWidth = 115;
+    CGFloat  LotteryViewHeight = 180;
+    CGFloat RecordViewWidth = 195;
+    CGFloat  RecordViewHeight = 180;
+    CGFloat SingleViewWidth = 30;
+    CGFloat  SingleViewHeight = 180;
+    
+    CGFloat  BetPointsViewWidth = 400;
+    CGFloat  BetPointsViewHeight = 70;
+    
+    CGFloat xSpace = 5;
+    CGFloat ySpace = 5;
+    CGFloat startX = (DFHScreenW - VideoDisplayViewWidth - MachineStatusViewWidth - SingleViewWidth - 2*xSpace)/2;
+    CGFloat startY = (DFHScreenH - VideoDisplayViewHeight -ScoreStatisticsViewHeight - RoundInningViewHeight - TimingLabelHeight)/2;
     CGFloat xAxis = startX;
     CGFloat yAxis = startY;
     
     _videoDisplayView = [[VideoDisplayView alloc]initWithFrame:CGRectMake(xAxis, yAxis, VideoDisplayViewWidth, VideoDisplayViewHeight)];
     [_mainBGImageView addSubview:_videoDisplayView];
-    yAxis += VideoDisplayViewHeight + ySpace;
+    yAxis += VideoDisplayViewHeight;
     
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, VideoDisplayViewWidth/2, 25)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, VideoDisplayViewWidth/2, TimingLabelHeight)];
     titleLabel.text = @"计时";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.adjustsFontSizeToFitWidth = YES;
     [_mainBGImageView addSubview:titleLabel];
-    _timingLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis+VideoDisplayViewWidth/2, yAxis,VideoDisplayViewWidth/2 , 25)];
+    _timingLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis+VideoDisplayViewWidth/2, yAxis,VideoDisplayViewWidth/2 , TimingLabelHeight)];
     _timingLabel.adjustsFontSizeToFitWidth = YES;
     _timingLabel.textAlignment = NSTextAlignmentCenter;
     _timingLabel.text = @"0";
     [_mainBGImageView addSubview:_timingLabel];
-    yAxis += 25;
+    yAxis += TimingLabelHeight;
     
     _scoreStatisticsView = [[ScoreStatisticsView alloc]initWithFrame:CGRectMake(xAxis, yAxis, ScoreStatisticsViewWidth, ScoreStatisticsViewHeight)];
     [_mainBGImageView addSubview:_scoreStatisticsView];
     yAxis += ScoreStatisticsViewHeight + ySpace;
-    
     _roundInningView = [[RoundInningView alloc]initWithFrame:CGRectMake(xAxis, yAxis, RoundInningViewWidth, RoundInningViewHeight)];
     [_mainBGImageView addSubview:_roundInningView];
     
     yAxis = startY;
-    CGFloat MachineStatusViewWidth = 316;
-    CGFloat  MachineStatusViewHeight = 30;
-    CGFloat LotteryViewWidth = 115;
-    CGFloat  LotteryViewHeight = 178;
-    CGFloat RecordViewWidth = 192.5;
-    CGFloat  RecordViewHeight = 181.75;
-    CGFloat SingleViewWidth = 29.75;
-    CGFloat  SingleViewHeight = 181.75;
-    
-    CGFloat xSpace = 10 *DFHSizeWidthRatio;
-    xAxis = VideoDisplayViewWidth + xSpace;
-    _machineStatusView = [[MachineStatusView alloc]initWithFrame:CGRectMake(xAxis, xSpace, MachineStatusViewWidth, MachineStatusViewHeight)];
+    xAxis += VideoDisplayViewWidth + xSpace;
+    _machineStatusView = [[MachineStatusView alloc]initWithFrame:CGRectMake(xAxis, yAxis, MachineStatusViewWidth, MachineStatusViewHeight)];
     [_mainBGImageView addSubview:_machineStatusView];
     
     _settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _settingButton.frame = CGRectMake(xAxis + MachineStatusViewWidth + xSpace, 1, 31.25, 30.5);
+    _settingButton.frame = CGRectMake(DFHScreenW - 31*DFHSizeMinRatio - 10*DFHSizeWidthRatio, 1, 31*DFHSizeMinRatio, 30*DFHSizeMinRatio);
     [_settingButton setBackgroundImage:[UIImage imageNamed:@"Main_Setting_Normal.png" bundle:DFHImageResourceBundle_Main_Setting] forState:UIControlStateNormal];
     [_settingButton setBackgroundImage:[UIImage imageNamed:@"Main_Setting_Selected.png" bundle:DFHImageResourceBundle_Main_Setting] forState:UIControlStateSelected];
     [_mainBGImageView addSubview:_settingButton];
     [_settingButton addTarget:self action:@selector(settingButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     _settingView = [[SettingView alloc]initWithFrame:self.view.bounds];
     
-    yAxis += ySpace+MachineStatusViewHeight;
+    yAxis += MachineStatusViewHeight;
     _lotteryView = [[LotteryView alloc]initWithFrame:CGRectMake(xAxis, yAxis, LotteryViewWidth, LotteryViewHeight)];
     [_mainBGImageView addSubview:_lotteryView];
     
-    xAxis += xSpace+LotteryViewWidth;
+    xAxis += xSpace+ LotteryViewWidth;
     _recordView = [[RecordView alloc]initWithFrame:CGRectMake(xAxis, yAxis, RecordViewWidth, RecordViewHeight)];
     [_mainBGImageView addSubview:_recordView];
     
@@ -119,8 +123,11 @@
     _singleView = [[SingleView alloc]initWithFrame:CGRectMake(xAxis, yAxis, SingleViewWidth, SingleViewHeight)];
     [_mainBGImageView addSubview:_singleView];
     
+    yAxis +=  SingleViewHeight + ySpace;
+    xAxis = startX + RoundInningViewWidth;
+    _betPointsView = [[BetPointsView alloc]initWithFrame:CGRectMake(xAxis, yAxis, BetPointsViewWidth, BetPointsViewHeight)];
+    [_mainBGImageView addSubview:_betPointsView];
 }
-
 
 - (void)settingButtonAction:(UIButton *)btn
 {

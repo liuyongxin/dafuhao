@@ -10,4 +10,9 @@
 
 @interface ScoreStatisticsView : UIView
 
+- (void)assignmentBalance:(NSString *)text;
+- (void)assignmentSignPoints:(NSString *)text;
+- (void)assignmentWinPoints:(NSString *)text;
+- (void)assignmentLastWinPoints:(NSString *)text;
+
 @end
