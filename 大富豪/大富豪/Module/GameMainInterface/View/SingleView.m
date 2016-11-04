@@ -40,7 +40,7 @@
     _mTableView.delegate = self;
     _mTableView.dataSource = self;
     [_bgImageView addSubview:_mTableView];
-    _mTableView.backgroundColor = [UIColor whiteColor];
+    _mTableView.backgroundColor = [UIColor clearColor];
     if ([_mTableView respondsToSelector:@selector(setSeparatorInset:)])
     {
         [_mTableView setSeparatorInset:UIEdgeInsetsZero];
@@ -110,5 +110,42 @@
     }
     return _bgImageView;
 }
+
+- (void)assignmentColour:(NSString *)colour  number:(NSString *)number
+{
+    //color	所押花色	S：黑
+    //C：梅
+    //H：红
+    //D：方
+    //O：王
+        NSMutableString *str = [NSMutableString stringWithString:@"Main_Poker_Single_"];
+        if ([colour isEqualToString:@"O"])//王
+        {
+            [str appendString:@"King"];
+            [str appendString:number];
+        }
+        else
+        {
+            if ([colour isEqualToString:@"S"]) { //黑桃♠️
+                [str appendString:@"Spade"];
+            }
+            else if ([colour isEqualToString:@"C"]) //梅花♣️
+            {
+                [str appendString:@"Club"];
+            }
+            else if ([colour isEqualToString:@"H"])//红桃♥️
+            {
+                [str appendString:@"Heart"];
+            }
+            else if ([colour isEqualToString:@"D"]) //方片♦️
+            {
+                [str appendString:@"Diamond"];
+            }
+            [str appendString:number];
+        }
+        [str appendString:@".png"];
+        self.bgImageView.image = [UIImage imageNamed:str bundle:DFHImageResourceBundle_Main_Poker_Single];
+}
+
 
 @end

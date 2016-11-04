@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1713D80D1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */; };
 		17193B361DBE09AE0012C2C5 /* Default_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B2F1DBE09AE0012C2C5 /* Default_6@2x.png */; };
 		17193B371DBE09AE0012C2C5 /* Default_6p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B301DBE09AE0012C2C5 /* Default_6p@3x.png */; };
 		17193B381DBE09AE0012C2C5 /* Default-568h@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B311DBE09AE0012C2C5 /* Default-568h@2x-1.png */; };
@@ -92,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1713D80B1DCC2E49001B8534 /* DFHRecordCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHRecordCollectionViewCell.h; sourceTree = "<group>"; };
+		1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHRecordCollectionViewCell.m; sourceTree = "<group>"; };
 		17193B2F1DBE09AE0012C2C5 /* Default_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default_6@2x.png"; sourceTree = "<group>"; };
 		17193B301DBE09AE0012C2C5 /* Default_6p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default_6p@3x.png"; sourceTree = "<group>"; };
 		17193B311DBE09AE0012C2C5 /* Default-568h@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x-1.png"; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				1784F7F81DC9E68A00452B36 /* SettingView.m */,
 				1784F7FA1DC9E6B800452B36 /* BetPointsView.h */,
 				1784F7FB1DC9E6B800452B36 /* BetPointsView.m */,
+				1713D80B1DCC2E49001B8534 /* DFHRecordCollectionViewCell.h */,
+				1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1169,6 +1174,7 @@
 				173E4A461DC1FDA00015B33D /* AES.m in Sources */,
 				17F794DD1DBDB06B00A73B4F /* DFHHttpRequest.m in Sources */,
 				173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */,
+				1713D80D1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m in Sources */,
 				17F794EF1DBDD6BF00A73B4F /* DFHSmartUtility.m in Sources */,
 				17F794EA1DBDCFEA00A73B4F /* DFHUtil.m in Sources */,
 				171E72B81DBEF4020089D5F6 /* DFHMachineSelectionController.m in Sources */,

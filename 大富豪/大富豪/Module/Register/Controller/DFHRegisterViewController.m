@@ -58,7 +58,9 @@
     _mainView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_mainView];
     
-    _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 419, 300)];
+    CGFloat bgWidth = 419;
+    CGFloat bgHeight = 300;
+    _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgWidth, bgHeight)];
     _bgImageView.image = [UIImage imageNamed:@"login_kuang.png" bundle:DFHImageResourceBundle_Login];
     _bgImageView.userInteractionEnabled = YES;
     [_mainView addSubview:_bgImageView];
@@ -70,7 +72,7 @@
     CGFloat labelWidth = 100;
     CGFloat textFieldWidth = 150;
     CGFloat labelHeight = 35;
-    xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
+    xAxis = (bgWidth - (labelWidth + textFieldWidth  +space))/2;
     yAxis = space*2;
     UILabel *accountLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, labelWidth, labelHeight)];
     accountLabel.text = @"账号:";
@@ -85,7 +87,7 @@
     [_bgImageView addSubview:_accountTextField];
     
     yAxis +=space +labelHeight;
-    xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
+    xAxis = (bgWidth - (labelWidth + textFieldWidth  +space))/2;
     UILabel *passwordLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, labelWidth, labelHeight)];
     passwordLabel.text = @"密码:";
     passwordLabel.adjustsFontSizeToFitWidth = YES;
@@ -99,7 +101,7 @@
     [_bgImageView addSubview:_passwordTextField];
     
     yAxis +=space +labelHeight;
-    xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
+    xAxis = (bgWidth - (labelWidth + textFieldWidth  +space))/2;
     _confirmPasswordLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, labelWidth, labelHeight)];
     _confirmPasswordLabel.text = @"确认密码:";
     _confirmPasswordLabel.adjustsFontSizeToFitWidth = YES;
@@ -113,7 +115,7 @@
     [_bgImageView addSubview:_confirmPasswordTextField];
     
     yAxis +=space +labelHeight;
-    xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
+    xAxis = (bgWidth - (labelWidth + textFieldWidth  +space))/2;
     
     CGFloat selectedBtnWidth = 110.0;
     CGFloat selectedBtnHeight = 23.0;
@@ -146,7 +148,7 @@
     [_bgImageView addSubview:_newlyMemberBtn];
     
     yAxis +=space +selectedBtnHeight;
-    xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
+    xAxis = (bgWidth - (labelWidth + textFieldWidth  +space))/2;
     _invitationCodeLabel = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, labelWidth, labelHeight)];
     _invitationCodeLabel.text = @"邀请码:";
     _invitationCodeLabel.adjustsFontSizeToFitWidth = YES;
@@ -159,7 +161,7 @@
     [_bgImageView addSubview:_invitationCodeTextField];
     
     yAxis +=space +labelHeight + space;
-    xAxis = (419 - (labelWidth + textFieldWidth  +space))/2;
+    xAxis = (bgWidth - (labelWidth + textFieldWidth  +space))/2;
     CGFloat confirmBtnWidth = 125;
     CGFloat confirmBtnHeight = 35;
     UIButton *confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];

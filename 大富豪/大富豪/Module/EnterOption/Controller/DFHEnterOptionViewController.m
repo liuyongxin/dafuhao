@@ -28,8 +28,8 @@
 
 - (void)configUI
 {
-    CGFloat bgW = 400 * DFHSizeMinRatio;
-    CGFloat bgH = 208 * DFHSizeMinRatio;
+    CGFloat bgW = 377;
+    CGFloat bgH = 196.5;
     CGFloat btnW = 100;
     _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgW, bgH)];
     _bgImageView.userInteractionEnabled = YES;
@@ -67,14 +67,15 @@
 
  - (void)tapBtnAction:(UIButton *)btn
 {
-    DFHRegisterViewController *controller = [[DFHRegisterViewController alloc]init];
-    if (btn.tag == 10) {
-        controller.type = LoginListType;
-    }
-    else if (btn.tag ==11)
-    {
-        controller.type =  RegisterListType;
-    }
+//    DFHRegisterViewController *controller = [[DFHRegisterViewController alloc]init];
+//    if (btn.tag == 10) {
+//        controller.type = LoginListType;
+//    }
+//    else if (btn.tag ==11)
+//    {
+//        controller.type =  RegisterListType;
+//    }
+    DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
     [self presentViewController:controller animated:NO completion:nil];
 }
 

@@ -24,6 +24,7 @@
         _bgImageView = [[UIImageView alloc]initWithFrame:self.bounds];
         _bgImageView.image = [UIImage imageNamed:@"LotteryBg.png" bundle:DFHImageResourceBundle_Main];
         [self addSubview:_bgImageView];
+        self.type = LotteryTypeColor;
     }
     return self;
 }
@@ -46,7 +47,7 @@
     //D：方
     //O：王
     if (self.type == LotteryTypeColor) {
-        NSMutableString *str = [NSMutableString string];
+        NSMutableString *str = [NSMutableString stringWithString:@"Main_Poker_Lottery_"];
         if ([colour isEqualToString:@"O"])//王
         {
                 [str appendString:@"King"];
@@ -71,9 +72,16 @@
             }
             [str appendString:number];
         }
-        
+        [str appendString:@".png"];
+        self.lotteryImageView.image = [UIImage imageNamed:str bundle:DFHImageResourceBundle_Main_Poker_Lottery];
     }
-    else
+    else if (self.type == LotteryTypeBeauty) {
+        NSMutableString *str = [NSMutableString stringWithString:@"Main_Beauty_"];
+        [str appendString:number];
+        [str appendString:@".png"];
+        self.lotteryImageView.image = [UIImage imageNamed:str bundle:DFHImageResourceBundle_Main_Beauty];
+    }
+    else if (self.type == LotteryTypeDefualt)
     {
     
     }

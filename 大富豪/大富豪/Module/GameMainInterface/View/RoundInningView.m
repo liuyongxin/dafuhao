@@ -36,11 +36,11 @@
         _roundBgView.image = [UIImage imageNamed:@"Main_Inning_Rounds.png" bundle:DFHImageResourceBundle_Main_Inning];
         _roundBgView.userInteractionEnabled = YES;
         [self addSubview:_roundBgView];
-        CGFloat btnWidth = 16;
-        CGFloat itemSpace = 3;
+        CGFloat btnWidth = 15;
+        CGFloat itemSpace = 1;
         CGFloat space = (self.frame.size.width - btnWidth*3 - itemSpace)/2;
         CGFloat xAxis = space;
-        CGFloat yAxis = 7*(_roundBgView.frame.size.height - btnWidth)/9;
+        CGFloat yAxis = (_roundBgView.frame.size.height - btnWidth) -1;
         for (int i = 0; i<3; i++) {
             UIButton *btn = [self createNumButtonRect:CGRectMake(xAxis, yAxis, btnWidth, btnWidth)];
             btn.tag = i+1;
@@ -58,11 +58,11 @@
         _inningBgView.image = [UIImage imageNamed:@"Main_Inning_Inning.png" bundle:DFHImageResourceBundle_Main_Inning];
         _inningBgView.userInteractionEnabled = YES;
         [self addSubview:_inningBgView];
-        CGFloat btnWidth = 16;
-        CGFloat itemSpace = 3;
+        CGFloat btnWidth = 15;
+        CGFloat itemSpace = 1;
         CGFloat space = (self.frame.size.width - btnWidth*3 - itemSpace)/2;
         CGFloat xAxis = space;
-        CGFloat yAxis = 7*(_inningBgView.frame.size.height - btnWidth)/9;
+        CGFloat yAxis = (_inningBgView.frame.size.height - btnWidth) - 1;
         for (int i = 0; i<3; i++) {
             UIButton *btn = [self createNumButtonRect:CGRectMake(xAxis, yAxis, btnWidth, btnWidth)];
             btn.tag = i+1;

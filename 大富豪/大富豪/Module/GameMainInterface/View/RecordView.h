@@ -10,4 +10,12 @@
 
 @interface RecordView : UIView
 
+- (void)assignmentBetPoints:(NSInteger )num;
+
+@end
+
+@interface RecordViewCell : UITableViewCell
+
+@property(nonatomic,retain)UILabel *titleLabel;
+
 @end

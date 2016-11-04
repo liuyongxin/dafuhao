@@ -44,16 +44,51 @@
     _backgroundView.image = [UIImage imageNamed:@"Main_Setting_Bg.png" bundle:DFHImageResourceBundle_Main_Setting];
     [_alertView addSubview:_backgroundView];
     //270,110
-    CGFloat xStart = (bgWidth - 270)/2;
-    CGFloat yStart = (bgHeight - 110)/2;
+
+    CGFloat space = 10;
+    CGFloat btnWidth = 115;
+    CGFloat btnHeight = 32;
+    CGFloat xStart =  (bgWidth-btnWidth*2 - space)/2;
+    CGFloat yStart =  (bgHeight - btnHeight *3 - 2*space)/2;
     CGFloat xAxis = xStart;
-    CGFloat space = 1;
-    for (int i = 0;i < 5; i++) {
-        
+    CGFloat yAxis = yStart;
+    NSArray *imagesNormalStr = @[@"Main_Setting_001.png",@"Main_Setting_002.png",@"Main_Setting_003.png",@"Main_Setting_004.png",@"Main_Setting_NormalCancel.png"];
+    NSArray *imagesSelectedStr = @[@"Main_Setting_008.png",@"Main_Setting_007.png",@"Main_Setting_006.png",@"Main_Setting_005.png",@"Main_Setting_SelectedCancel.png"];
+    for (int i = 0; i < 5; i++) {
+        xAxis = xStart + (i%2)*(btnWidth + space);
+        yAxis = yStart +(i/2)*(btnHeight + space);
+        if (i ==4) {
+            xAxis += (btnWidth + space);
+        }
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.tag = 100+i;
+        btn.frame = CGRectMake(xAxis, yAxis, btnWidth, btnHeight);
+        [btn setBackgroundImage:[UIImage imageNamed:imagesNormalStr[i] bundle:DFHImageResourceBundle_Main_Setting] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageNamed:imagesSelectedStr[i] bundle:DFHImageResourceBundle_Main_Setting] forState:UIControlStateSelected];
+        [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_alertView addSubview:btn];
     }
-    
 }
 
+- (void)btnAction:(UIButton *)btn
+{
+    if (btn.tag == 100) {  //游戏设定
+    }
+    else if (btn.tag == 101) //游戏说明
+    {
+    }
+    else if (btn.tag == 102) //加退通知
+    {
+    }
+    else if (btn.tag == 103)//退出游戏
+    {
+    }
+    else if (btn.tag == 104)//取消
+    {
+        [self dismiss:YES];
+    }
+
+}
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [super touchesBegan:touches withEvent:event];

@@ -15,4 +15,6 @@
 
 @interface SingleViewCell : UITableViewCell
 
+- (void)assignmentColour:(NSString *)colour  number:(NSString *)number;
+
 @end

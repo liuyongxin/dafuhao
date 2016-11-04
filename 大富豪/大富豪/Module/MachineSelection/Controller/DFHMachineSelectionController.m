@@ -69,8 +69,8 @@ static NSString *collectionCellID = @"collectionCellID";
 
 -(void)configUI
 {
-    CGFloat bgW = 400 * DFHSizeMinRatio;
-    CGFloat bgH = 208 * DFHSizeMinRatio;
+    CGFloat bgW = 377;
+    CGFloat bgH = 196.5;
     CGFloat btnW = 100;
     _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgW, bgH)];
     _bgImageView.userInteractionEnabled = YES;
@@ -117,7 +117,7 @@ static NSString *collectionCellID = @"collectionCellID";
  - (void)resetCollectViewFrame
 {
     if ([_dataArray isValidArray]) {
-        CGFloat bgW = 400 * DFHSizeMinRatio;
+        CGFloat bgW = 377;
         CGFloat btnW = 100;
         CGFloat xSpace = 30;
         CGRect rect = _collectionView.frame;

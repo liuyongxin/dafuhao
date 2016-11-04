@@ -10,6 +10,7 @@ typedef NS_ENUM(NSInteger,LotteryType)
 {
     LotteryTypeNone = -1,
     LotteryTypeDefualt = 0,
+    LotteryTypeBeauty = 1,
     LotteryTypeColor
 };
 #import <UIKit/UIKit.h>
