@@ -72,6 +72,7 @@
 		3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A40971DBCD39600377929 /* DFHBaseViewController.m */; };
 		3C6A409B1DBCD3AF00377929 /* DFHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A409A1DBCD3AF00377929 /* DFHNavigationController.m */; };
 		3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A409D1DBCD3C900377929 /* DFHTabBarController.m */; };
+		BFEDE6F81DCE109C0080B340 /* BetPointsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEDE6F71DCE109C0080B340 /* BetPointsButton.m */; };
 		FF00367AF38F1E21FFFD4A8A /* libPods-大富豪.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2DCA641823C3744E8E6C14 /* libPods-大富豪.a */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +294,8 @@
 		3C6A409C1DBCD3C900377929 /* DFHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHTabBarController.h; sourceTree = "<group>"; };
 		3C6A409D1DBCD3C900377929 /* DFHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHTabBarController.m; sourceTree = "<group>"; };
 		9CF5BE8530604A99EBCD96AA /* Pods-大富豪.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-大富豪.debug.xcconfig"; path = "Pods/Target Support Files/Pods-大富豪/Pods-大富豪.debug.xcconfig"; sourceTree = "<group>"; };
+		BFEDE6F61DCE109C0080B340 /* BetPointsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetPointsButton.h; sourceTree = "<group>"; };
+		BFEDE6F71DCE109C0080B340 /* BetPointsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetPointsButton.m; sourceTree = "<group>"; };
 		CA2DCA641823C3744E8E6C14 /* libPods-大富豪.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-大富豪.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -573,6 +576,8 @@
 				1784F7FB1DC9E6B800452B36 /* BetPointsView.m */,
 				1713D80B1DCC2E49001B8534 /* DFHRecordCollectionViewCell.h */,
 				1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */,
+				BFEDE6F61DCE109C0080B340 /* BetPointsButton.h */,
+				BFEDE6F71DCE109C0080B340 /* BetPointsButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1193,6 +1198,7 @@
 				173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */,
 				175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */,
+				BFEDE6F81DCE109C0080B340 /* BetPointsButton.m in Sources */,
 				17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */,
 				3C6A40101DBCCFAD00377929 /* UIImage+Util.m in Sources */,
 				17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */,

@@ -67,15 +67,15 @@
 
  - (void)tapBtnAction:(UIButton *)btn
 {
-//    DFHRegisterViewController *controller = [[DFHRegisterViewController alloc]init];
-//    if (btn.tag == 10) {
-//        controller.type = LoginListType;
-//    }
-//    else if (btn.tag ==11)
-//    {
-//        controller.type =  RegisterListType;
-//    }
-    DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
+    DFHRegisterViewController *controller = [[DFHRegisterViewController alloc]init];
+    if (btn.tag == 10) {
+        controller.type = LoginListType;
+    }
+    else if (btn.tag ==11)
+    {
+        controller.type =  RegisterListType;
+    }
+//    DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
     [self presentViewController:controller animated:NO completion:nil];
 }
 

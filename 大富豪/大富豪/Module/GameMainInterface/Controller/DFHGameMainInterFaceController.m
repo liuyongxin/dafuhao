@@ -104,7 +104,7 @@
     [_mainBGImageView addSubview:_machineStatusView];
     
     _settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _settingButton.frame = CGRectMake(DFHScreenW - 30*DFHSizeMinRatio - 11*DFHSizeWidthRatio, 1, 30*DFHSizeMinRatio, 30*DFHSizeMinRatio);
+    _settingButton.frame = CGRectMake(DFHScreenW - 40*DFHSizeMinRatio - 8*DFHSizeWidthRatio, 1, 40*DFHSizeMinRatio, 40*DFHSizeMinRatio);
     [_settingButton setBackgroundImage:[UIImage imageNamed:@"Main_Setting_Normal.png" bundle:DFHImageResourceBundle_Main_Setting] forState:UIControlStateNormal];
     [_settingButton setBackgroundImage:[UIImage imageNamed:@"Main_Setting_Selected.png" bundle:DFHImageResourceBundle_Main_Setting] forState:UIControlStateSelected];
     [_mainBGImageView addSubview:_settingButton];
