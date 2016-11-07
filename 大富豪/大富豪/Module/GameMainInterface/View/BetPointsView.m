@@ -7,6 +7,7 @@
 //
 
 #import "BetPointsView.h"
+#import "BetPointsButton.h"
 
 @interface BetPointsView()
 
@@ -34,11 +35,11 @@
 {
     CGSize size = self.frame.size;
     CGFloat xSpace = 1;
-    CGFloat btnWidth = 65;
-    CGFloat btnHeight = 60;
+    CGFloat btnWidth = 65 *0.9;
+    CGFloat btnHeight = 60 *0.9;
     
-    CGFloat xStart = (size.width -  btnWidth * 6 - xSpace*5)/2;
-    CGFloat yStart = (size.height - btnHeight) /2;
+    CGFloat xStart = xSpace;
+    CGFloat yStart = 0;
     CGFloat xAxis = xStart;
     CGFloat yAxis = yStart;
 
@@ -56,16 +57,19 @@
                                      [UIImage imageNamed:@"Main_ChargePoints_SelectedFangkuai.png" bundle:DFHImageResourceBundle_Main_ChargePoints],
                                      [UIImage imageNamed:@"Main_ChargePoints_SelectedWang.png" bundle:DFHImageResourceBundle_Main_ChargePoints],
                                      [UIImage imageNamed:@"Main_ChargePoints_SelectedConfirm.png" bundle:DFHImageResourceBundle_Main_ChargePoints]];
-    for (int i = 0; i < 6; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(xAxis,yAxis, btnWidth, btnHeight);
+    for (int i = 0; i < 5; i++) {
+//        BetPointsButton *btn = [BetPointsButton buttonWithType:UIButtonTypeCustom];
+//        btn.frame = CGRectMake(xAxis,yAxis, (size.width - btnWidth - xSpace*7)/5, size.height - 3);
+         BetPointsButton *btn = [[BetPointsButton alloc]initWithFrame:CGRectMake(xAxis,yAxis, (size.width - btnWidth - xSpace*7)/5, size.height - 3)];
         [btn setBackgroundImage:normalImagesArray[i] forState:UIControlStateNormal];
         [btn setBackgroundImage:selectedImagesArray[i] forState:UIControlStateSelected];
+        [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
-        xAxis += xSpace + btnWidth;
-        [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height/3, btn.frame.size.width/3, btn.frame.size.height/3, 5)];
+        
+        xAxis += xSpace + (size.width - btnWidth - xSpace*7)/5;
         if (i == 0) {
             _spadesBtn = btn;
+        
         }
         else if (i == 1)
         {
@@ -83,15 +87,41 @@
         {
             _kingBtn = btn;
         }
-        else if (i == 5)
-        {
-            [btn setTitleEdgeInsets:UIEdgeInsetsZero];
-            _confirmBtn = btn;
-        }
     }
     
-    
+    _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _confirmBtn.frame = CGRectMake(xAxis + xSpace,(size.height - btnHeight)/2, btnWidth, btnHeight);
+    [_confirmBtn setBackgroundImage:normalImagesArray[5] forState:UIControlStateNormal];
+    [_confirmBtn setBackgroundImage:selectedImagesArray[5] forState:UIControlStateSelected];
+    [_confirmBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_confirmBtn];
 }
 
+- (void)btnAction:(UIButton *)btn
+{
+    if (btn == _spadesBtn) {
+        
+    }
+    else if(btn == _heartsBtn)
+    {
+    
+    }
+    else if(btn == _clubsBtn)
+    {
+        
+    }
+    else if(btn == _diamondsBtn)
+    {
+        
+    }
+    else if(btn == _kingBtn)
+    {
+        
+    }
+    else if(btn == _confirmBtn)
+    {
+        
+    }
+}
 
 @end

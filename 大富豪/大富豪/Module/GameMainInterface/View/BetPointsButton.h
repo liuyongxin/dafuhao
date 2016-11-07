@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BetPointsButton : UIControl
+@interface BetPointsButton : UIButton
 
 @end

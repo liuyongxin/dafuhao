@@ -38,7 +38,6 @@ static NSString *collectionCellID = @"collectionCellID";
                 if ([result isValidArray]) {
                    [weakSelf.dataArray removeAllObjects];
                     [weakSelf.dataArray addObjectsFromArray:result];
-                    [weakSelf.dataArray addObjectsFromArray:result];
                     [weakSelf.collectionView reloadData];
                     [weakSelf resetCollectViewFrame];
                 }
@@ -69,29 +68,29 @@ static NSString *collectionCellID = @"collectionCellID";
 
 -(void)configUI
 {
-    CGFloat bgW = 377;
-    CGFloat bgH = 196.5;
-    CGFloat btnW = 100;
+    CGFloat bgW = 377*DFHSizeMinRatio;
+    CGFloat bgH = 196.5*DFHSizeMinRatio;
+    CGFloat btnW = 90;
     _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgW, bgH)];
     _bgImageView.userInteractionEnabled = YES;
     _bgImageView.center = self.view.center;
     _bgImageView.image = [UIImage imageNamed:@"login_bg.png" bundle:DFHImageResourceBundle_Login];
     [self.view addSubview:_bgImageView];
     
-    CGFloat space = 15;
+    CGFloat space = 25;
     CGFloat yAxis = space;
-    _playerTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(space, yAxis, bgW/2 - 2*space, 30)];
+    _playerTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(2*space, yAxis, (bgW - 5*space)/2, 30)];
     _playerTypeLabel.text = @"体验玩家";
-    _playerTypeLabel.textAlignment = NSTextAlignmentCenter;
+    _playerTypeLabel.textAlignment = NSTextAlignmentRight;
     _playerTypeLabel.textColor = [UIColor redColor];
     [_bgImageView addSubview:_playerTypeLabel];
     
-    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(space + bgW/2, yAxis, bgW/2 - 2*space, 30)];
+    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(3*space + (    bgW - 5*space)/2, yAxis, (bgW - 5*space)/2, 30)];
     tipLabel.text = @"请选择机台";
-    tipLabel.textAlignment = NSTextAlignmentCenter;
+    tipLabel.textAlignment = NSTextAlignmentLeft;
     tipLabel.textColor = [UIColor redColor];
     [_bgImageView addSubview:tipLabel];
-    yAxis += (30 + space);
+    yAxis += (30 + 5);
     
     CGFloat xSpace = 30;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -104,9 +103,9 @@ static NSString *collectionCellID = @"collectionCellID";
     _collectionView.backgroundColor = [UIColor clearColor];
     [_bgImageView addSubview:_collectionView];
     [_collectionView registerClass:[DFHMachineSelectionCollectionCell class] forCellWithReuseIdentifier:collectionCellID];
-    yAxis += (btnW + space);
+    yAxis += (btnW + 5);
     UIButton *backHomeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backHomeBtn.frame = CGRectMake((bgW - 158.5)/2, yAxis,158.5, 42);
+    backHomeBtn.frame = CGRectMake((bgW - 150)/2, yAxis,150, 40);
     [backHomeBtn setImage:[UIImage imageNamed:@"login_backNormal.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateNormal];
         [backHomeBtn setImage:[UIImage imageNamed:@"login_backSelected.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateSelected];
     [backHomeBtn addTarget:self action:@selector(backHomeAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -117,8 +116,8 @@ static NSString *collectionCellID = @"collectionCellID";
  - (void)resetCollectViewFrame
 {
     if ([_dataArray isValidArray]) {
-        CGFloat bgW = 377;
-        CGFloat btnW = 100;
+        CGFloat bgW = 377*DFHSizeMinRatio;
+        CGFloat btnW = 90;
         CGFloat xSpace = 30;
         CGRect rect = _collectionView.frame;
         if (_dataArray.count < 3) {

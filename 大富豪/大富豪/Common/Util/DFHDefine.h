@@ -25,6 +25,8 @@
 #define DFHImageResourceBundle_Main_Setting   [NSBundle bundleWithPath:[NSString stringWithFormat:@"%@/DFHImageResource.bundle/Image_Main/MainSetting", [[NSBundle mainBundle] resourcePath]]]
 #define DFHImageResourceBundle_Main_Text   [NSBundle bundleWithPath:[NSString stringWithFormat:@"%@/DFHImageResource.bundle/Image_Main/MainText", [[NSBundle mainBundle] resourcePath]]]
 #define DFHImageResourceBundle_Main_Video   [NSBundle bundleWithPath:[NSString stringWithFormat:@"%@/DFHImageResource.bundle/Image_Main/MainVideo", [[NSBundle mainBundle] resourcePath]]]
+
+#define DFHImageResourceBundle_Util   [NSBundle bundleWithPath:[NSString stringWithFormat:@"%@/DFHImageResource.bundle/Util", [[NSBundle mainBundle] resourcePath]]]
 //////////////////////////////////////////////////////////////////////图片资源路径///////////////////////////////////////////////////////////////////////////////////////////////
 
 #define DFHScreenW    [UIScreen mainScreen].bounds.size.width

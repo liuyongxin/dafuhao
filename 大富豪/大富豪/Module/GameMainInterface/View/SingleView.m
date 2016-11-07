@@ -34,9 +34,9 @@
 - (void)configUI
 {
     CGFloat space = 5;
-    CGFloat xAxis = (self.frame.size.width - 20)/2;
+    CGFloat xAxis = (self.frame.size.width - 20*DFHSizeWidthRatio)/2;
     CGFloat height = self.frame.size.height - 2*space;
-    _mTableView = [[UITableView alloc]initWithFrame:CGRectMake(xAxis, space, 20, height) style:UITableViewStylePlain];
+    _mTableView = [[UITableView alloc]initWithFrame:CGRectMake(xAxis, space, 20*DFHSizeWidthRatio, height) style:UITableViewStylePlain];
     _mTableView.delegate = self;
     _mTableView.dataSource = self;
     [_bgImageView addSubview:_mTableView];

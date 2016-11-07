@@ -43,27 +43,26 @@
 - (void)configSubImageViews
 {
     CGFloat width = 40;
-    CGFloat height = 14;
-
-    CGFloat xStart = 10;
-    CGFloat yStart = 10;
+    CGFloat xStart = 15;
+    CGFloat yStart = 10 *DFHSizeHeightRatio;
     CGFloat xAxis = xStart;
     CGFloat yAxis = yStart;
-    CGFloat space =  3;
-    NSArray *imagesArray = @[@"余    额",@"本次押分",@"本次赢分",@"上次赢分"];
+    CGFloat space =  3*DFHSizeHeightRatio;
+    CGFloat height = (self.sizeHeight -  space*3 - 2*yStart)/4;
+    NSArray *imagesArray = @[@"余      额",@"本次押分",@"本次赢分",@"上次赢分"];
     for (int i = 0; i<imagesArray.count; i++) {
         xAxis = xStart;
         UILabel *view = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis, width, height)];
         view.textColor = [UIColor colorWithRed:1.00 green:0.99 blue:0.25 alpha:1.00];
         view.text = imagesArray[i];
         view.adjustsFontSizeToFitWidth = YES;
-        view.font = [UIFont boldSystemFontOfSize:10];
+        view.font = [UIFont boldSystemFontOfSize:11];
         [_bgImageView addSubview:view];
         
         xAxis += width + space;
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis,self.frame.size.width - xAxis - 2*space, height)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(xAxis, yAxis,self.frame.size.width - xAxis - 3*space, height)];
         label.adjustsFontSizeToFitWidth = YES;
-        label.font = [UIFont boldSystemFontOfSize:10];
+        label.font = [UIFont boldSystemFontOfSize:11];
         label.textAlignment = NSTextAlignmentRight;
         label.textColor = [UIColor whiteColor];
         label.text = @"0";

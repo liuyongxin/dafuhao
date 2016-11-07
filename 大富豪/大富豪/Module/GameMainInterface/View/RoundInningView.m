@@ -22,7 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _space = 3;
+        _space = 5 * DFHSizeHeightRatio;
         [self settingNum:0 targetView:self.roundBgView];
         [self settingNum:0 targetView:self.inningBgView];
     }

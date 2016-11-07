@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSInteger,ClickBtnType)
+{
+    ClickBtnTypeSpades,
+    ClickBtnTypeHearts,
+    ClickBtnTypeClubs,
+    ClickBtnTypeDiamonds,
+    ClickBtnTypeKing
+};
 
 @interface BetPointsView : UIView
+
+@property(nonatomic,copy)void(^betPointsAction)(ClickBtnType type);
+@property(nonatomic,copy)void(^confirmAction)();
 
 @end

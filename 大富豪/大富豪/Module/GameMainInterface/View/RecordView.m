@@ -40,9 +40,9 @@ static NSString *headerViewID = @"headerViewID";
 - (void)configUI
 {
     CGFloat bgW = self.frame.size.width;
-    CGFloat cellW = 16;
-    CGFloat cellH = 28;
-    CGFloat xSpace = 5;
+    CGFloat cellW = 16 *DFHSizeWidthRatio;
+    CGFloat cellH = 28 *DFHSizeHeightRatio;
+    CGFloat xSpace = 5 *DFHSizeWidthRatio;
     CGFloat yAxis = xSpace;
     
     CGFloat collectionW = cellW * 10;
@@ -75,7 +75,7 @@ static NSString *headerViewID = @"headerViewID";
     
     CGFloat ySpace = 5;
     yAxis += collectionH + ySpace;
-    xAxis = xSpace;
+    xAxis = (self.frame.size.width - 24 - 70 - 24 - 52- xSpace*3)/2;
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelBtn.frame = CGRectMake(xAxis, yAxis, 24, 24);
     [cancelBtn setBackgroundImage:[UIImage imageNamed:@"Main_ChargePoints_NormalCancel.png" bundle:DFHImageResourceBundle_Main_ChargePoints] forState:UIControlStateNormal];
@@ -134,7 +134,7 @@ static NSString *headerViewID = @"headerViewID";
 
 - (void)assignmentBetPoints:(NSInteger )num
 {
-    NSString *str = [NSString stringWithFormat:@"%04d",num];
+    NSString *str = [NSString stringWithFormat:@"%04ld",(long)num];
     if (str.length == 4) {
         NSMutableString *text =[NSMutableString string];
         for (int i = 0; i<4; i++) {
@@ -179,12 +179,12 @@ static NSString *headerViewID = @"headerViewID";
         cell = [[RecordViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.backgroundColor = [UIColor clearColor];
     }
-    cell.titleLabel.text = [NSString stringWithFormat:@"%d1",indexPath.row];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld1",(long)indexPath.row];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 28;
+    return 28 *DFHSizeHeightRatio;
 }
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -210,7 +210,7 @@ static NSString *headerViewID = @"headerViewID";
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 14, 24,14)];
         _titleLabel.textColor  = [UIColor redColor];
-        _titleLabel.textAlignment = NSTextAlignmentRight;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont boldSystemFontOfSize:13];
         _titleLabel.adjustsFontSizeToFitWidth = YES;
         [self.contentView addSubview:_titleLabel];
