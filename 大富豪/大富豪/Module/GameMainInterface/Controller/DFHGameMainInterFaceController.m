@@ -217,10 +217,11 @@
     NSString *urlStr = [DFHRequestDataInterface makeRequestHistoryBrandRoad:machineId];
     [_httpRequest getWithURLString:urlStr parameters:nil success:^(id responseObject) {
         if ([responseObject isKindOfClass:[NSData class]]) {
-         NSString *str = ((NSData *)responseObject).description;
+         NSString *str = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
          NSString *jsonStr =  [AES AES128Decrypt:str key:Decryption_AESSecretKey];
          NSDictionary *dataDic = [JSONFormatFunc parseToDict:jsonStr];
-         NSArray *dataArray = [JSONFormatFunc arrayValueForKey:@"historyList" ofDict:dataDic];
+         NSDictionary *subDic = [JSONFormatFunc dictionaryValueForKey:@"result" ofDict:dataDic];
+         NSArray *dataArray = [JSONFormatFunc arrayValueForKey:@"historyList" ofDict:subDic];
             if ([dataArray isValidArray]) {
                 [weakSelf.recordView refreshRecordData:dataArray];
             }
