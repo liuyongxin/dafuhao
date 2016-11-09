@@ -18,7 +18,9 @@
 #import "BetPointsView.h"
 
 @interface DFHGameMainInterFaceController ()
-
+{
+    DFHHttpRequest *_httpRequest;
+}
 @property(nonatomic,retain)UIImageView *mainBGImageView;
 @property(nonatomic,retain)UILabel *timingLabel;
 @property(nonatomic,retain)VideoDisplayView *videoDisplayView;
@@ -32,14 +34,23 @@
 @property(nonatomic,retain)SingleView *singleView;
 @property(nonatomic,retain)BetPointsView *betPointsView;
 
+@property(nonatomic,copy)NSString *rounds;
+@property(nonatomic,copy)NSString *bouts;
+@property(nonatomic,copy)NSString *status;
+
 @end
 
 @implementation DFHGameMainInterFaceController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self prepareData];
     [self configUI];
+}
 
+- (void)prepareData
+{
+    _httpRequest = [[DFHHttpRequest alloc]init];
 }
 
 - (void)configUI
@@ -137,4 +148,96 @@
     [_settingView showInSuperView:self.view targetView:nil animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self requestHistoryBrandRoad:self.machineId];
+}
+
+#pragma mark - request
+//根据机器 id 获取机器设置接口
+ - (void)requestMachineSeting:(NSString *)machineId
+{
+    NSString *urlStr = [DFHRequestDataInterface makeRequestMachineSeting:machineId];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+//修改押分接口(手游版)
+- (void)requestModifyPoints:(NSString *)memberId score:(NSString *)score machineId:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bounts color:(NSString *)color
+{
+    NSString *urlStr = [DFHRequestDataInterface makeRequestModifyPoints:memberId score:score machineId:machineId rounds:rounds bouts:bounts color:color];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+//修改盈利接口(手游版)<每局结束时调用>
+ - (void)requestModifyProfit:(NSString *)memberId profit:(NSString *)profit machineId:(NSString *)machineId
+{
+    NSString *urlStr = [DFHRequestDataInterface makeRequestModifyProfit:memberId profit:profit machineId:machineId];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+//获取单个牌路(请求返回为 aes 加密字符串)
+- (void)requestObtainSingleCard:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bouts
+{
+    NSString *urlStr = [DFHRequestDataInterface makeRequestObtainSingleCard:machineId rounds:rounds bouts:bouts];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+//修改某局状态接口(请求返回为 aes 加密字符串)
+ - (void)requestModifyBureauState:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bouts status:(NSString *)status
+{
+    NSString *urlStr = [DFHRequestDataInterface makeRequestModifyBureauState:machineId rounds:rounds bouts:bouts status:status];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+//获取历史牌路接口(请求返回为 aes 加密字符串)
+- (void)requestHistoryBrandRoad:(NSString *)machineId
+{
+    __weak typeof(self) weakSelf = self;
+    NSString *urlStr = [DFHRequestDataInterface makeRequestHistoryBrandRoad:machineId];
+    [_httpRequest getWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        if ([responseObject isKindOfClass:[NSData class]]) {
+         NSString *str = ((NSData *)responseObject).description;
+         NSString *jsonStr =  [AES AES128Decrypt:str key:Decryption_AESSecretKey];
+         NSDictionary *dataDic = [JSONFormatFunc parseToDict:jsonStr];
+         NSArray *dataArray = [JSONFormatFunc arrayValueForKey:@"historyList" ofDict:dataDic];
+            if ([dataArray isValidArray]) {
+                [weakSelf.recordView refreshRecordData:dataArray];
+            }
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+//生成牌路接口
+ - (void)requestGenerateBrandRoad:(NSString *)machineId
+{
+    NSString *urlStr = [DFHRequestDataInterface makeRequestGenerateBrandRoad:machineId];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
 @end

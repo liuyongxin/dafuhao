@@ -43,6 +43,7 @@
      */
     self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [self.manager.requestSerializer setValue:@"application/json;charset=utf-8"forHTTPHeaderField:@"Content-Type"];
+    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/xml",@"text/html", nil];
     /**
      *  请求队列的最大并发数
      */
@@ -79,6 +80,7 @@
     self.manager.requestSerializer=[AFJSONRequestSerializer serializer];
     self.manager.responseSerializer=[AFJSONResponseSerializer serializer];
     [self.manager.requestSerializer setValue:@"application/json;charset=utf-8"forHTTPHeaderField:@"Content-Type"];
+    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/xml",@"text/html", nil];
     [self.manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);

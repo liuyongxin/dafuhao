@@ -10,4 +10,6 @@
 
 @interface DFHRecordCollectionViewCell : UICollectionViewCell
 
+- (void)assignmentColour:(NSString *)colour  number:(NSString *)number;
+
 @end

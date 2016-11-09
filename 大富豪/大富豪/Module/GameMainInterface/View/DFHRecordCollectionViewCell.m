@@ -65,14 +65,7 @@
     //D：方
     //O：王
     NSMutableString *str = [NSMutableString stringWithString:@"Main_Poker_Record_"];
-    if ([colour isEqualToString:@"O"])//王
-    {
-        [str appendString:@"King"];
-        [str appendString:number];
-    }
-    else
-    {
-        if ([colour isEqualToString:@"S"]) { //黑桃♠️
+       if ([colour isEqualToString:@"S"]) { //黑桃♠️
             [str appendString:@"Spade"];
         }
         else if ([colour isEqualToString:@"C"]) //梅花♣️
@@ -87,8 +80,13 @@
         {
             [str appendString:@"Diamond"];
         }
-        [str appendString:number];
-    }
+        else
+       {
+            [str appendString:colour];
+        }
+    
+        [str appendFormat:@"_%@",number];
+
     [str appendString:@".png"];
     self.colorImageView.image = [UIImage imageNamed:str bundle:DFHImageResourceBundle_Main_Poker_Record];
 }

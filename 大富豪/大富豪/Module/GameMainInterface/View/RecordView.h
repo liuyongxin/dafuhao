@@ -11,6 +11,7 @@
 @interface RecordView : UIView
 
 - (void)assignmentBetPoints:(NSInteger )num;
+- (void)refreshRecordData:(NSArray *)dataArray;
 
 @end
 

@@ -20,6 +20,7 @@ static NSString *collectionCellID = @"collectionCellID";
 @property(nonatomic,retain)UIImageView *bgImageView;
 @property(nonatomic,retain)UICollectionView *collectionView;
 @property(nonatomic,retain)NSMutableArray *dataArray;
+@property(nonatomic,retain)NSDictionary *memberInfo;
 
 @end
 
@@ -56,11 +57,11 @@ static NSString *collectionCellID = @"collectionCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    [self preperaData];
+    [self prepareData];
     [self configUI];
 }
 
-- (void)preperaData
+- (void)prepareData
 {
     _httpRequest = [[DFHHttpRequest alloc]init];
     _dataArray = [[NSMutableArray alloc]init];
@@ -139,6 +140,41 @@ static NSString *collectionCellID = @"collectionCellID";
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+- (void)requestMemberChoiceMachine:(NSString *)memberId machineId:(NSString *)machineId
+{
+    __weak typeof(self) weakSelf = self;
+    NSString *urlStr = [DFHRequestDataInterface makeRequestMemberChoiceMachine:memberId machineId:machineId];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+    [weakSelf hideHudDefault];
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            weakSelf.memberInfo = responseObject;
+            [weakSelf requestMachineSeting:machineId];
+        }
+    } failure:^(NSError *error) {
+        [weakSelf hideHudDefault];
+    }];
+    [self showHudWithAnimation:YES];
+}
+
+- (void)requestMachineSeting:(NSString *)machineId
+{
+    __weak typeof(self) weakSelf = self;
+    NSString *urlStr = [DFHRequestDataInterface makeRequestMachineSeting:machineId];
+    [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+    [weakSelf hideHudDefault];
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
+            controller.memberInfo = weakSelf.memberInfo;
+            controller.machinesetInfo = responseObject;
+            controller.machineId = machineId;
+            [weakSelf presentViewController:controller animated:NO completion:nil];
+        }
+    } failure:^(NSError *error) {
+    [weakSelf hideHudDefault];
+    }];
+    [self showHudWithAnimation:YES];
+}
+
 #pragma mark -- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -155,8 +191,8 @@ static NSString *collectionCellID = @"collectionCellID";
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
-    [self presentViewController:controller animated:NO completion:nil];
+    NSDictionary *dic = [JSONFormatFunc dictionaryValueForKey:@"machineInfo" ofDict:self.dataArray[indexPath.row]];
+    [self requestMemberChoiceMachine:[DFHDataManager sharedInstance].loginInfo.id machineId:[JSONFormatFunc strValueForKey:@"id" ofDict:dic]];
 }
 
 @end

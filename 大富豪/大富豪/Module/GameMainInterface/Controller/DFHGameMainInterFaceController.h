@@ -10,6 +10,8 @@
 
 @interface DFHGameMainInterFaceController : DFHBaseViewController
 
-@property(nonatomic,copy)NSString *decid;
+@property(nonatomic,copy)NSString *machineId;
+@property(nonatomic,retain)NSDictionary *memberInfo;
+@property(nonatomic,retain)NSDictionary *machinesetInfo;
 
 @end

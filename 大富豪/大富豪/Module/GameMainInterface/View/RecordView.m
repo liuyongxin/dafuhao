@@ -147,6 +147,12 @@ static NSString *headerViewID = @"headerViewID";
     }
 }
 
+- (void)refreshRecordData:(NSArray *)dataArray
+{
+    [self.dataArray removeAllObjects];
+    [self.dataArray addObjectsFromArray:dataArray];
+    [self.mCollectionView reloadData];
+}
 #pragma mark -- UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -161,7 +167,11 @@ static NSString *headerViewID = @"headerViewID";
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DFHRecordCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
-
+    NSInteger n = indexPath.section * 10;
+    if (n + indexPath.row < self.dataArray.count) {
+        NSDictionary *dataDic = self.dataArray[n + indexPath.row];
+        [cell assignmentColour:[JSONFormatFunc strValueForKey:@"color" ofDict:dataDic] number:[JSONFormatFunc strValueForKey:@"num" ofDict:dataDic]];
+    }
     return cell;
 }
 
