@@ -28,17 +28,23 @@ static NSString *headerViewID = @"headerViewID";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _bgImageView = [[UIImageView alloc]initWithFrame:self.bounds];
-        _bgImageView.image = [UIImage imageNamed:@"RecordBg.png" bundle:DFHImageResourceBundle_Main];
-        _bgImageView.userInteractionEnabled = YES;
-        [self addSubview:_bgImageView];
+        [self prepareData];
         [self configUI];
     }
     return self;
 }
 
+- (void)prepareData
+{
+    _dataArray = [[NSMutableArray alloc]init];
+}
 - (void)configUI
 {
+    _bgImageView = [[UIImageView alloc]initWithFrame:self.bounds];
+    _bgImageView.image = [UIImage imageNamed:@"RecordBg.png" bundle:DFHImageResourceBundle_Main];
+    _bgImageView.userInteractionEnabled = YES;
+    [self addSubview:_bgImageView];
+    
     CGFloat bgW = self.frame.size.width;
     CGFloat cellW = 16 *DFHSizeWidthRatio;
     CGFloat cellH = 28 *DFHSizeHeightRatio;
@@ -167,6 +173,7 @@ static NSString *headerViewID = @"headerViewID";
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     DFHRecordCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
+    [cell clearColorImage];
     NSInteger n = indexPath.section * 10;
     if (n + indexPath.row < self.dataArray.count) {
         NSDictionary *dataDic = self.dataArray[n + indexPath.row];

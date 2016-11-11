@@ -11,5 +11,6 @@
 @interface DFHRecordCollectionViewCell : UICollectionViewCell
 
 - (void)assignmentColour:(NSString *)colour  number:(NSString *)number;
+- (void)clearColorImage;
 
 @end

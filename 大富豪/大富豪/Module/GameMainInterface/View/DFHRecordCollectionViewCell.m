@@ -91,5 +91,8 @@
     self.colorImageView.image = [UIImage imageNamed:str bundle:DFHImageResourceBundle_Main_Poker_Record];
 }
 
-
+- (void)clearColorImage
+{
+    self.colorImageView.image = nil;
+}
 @end
