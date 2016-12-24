@@ -24,4 +24,10 @@ static DFHDataManager*sharedMNDataManager = nil;
     return [self sharedMNDataManager];
 }
 
+- (void)logOut
+{
+    self.accountInfo = nil;
+    self.loginInfo = nil;
+}
+
 @end

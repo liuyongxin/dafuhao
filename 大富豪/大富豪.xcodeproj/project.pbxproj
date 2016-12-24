@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1713D80D1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */; };
 		17193B361DBE09AE0012C2C5 /* Default_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B2F1DBE09AE0012C2C5 /* Default_6@2x.png */; };
 		17193B371DBE09AE0012C2C5 /* Default_6p@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B301DBE09AE0012C2C5 /* Default_6p@3x.png */; };
 		17193B381DBE09AE0012C2C5 /* Default-568h@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B311DBE09AE0012C2C5 /* Default-568h@2x-1.png */; };
@@ -15,10 +14,6 @@
 		17193B3A1DBE09AE0012C2C5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B331DBE09AE0012C2C5 /* Default.png */; };
 		17193B3B1DBE09AE0012C2C5 /* Default@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B341DBE09AE0012C2C5 /* Default@2x-1.png */; };
 		17193B3C1DBE09AE0012C2C5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17193B351DBE09AE0012C2C5 /* Default@2x.png */; };
-		171E72B21DBEF3A70089D5F6 /* DFHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72B11DBEF3A70089D5F6 /* DFHLoginViewController.m */; };
-		171E72B51DBEF3E30089D5F6 /* DFHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72B41DBEF3E30089D5F6 /* DFHRegisterViewController.m */; };
-		171E72B81DBEF4020089D5F6 /* DFHMachineSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72B71DBEF4020089D5F6 /* DFHMachineSelectionController.m */; };
-		171E72BB1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72BA1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m */; };
 		171E72C31DBF338D0089D5F6 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 171E72C21DBF338D0089D5F6 /* NSData+CommonCrypto.m */; };
 		173E4A361DC1A3F10015B33D /* PositionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A351DC1A3F10015B33D /* PositionButton.m */; };
 		173E4A401DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A391DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m */; };
@@ -26,18 +21,28 @@
 		173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */; };
 		173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
-		175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */; };
-		176D25C11DC8416D00B9CF57 /* RoundInningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 176D25C01DC8416D00B9CF57 /* RoundInningView.m */; };
-		1784F7ED1DC9C65A00452B36 /* MachineStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7EC1DC9C65A00452B36 /* MachineStatusView.m */; };
-		1784F7F01DC9D16300452B36 /* LotteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7EF1DC9D16300452B36 /* LotteryView.m */; };
-		1784F7F31DC9DEED00452B36 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7F21DC9DEED00452B36 /* RecordView.m */; };
-		1784F7F61DC9DF0A00452B36 /* SingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7F51DC9DF0A00452B36 /* SingleView.m */; };
-		1784F7F91DC9E68A00452B36 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7F81DC9E68A00452B36 /* SettingView.m */; };
-		1784F7FC1DC9E6B800452B36 /* BetPointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1784F7FB1DC9E6B800452B36 /* BetPointsView.m */; };
-		1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1790B4151DC715B800AAFF1D /* VideoDisplayView.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
-		17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */; };
-		17E7B4FD1DC31D7000EAD823 /* DFHGameMainInterFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */; };
+		17E13AC01E0A2166000F95CE /* DFHGameMainInterFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13A971E0A2166000F95CE /* DFHGameMainInterFaceController.m */; };
+		17E13AC11E0A2166000F95CE /* BetPointsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13A9A1E0A2166000F95CE /* BetPointsButton.m */; };
+		17E13AC21E0A2166000F95CE /* BetPointsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13A9C1E0A2166000F95CE /* BetPointsView.m */; };
+		17E13AC31E0A2166000F95CE /* DFHRecordCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13A9E1E0A2166000F95CE /* DFHRecordCollectionViewCell.m */; };
+		17E13AC41E0A2166000F95CE /* LotteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AA01E0A2166000F95CE /* LotteryView.m */; };
+		17E13AC51E0A2166000F95CE /* MachineStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AA21E0A2166000F95CE /* MachineStatusView.m */; };
+		17E13AC61E0A2166000F95CE /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AA41E0A2166000F95CE /* RecordView.m */; };
+		17E13AC71E0A2166000F95CE /* RoundInningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AA61E0A2166000F95CE /* RoundInningView.m */; };
+		17E13AC81E0A2166000F95CE /* ScoreStatisticsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AA81E0A2166000F95CE /* ScoreStatisticsView.m */; };
+		17E13AC91E0A2166000F95CE /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AAA1E0A2166000F95CE /* SettingView.m */; };
+		17E13ACA1E0A2166000F95CE /* SingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AAC1E0A2166000F95CE /* SingleView.m */; };
+		17E13ACB1E0A2166000F95CE /* VideoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AAE1E0A2166000F95CE /* VideoDisplayView.m */; };
+		17E13ACC1E0A2166000F95CE /* DFHGreatHallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AB21E0A2166000F95CE /* DFHGreatHallController.m */; };
+		17E13ACD1E0A2166000F95CE /* DFHMachineSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AB81E0A2166000F95CE /* DFHMachineSelectionController.m */; };
+		17E13ACE1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13ABB1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.m */; };
+		17E13ACF1E0A2166000F95CE /* DFHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13ABF1E0A2166000F95CE /* DFHRegisterViewController.m */; };
+		17E13AD71E0A4CA1000F95CE /* DFHInvitationCodeSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AD31E0A4CA0000F95CE /* DFHInvitationCodeSelectionController.m */; };
+		17E13AD81E0A4CA1000F95CE /* DFHInvitationCodeSelectionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AD61E0A4CA0000F95CE /* DFHInvitationCodeSelectionCollectionCell.m */; };
+		17E13ADF1E0A6AE5000F95CE /* DFHUserManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13ADE1E0A6AE5000F95CE /* DFHUserManagement.m */; };
+		17E13AE61E0A6DDB000F95CE /* CommonDrawFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AE21E0A6DDB000F95CE /* CommonDrawFunc.m */; };
+		17E13AE71E0A6DDB000F95CE /* CommonFileFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13AE51E0A6DDB000F95CE /* CommonFileFunc.m */; };
 		17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794B71DBDA4EC00A73B4F /* DFHDataManager.m */; };
 		17F794BF1DBDA88600A73B4F /* DFHLogManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794BE1DBDA88600A73B4F /* DFHLogManagement.m */; };
 		17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F794D21DBDB06B00A73B4F /* DFHDataDefine.m */; };
@@ -72,7 +77,6 @@
 		3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A40971DBCD39600377929 /* DFHBaseViewController.m */; };
 		3C6A409B1DBCD3AF00377929 /* DFHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A409A1DBCD3AF00377929 /* DFHNavigationController.m */; };
 		3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6A409D1DBCD3C900377929 /* DFHTabBarController.m */; };
-		BFEDE6F81DCE109C0080B340 /* BetPointsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEDE6F71DCE109C0080B340 /* BetPointsButton.m */; };
 		FF00367AF38F1E21FFFD4A8A /* libPods-大富豪.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2DCA641823C3744E8E6C14 /* libPods-大富豪.a */; };
 /* End PBXBuildFile section */
 
@@ -94,8 +98,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1713D80B1DCC2E49001B8534 /* DFHRecordCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHRecordCollectionViewCell.h; sourceTree = "<group>"; };
-		1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHRecordCollectionViewCell.m; sourceTree = "<group>"; };
 		17193B2F1DBE09AE0012C2C5 /* Default_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default_6@2x.png"; sourceTree = "<group>"; };
 		17193B301DBE09AE0012C2C5 /* Default_6p@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default_6p@3x.png"; sourceTree = "<group>"; };
 		17193B311DBE09AE0012C2C5 /* Default-568h@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x-1.png"; sourceTree = "<group>"; };
@@ -103,14 +105,6 @@
 		17193B331DBE09AE0012C2C5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		17193B341DBE09AE0012C2C5 /* Default@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-1.png"; sourceTree = "<group>"; };
 		17193B351DBE09AE0012C2C5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		171E72B01DBEF3A70089D5F6 /* DFHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHLoginViewController.h; sourceTree = "<group>"; };
-		171E72B11DBEF3A70089D5F6 /* DFHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHLoginViewController.m; sourceTree = "<group>"; };
-		171E72B31DBEF3E30089D5F6 /* DFHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHRegisterViewController.h; sourceTree = "<group>"; };
-		171E72B41DBEF3E30089D5F6 /* DFHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHRegisterViewController.m; sourceTree = "<group>"; };
-		171E72B61DBEF4020089D5F6 /* DFHMachineSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHMachineSelectionController.h; sourceTree = "<group>"; };
-		171E72B71DBEF4020089D5F6 /* DFHMachineSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHMachineSelectionController.m; sourceTree = "<group>"; };
-		171E72B91DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHMachineSelectionCollectionCell.h; sourceTree = "<group>"; };
-		171E72BA1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHMachineSelectionCollectionCell.m; sourceTree = "<group>"; };
 		171E72C11DBF338D0089D5F6 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
 		171E72C21DBF338D0089D5F6 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		173E4A341DC1A3F10015B33D /* PositionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionButton.h; sourceTree = "<group>"; };
@@ -125,29 +119,49 @@
 		173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		173E4A441DC1FDA00015B33D /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		173E4A451DC1FDA00015B33D /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
-		175B8C3F1DC824DF00061D79 /* ScoreStatisticsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreStatisticsView.h; sourceTree = "<group>"; };
-		175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreStatisticsView.m; sourceTree = "<group>"; };
-		176D25BF1DC8416D00B9CF57 /* RoundInningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundInningView.h; sourceTree = "<group>"; };
-		176D25C01DC8416D00B9CF57 /* RoundInningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundInningView.m; sourceTree = "<group>"; };
-		1784F7EB1DC9C65A00452B36 /* MachineStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineStatusView.h; sourceTree = "<group>"; };
-		1784F7EC1DC9C65A00452B36 /* MachineStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineStatusView.m; sourceTree = "<group>"; };
-		1784F7EE1DC9D16300452B36 /* LotteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryView.h; sourceTree = "<group>"; };
-		1784F7EF1DC9D16300452B36 /* LotteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryView.m; sourceTree = "<group>"; };
-		1784F7F11DC9DEED00452B36 /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
-		1784F7F21DC9DEED00452B36 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
-		1784F7F41DC9DF0A00452B36 /* SingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleView.h; sourceTree = "<group>"; };
-		1784F7F51DC9DF0A00452B36 /* SingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleView.m; sourceTree = "<group>"; };
-		1784F7F71DC9E68A00452B36 /* SettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
-		1784F7F81DC9E68A00452B36 /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
-		1784F7FA1DC9E6B800452B36 /* BetPointsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetPointsView.h; sourceTree = "<group>"; };
-		1784F7FB1DC9E6B800452B36 /* BetPointsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetPointsView.m; sourceTree = "<group>"; };
-		1790B4141DC715B800AAFF1D /* VideoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDisplayView.h; sourceTree = "<group>"; };
-		1790B4151DC715B800AAFF1D /* VideoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDisplayView.m; sourceTree = "<group>"; };
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
-		17CFD74D1DBDE7AA00911455 /* DFHEnterOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHEnterOptionViewController.h; sourceTree = "<group>"; };
-		17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHEnterOptionViewController.m; sourceTree = "<group>"; };
-		17E7B4FB1DC31D7000EAD823 /* DFHGameMainInterFaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHGameMainInterFaceController.h; sourceTree = "<group>"; };
-		17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHGameMainInterFaceController.m; sourceTree = "<group>"; };
+		17E13A961E0A2166000F95CE /* DFHGameMainInterFaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHGameMainInterFaceController.h; sourceTree = "<group>"; };
+		17E13A971E0A2166000F95CE /* DFHGameMainInterFaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHGameMainInterFaceController.m; sourceTree = "<group>"; };
+		17E13A991E0A2166000F95CE /* BetPointsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetPointsButton.h; sourceTree = "<group>"; };
+		17E13A9A1E0A2166000F95CE /* BetPointsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetPointsButton.m; sourceTree = "<group>"; };
+		17E13A9B1E0A2166000F95CE /* BetPointsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetPointsView.h; sourceTree = "<group>"; };
+		17E13A9C1E0A2166000F95CE /* BetPointsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetPointsView.m; sourceTree = "<group>"; };
+		17E13A9D1E0A2166000F95CE /* DFHRecordCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHRecordCollectionViewCell.h; sourceTree = "<group>"; };
+		17E13A9E1E0A2166000F95CE /* DFHRecordCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHRecordCollectionViewCell.m; sourceTree = "<group>"; };
+		17E13A9F1E0A2166000F95CE /* LotteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryView.h; sourceTree = "<group>"; };
+		17E13AA01E0A2166000F95CE /* LotteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryView.m; sourceTree = "<group>"; };
+		17E13AA11E0A2166000F95CE /* MachineStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineStatusView.h; sourceTree = "<group>"; };
+		17E13AA21E0A2166000F95CE /* MachineStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineStatusView.m; sourceTree = "<group>"; };
+		17E13AA31E0A2166000F95CE /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
+		17E13AA41E0A2166000F95CE /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
+		17E13AA51E0A2166000F95CE /* RoundInningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundInningView.h; sourceTree = "<group>"; };
+		17E13AA61E0A2166000F95CE /* RoundInningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundInningView.m; sourceTree = "<group>"; };
+		17E13AA71E0A2166000F95CE /* ScoreStatisticsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreStatisticsView.h; sourceTree = "<group>"; };
+		17E13AA81E0A2166000F95CE /* ScoreStatisticsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreStatisticsView.m; sourceTree = "<group>"; };
+		17E13AA91E0A2166000F95CE /* SettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
+		17E13AAA1E0A2166000F95CE /* SettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
+		17E13AAB1E0A2166000F95CE /* SingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleView.h; sourceTree = "<group>"; };
+		17E13AAC1E0A2166000F95CE /* SingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleView.m; sourceTree = "<group>"; };
+		17E13AAD1E0A2166000F95CE /* VideoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDisplayView.h; sourceTree = "<group>"; };
+		17E13AAE1E0A2166000F95CE /* VideoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDisplayView.m; sourceTree = "<group>"; };
+		17E13AB11E0A2166000F95CE /* DFHGreatHallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHGreatHallController.h; sourceTree = "<group>"; };
+		17E13AB21E0A2166000F95CE /* DFHGreatHallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHGreatHallController.m; sourceTree = "<group>"; };
+		17E13AB71E0A2166000F95CE /* DFHMachineSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHMachineSelectionController.h; sourceTree = "<group>"; };
+		17E13AB81E0A2166000F95CE /* DFHMachineSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHMachineSelectionController.m; sourceTree = "<group>"; };
+		17E13ABA1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHMachineSelectionCollectionCell.h; sourceTree = "<group>"; };
+		17E13ABB1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHMachineSelectionCollectionCell.m; sourceTree = "<group>"; };
+		17E13ABE1E0A2166000F95CE /* DFHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHRegisterViewController.h; sourceTree = "<group>"; };
+		17E13ABF1E0A2166000F95CE /* DFHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHRegisterViewController.m; sourceTree = "<group>"; };
+		17E13AD21E0A4CA0000F95CE /* DFHInvitationCodeSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHInvitationCodeSelectionController.h; sourceTree = "<group>"; };
+		17E13AD31E0A4CA0000F95CE /* DFHInvitationCodeSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHInvitationCodeSelectionController.m; sourceTree = "<group>"; };
+		17E13AD51E0A4CA0000F95CE /* DFHInvitationCodeSelectionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHInvitationCodeSelectionCollectionCell.h; sourceTree = "<group>"; };
+		17E13AD61E0A4CA0000F95CE /* DFHInvitationCodeSelectionCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHInvitationCodeSelectionCollectionCell.m; sourceTree = "<group>"; };
+		17E13ADD1E0A6AE5000F95CE /* DFHUserManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHUserManagement.h; sourceTree = "<group>"; };
+		17E13ADE1E0A6AE5000F95CE /* DFHUserManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHUserManagement.m; sourceTree = "<group>"; };
+		17E13AE11E0A6DDB000F95CE /* CommonDrawFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDrawFunc.h; sourceTree = "<group>"; };
+		17E13AE21E0A6DDB000F95CE /* CommonDrawFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDrawFunc.m; sourceTree = "<group>"; };
+		17E13AE41E0A6DDB000F95CE /* CommonFileFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFileFunc.h; sourceTree = "<group>"; };
+		17E13AE51E0A6DDB000F95CE /* CommonFileFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFileFunc.m; sourceTree = "<group>"; };
 		17F794B61DBDA4EC00A73B4F /* DFHDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHDataManager.h; sourceTree = "<group>"; };
 		17F794B71DBDA4EC00A73B4F /* DFHDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHDataManager.m; sourceTree = "<group>"; };
 		17F794BD1DBDA88600A73B4F /* DFHLogManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHLogManagement.h; sourceTree = "<group>"; };
@@ -294,8 +308,6 @@
 		3C6A409C1DBCD3C900377929 /* DFHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHTabBarController.h; sourceTree = "<group>"; };
 		3C6A409D1DBCD3C900377929 /* DFHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHTabBarController.m; sourceTree = "<group>"; };
 		9CF5BE8530604A99EBCD96AA /* Pods-大富豪.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-大富豪.debug.xcconfig"; path = "Pods/Target Support Files/Pods-大富豪/Pods-大富豪.debug.xcconfig"; sourceTree = "<group>"; };
-		BFEDE6F61DCE109C0080B340 /* BetPointsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetPointsButton.h; sourceTree = "<group>"; };
-		BFEDE6F71DCE109C0080B340 /* BetPointsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetPointsButton.m; sourceTree = "<group>"; };
 		CA2DCA641823C3744E8E6C14 /* libPods-大富豪.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-大富豪.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -325,41 +337,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		171E72AC1DBEF1720089D5F6 /* MachineSelection */ = {
-			isa = PBXGroup;
-			children = (
-				171E72AD1DBEF1720089D5F6 /* Controller */,
-				171E72AE1DBEF1720089D5F6 /* Model */,
-				171E72AF1DBEF1720089D5F6 /* View */,
-			);
-			path = MachineSelection;
-			sourceTree = "<group>";
-		};
-		171E72AD1DBEF1720089D5F6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				171E72B61DBEF4020089D5F6 /* DFHMachineSelectionController.h */,
-				171E72B71DBEF4020089D5F6 /* DFHMachineSelectionController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		171E72AE1DBEF1720089D5F6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		171E72AF1DBEF1720089D5F6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				171E72B91DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.h */,
-				171E72BA1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		171E72C01DBF338D0089D5F6 /* crypto */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,170 +393,195 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		17CFD74A1DBDE7AA00911455 /* Module */ = {
+		17E13A931E0A2166000F95CE /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				17E7B4F71DC31D3E00EAD823 /* GameMainInterface */,
-				171E72AC1DBEF1720089D5F6 /* MachineSelection */,
-				17CFD74B1DBDE7AA00911455 /* EnterOption */,
-				17CFD7511DBDE7AA00911455 /* Login */,
-				17CFD7551DBDE7AA00911455 /* Register */,
+				17E13AD01E0A4CA0000F95CE /* InvitationCodeSelection */,
+				17E13A941E0A2166000F95CE /* GameMainInterface */,
+				17E13AAF1E0A2166000F95CE /* GreatHall */,
+				17E13AB31E0A2166000F95CE /* Login */,
+				17E13AB51E0A2166000F95CE /* MachineSelection */,
+				17E13ABC1E0A2166000F95CE /* Register */,
 			);
-			path = Module;
-			sourceTree = "<group>";
+			name = Module;
+			path = "大富豪/Module";
+			sourceTree = SOURCE_ROOT;
 		};
-		17CFD74B1DBDE7AA00911455 /* EnterOption */ = {
+		17E13A941E0A2166000F95CE /* GameMainInterface */ = {
 			isa = PBXGroup;
 			children = (
-				17CFD74C1DBDE7AA00911455 /* Controller */,
-				17CFD74F1DBDE7AA00911455 /* Model */,
-				17CFD7501DBDE7AA00911455 /* View */,
-			);
-			path = EnterOption;
-			sourceTree = "<group>";
-		};
-		17CFD74C1DBDE7AA00911455 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				17CFD74D1DBDE7AA00911455 /* DFHEnterOptionViewController.h */,
-				17CFD74E1DBDE7AA00911455 /* DFHEnterOptionViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		17CFD74F1DBDE7AA00911455 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		17CFD7501DBDE7AA00911455 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		17CFD7511DBDE7AA00911455 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				17CFD7521DBDE7AA00911455 /* Controller */,
-				17CFD7531DBDE7AA00911455 /* Model */,
-				17CFD7541DBDE7AA00911455 /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		17CFD7521DBDE7AA00911455 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				171E72B01DBEF3A70089D5F6 /* DFHLoginViewController.h */,
-				171E72B11DBEF3A70089D5F6 /* DFHLoginViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		17CFD7531DBDE7AA00911455 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		17CFD7541DBDE7AA00911455 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		17CFD7551DBDE7AA00911455 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				17CFD7561DBDE7AA00911455 /* Controller */,
-				17CFD7571DBDE7AA00911455 /* Model */,
-				17CFD7581DBDE7AA00911455 /* View */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		17CFD7561DBDE7AA00911455 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				171E72B31DBEF3E30089D5F6 /* DFHRegisterViewController.h */,
-				171E72B41DBEF3E30089D5F6 /* DFHRegisterViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		17CFD7571DBDE7AA00911455 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		17CFD7581DBDE7AA00911455 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		17E7B4F71DC31D3E00EAD823 /* GameMainInterface */ = {
-			isa = PBXGroup;
-			children = (
-				17E7B4F81DC31D3E00EAD823 /* Controller */,
-				17E7B4F91DC31D3E00EAD823 /* Model */,
-				17E7B4FA1DC31D3E00EAD823 /* View */,
+				17E13A951E0A2166000F95CE /* Controller */,
+				17E13A981E0A2166000F95CE /* View */,
 			);
 			path = GameMainInterface;
 			sourceTree = "<group>";
 		};
-		17E7B4F81DC31D3E00EAD823 /* Controller */ = {
+		17E13A951E0A2166000F95CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				17E7B4FB1DC31D7000EAD823 /* DFHGameMainInterFaceController.h */,
-				17E7B4FC1DC31D7000EAD823 /* DFHGameMainInterFaceController.m */,
+				17E13A961E0A2166000F95CE /* DFHGameMainInterFaceController.h */,
+				17E13A971E0A2166000F95CE /* DFHGameMainInterFaceController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		17E7B4F91DC31D3E00EAD823 /* Model */ = {
+		17E13A981E0A2166000F95CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		17E7B4FA1DC31D3E00EAD823 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1790B4141DC715B800AAFF1D /* VideoDisplayView.h */,
-				1790B4151DC715B800AAFF1D /* VideoDisplayView.m */,
-				175B8C3F1DC824DF00061D79 /* ScoreStatisticsView.h */,
-				175B8C401DC824DF00061D79 /* ScoreStatisticsView.m */,
-				176D25BF1DC8416D00B9CF57 /* RoundInningView.h */,
-				176D25C01DC8416D00B9CF57 /* RoundInningView.m */,
-				1784F7EB1DC9C65A00452B36 /* MachineStatusView.h */,
-				1784F7EC1DC9C65A00452B36 /* MachineStatusView.m */,
-				1784F7EE1DC9D16300452B36 /* LotteryView.h */,
-				1784F7EF1DC9D16300452B36 /* LotteryView.m */,
-				1784F7F11DC9DEED00452B36 /* RecordView.h */,
-				1784F7F21DC9DEED00452B36 /* RecordView.m */,
-				1784F7F41DC9DF0A00452B36 /* SingleView.h */,
-				1784F7F51DC9DF0A00452B36 /* SingleView.m */,
-				1784F7F71DC9E68A00452B36 /* SettingView.h */,
-				1784F7F81DC9E68A00452B36 /* SettingView.m */,
-				1784F7FA1DC9E6B800452B36 /* BetPointsView.h */,
-				1784F7FB1DC9E6B800452B36 /* BetPointsView.m */,
-				1713D80B1DCC2E49001B8534 /* DFHRecordCollectionViewCell.h */,
-				1713D80C1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m */,
-				BFEDE6F61DCE109C0080B340 /* BetPointsButton.h */,
-				BFEDE6F71DCE109C0080B340 /* BetPointsButton.m */,
+				17E13A991E0A2166000F95CE /* BetPointsButton.h */,
+				17E13A9A1E0A2166000F95CE /* BetPointsButton.m */,
+				17E13A9B1E0A2166000F95CE /* BetPointsView.h */,
+				17E13A9C1E0A2166000F95CE /* BetPointsView.m */,
+				17E13A9D1E0A2166000F95CE /* DFHRecordCollectionViewCell.h */,
+				17E13A9E1E0A2166000F95CE /* DFHRecordCollectionViewCell.m */,
+				17E13A9F1E0A2166000F95CE /* LotteryView.h */,
+				17E13AA01E0A2166000F95CE /* LotteryView.m */,
+				17E13AA11E0A2166000F95CE /* MachineStatusView.h */,
+				17E13AA21E0A2166000F95CE /* MachineStatusView.m */,
+				17E13AA31E0A2166000F95CE /* RecordView.h */,
+				17E13AA41E0A2166000F95CE /* RecordView.m */,
+				17E13AA51E0A2166000F95CE /* RoundInningView.h */,
+				17E13AA61E0A2166000F95CE /* RoundInningView.m */,
+				17E13AA71E0A2166000F95CE /* ScoreStatisticsView.h */,
+				17E13AA81E0A2166000F95CE /* ScoreStatisticsView.m */,
+				17E13AA91E0A2166000F95CE /* SettingView.h */,
+				17E13AAA1E0A2166000F95CE /* SettingView.m */,
+				17E13AAB1E0A2166000F95CE /* SingleView.h */,
+				17E13AAC1E0A2166000F95CE /* SingleView.m */,
+				17E13AAD1E0A2166000F95CE /* VideoDisplayView.h */,
+				17E13AAE1E0A2166000F95CE /* VideoDisplayView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		17E13AAF1E0A2166000F95CE /* GreatHall */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AB01E0A2166000F95CE /* Controller */,
+			);
+			path = GreatHall;
+			sourceTree = "<group>";
+		};
+		17E13AB01E0A2166000F95CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AB11E0A2166000F95CE /* DFHGreatHallController.h */,
+				17E13AB21E0A2166000F95CE /* DFHGreatHallController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17E13AB31E0A2166000F95CE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AB41E0A2166000F95CE /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		17E13AB41E0A2166000F95CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17E13AB51E0A2166000F95CE /* MachineSelection */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AB61E0A2166000F95CE /* Controller */,
+				17E13AB91E0A2166000F95CE /* View */,
+			);
+			path = MachineSelection;
+			sourceTree = "<group>";
+		};
+		17E13AB61E0A2166000F95CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AB71E0A2166000F95CE /* DFHMachineSelectionController.h */,
+				17E13AB81E0A2166000F95CE /* DFHMachineSelectionController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17E13AB91E0A2166000F95CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17E13ABA1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.h */,
+				17E13ABB1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17E13ABC1E0A2166000F95CE /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				17E13ABD1E0A2166000F95CE /* Controller */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		17E13ABD1E0A2166000F95CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17E13ABE1E0A2166000F95CE /* DFHRegisterViewController.h */,
+				17E13ABF1E0A2166000F95CE /* DFHRegisterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17E13AD01E0A4CA0000F95CE /* InvitationCodeSelection */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AD11E0A4CA0000F95CE /* Controller */,
+				17E13AD41E0A4CA0000F95CE /* View */,
+			);
+			path = InvitationCodeSelection;
+			sourceTree = "<group>";
+		};
+		17E13AD11E0A4CA0000F95CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AD21E0A4CA0000F95CE /* DFHInvitationCodeSelectionController.h */,
+				17E13AD31E0A4CA0000F95CE /* DFHInvitationCodeSelectionController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17E13AD41E0A4CA0000F95CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AD51E0A4CA0000F95CE /* DFHInvitationCodeSelectionCollectionCell.h */,
+				17E13AD61E0A4CA0000F95CE /* DFHInvitationCodeSelectionCollectionCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17E13AD91E0A6AD0000F95CE /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				17E13ADD1E0A6AE5000F95CE /* DFHUserManagement.h */,
+				17E13ADE1E0A6AE5000F95CE /* DFHUserManagement.m */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		17E13AE01E0A6DDB000F95CE /* CommonDrawFunc */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AE11E0A6DDB000F95CE /* CommonDrawFunc.h */,
+				17E13AE21E0A6DDB000F95CE /* CommonDrawFunc.m */,
+			);
+			path = CommonDrawFunc;
+			sourceTree = "<group>";
+		};
+		17E13AE31E0A6DDB000F95CE /* CommonFileFunc */ = {
+			isa = PBXGroup;
+			children = (
+				17E13AE41E0A6DDB000F95CE /* CommonFileFunc.h */,
+				17E13AE51E0A6DDB000F95CE /* CommonFileFunc.m */,
+			);
+			path = CommonFileFunc;
 			sourceTree = "<group>";
 		};
 		17F794BC1DBDA88600A73B4F /* LogManagement */ = {
@@ -667,8 +669,8 @@
 		3C6A3E4A1DBCCF1700377929 /* 大富豪 */ = {
 			isa = PBXGroup;
 			children = (
-				17CFD74A1DBDE7AA00911455 /* Module */,
 				17CFD7441DBDE15500911455 /* Resource */,
+				17E13A931E0A2166000F95CE /* Module */,
 				3C6A3E7E1DBCCFAD00377929 /* Base */,
 				3C6A3E8C1DBCCFAD00377929 /* Category */,
 				3C6A3EA61DBCCFAD00377929 /* Common */,
@@ -741,6 +743,8 @@
 		3C6A3EA61DBCCFAD00377929 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				17E13AE01E0A6DDB000F95CE /* CommonDrawFunc */,
+				17E13AE31E0A6DDB000F95CE /* CommonFileFunc */,
 				17F794E11DBDCFEA00A73B4F /* Util */,
 				3C6A3EA71DBCCFAD00377929 /* JSONFormatFunc */,
 			);
@@ -759,6 +763,7 @@
 		3C6A3F6A1DBCCFAD00377929 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				17E13AD91E0A6AD0000F95CE /* UserManager */,
 				17F794D01DBDB06B00A73B4F /* RequestService */,
 				17F794BC1DBDA88600A73B4F /* LogManagement */,
 				3C6A3F6B1DBCCFAD00377929 /* DataManager */,
@@ -1036,8 +1041,8 @@
 				TargetAttributes = {
 					3C6A3E471DBCCF1700377929 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8YC2YJDRHR;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 3RG4QMG6EY;
+						ProvisioningStyle = Manual;
 					};
 					3C6A3E601DBCCF1700377929 = {
 						CreatedOnToolsVersion = 8.0;
@@ -1163,55 +1168,59 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6A40141DBCCFAD00377929 /* UIViewController+KeyboardButton.m in Sources */,
+				17E13ACF1E0A2166000F95CE /* DFHRegisterViewController.m in Sources */,
 				17F794F61DBDD8F600A73B4F /* DESEncryption.m in Sources */,
 				171E72C31DBF338D0089D5F6 /* NSData+CommonCrypto.m in Sources */,
 				173E4A361DC1A3F10015B33D /* PositionButton.m in Sources */,
-				171E72B51DBEF3E30089D5F6 /* DFHRegisterViewController.m in Sources */,
 				3C6A408A1DBCCFAD00377929 /* GRKPageViewController.m in Sources */,
-				1784F7F61DC9DF0A00452B36 /* SingleView.m in Sources */,
-				1784F7F01DC9D16300452B36 /* LotteryView.m in Sources */,
+				17E13AC21E0A2166000F95CE /* BetPointsView.m in Sources */,
 				3C6A408D1DBCCFAD00377929 /* CKCalendarView.m in Sources */,
+				17E13ADF1E0A6AE5000F95CE /* DFHUserManagement.m in Sources */,
+				17E13AC91E0A2166000F95CE /* SettingView.m in Sources */,
+				17E13AE61E0A6DDB000F95CE /* CommonDrawFunc.m in Sources */,
+				17E13AC11E0A2166000F95CE /* BetPointsButton.m in Sources */,
+				17E13AC41E0A2166000F95CE /* LotteryView.m in Sources */,
 				3C6A40151DBCCFAD00377929 /* JSONFormatFunc.m in Sources */,
 				17F794F71DBDD8F600A73B4F /* NSString+MD5.m in Sources */,
 				3C6A408C1DBCCFAD00377929 /* KILabel.m in Sources */,
 				17F794BF1DBDA88600A73B4F /* DFHLogManagement.m in Sources */,
+				17E13AC01E0A2166000F95CE /* DFHGameMainInterFaceController.m in Sources */,
 				3C6A40951DBCD18A00377929 /* DFHAppDelegate.m in Sources */,
+				17E13AD71E0A4CA1000F95CE /* DFHInvitationCodeSelectionController.m in Sources */,
 				173E4A461DC1FDA00015B33D /* AES.m in Sources */,
 				17F794DD1DBDB06B00A73B4F /* DFHHttpRequest.m in Sources */,
 				173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */,
-				1713D80D1DCC2E49001B8534 /* DFHRecordCollectionViewCell.m in Sources */,
+				17E13AC71E0A2166000F95CE /* RoundInningView.m in Sources */,
 				17F794EF1DBDD6BF00A73B4F /* DFHSmartUtility.m in Sources */,
 				17F794EA1DBDCFEA00A73B4F /* DFHUtil.m in Sources */,
-				171E72B81DBEF4020089D5F6 /* DFHMachineSelectionController.m in Sources */,
-				17E7B4FD1DC31D7000EAD823 /* DFHGameMainInterFaceController.m in Sources */,
 				3C6A40891DBCCFAD00377929 /* SSKeychain.m in Sources */,
 				17F794E01DBDB06B00A73B4F /* DFHResponsePackageDataDefine.m in Sources */,
-				171E72BB1DBEFB2C0089D5F6 /* DFHMachineSelectionCollectionCell.m in Sources */,
 				173E4A401DC1D2DE0015B33D /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				17E13AC51E0A2166000F95CE /* MachineStatusView.m in Sources */,
 				3C6A40131DBCCFAD00377929 /* UIViewController+HUD.m in Sources */,
+				17E13AC81E0A2166000F95CE /* ScoreStatisticsView.m in Sources */,
+				17E13AE71E0A6DDB000F95CE /* CommonFileFunc.m in Sources */,
+				17E13ACD1E0A2166000F95CE /* DFHMachineSelectionController.m in Sources */,
 				3C6A409B1DBCD3AF00377929 /* DFHNavigationController.m in Sources */,
-				17CFD7591DBDE7AA00911455 /* DFHEnterOptionViewController.m in Sources */,
-				171E72B21DBEF3A70089D5F6 /* DFHLoginViewController.m in Sources */,
-				1784F7FC1DC9E6B800452B36 /* BetPointsView.m in Sources */,
 				3C6A40981DBCD39600377929 /* DFHBaseViewController.m in Sources */,
-				1784F7ED1DC9C65A00452B36 /* MachineStatusView.m in Sources */,
 				173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				1790B4161DC715BA00AAFF1D /* VideoDisplayView.m in Sources */,
-				175B8C411DC824DF00061D79 /* ScoreStatisticsView.m in Sources */,
-				BFEDE6F81DCE109C0080B340 /* BetPointsButton.m in Sources */,
 				17F794DC1DBDB06B00A73B4F /* DFHDataDefine.m in Sources */,
+				17E13ACA1E0A2166000F95CE /* SingleView.m in Sources */,
 				3C6A40101DBCCFAD00377929 /* UIImage+Util.m in Sources */,
 				17F794B81DBDA4EC00A73B4F /* DFHDataManager.m in Sources */,
-				1784F7F91DC9E68A00452B36 /* SettingView.m in Sources */,
 				3C6A3E4D1DBCCF1700377929 /* main.m in Sources */,
 				3C6A40831DBCCFAD00377929 /* NSData+Base64.m in Sources */,
-				1784F7F31DC9DEED00452B36 /* RecordView.m in Sources */,
+				17E13AC61E0A2166000F95CE /* RecordView.m in Sources */,
+				17E13AC31E0A2166000F95CE /* DFHRecordCollectionViewCell.m in Sources */,
+				17E13ACC1E0A2166000F95CE /* DFHGreatHallController.m in Sources */,
+				17E13AD81E0A4CA1000F95CE /* DFHInvitationCodeSelectionCollectionCell.m in Sources */,
+				17E13ACB1E0A2166000F95CE /* VideoDisplayView.m in Sources */,
 				3C6A40841DBCCFAD00377929 /* NSString+Base64.m in Sources */,
 				3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */,
 				173E4A411DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m in Sources */,
 				17F794DE1DBDB06B00A73B4F /* DFHRequestBaseInterface.m in Sources */,
-				176D25C11DC8416D00B9CF57 /* RoundInningView.m in Sources */,
 				17F794DF1DBDB06B00A73B4F /* DFHRequestDataInterface.m in Sources */,
+				17E13ACE1E0A2166000F95CE /* DFHMachineSelectionCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,7 +1361,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 8YC2YJDRHR;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kun liu (4APAGAU8D5)";
+				DEVELOPMENT_TEAM = 3RG4QMG6EY;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/大富豪/DaFuHaoPrefixHeader.pch";
 				INFOPLIST_FILE = "大富豪/Info.plist";
@@ -1360,6 +1370,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dafuhao.game.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b912bb63-5886-49d6-ba5a-de617a80762e";
+				PROVISIONING_PROFILE_SPECIFIER = WTDevelopmentForDzHDebug20160707;
 			};
 			name = Debug;
 		};
@@ -1369,7 +1381,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 8YC2YJDRHR;
+				CODE_SIGN_IDENTITY = "iPhone Developer: kun liu (4APAGAU8D5)";
+				DEVELOPMENT_TEAM = 3RG4QMG6EY;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/大富豪/DaFuHaoPrefixHeader.pch";
 				INFOPLIST_FILE = "大富豪/Info.plist";
@@ -1377,6 +1390,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dafuhao.game.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b912bb63-5886-49d6-ba5a-de617a80762e";
+				PROVISIONING_PROFILE_SPECIFIER = WTDevelopmentForDzHDebug20160707;
 			};
 			name = Release;
 		};

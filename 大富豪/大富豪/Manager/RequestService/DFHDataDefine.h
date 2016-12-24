@@ -16,7 +16,8 @@
 #pragma mark -- 登陆账号信息
 @interface DFHAccountInfo : DFHBaseInfo
 
-@property(nonatomic,copy)NSString  *userid; //用户名
+@property(nonatomic,copy)NSString  *phoneNumber; //手机号码
+@property(nonatomic,copy)NSString  *userName; //用户名
 @property(nonatomic,copy)NSString  *passkey; //用户登录密钥
 
 @end
@@ -25,14 +26,18 @@
 @interface DFHLoginInfo : DFHBaseInfo
 
 @property(nonatomic,copy)NSString *codeId;
-@property(nonatomic,copy)NSString *lastLoginTime;
-@property(nonatomic,copy)NSString *password;
-@property(nonatomic,copy)NSString *id;
-@property(nonatomic,copy)NSString *loginStatus;
-@property(nonatomic,copy)NSString *lastLoginIp;
-@property(nonatomic,copy)NSString *telephone;
 @property(nonatomic,copy)NSString *createTime;  //注册时间
-@property(nonatomic,copy)NSString *code;  //邀请码
+@property(nonatomic,copy)NSString *inviteName;
+@property(nonatomic,copy)NSString *id;
+@property(nonatomic,copy)NSString *lastLoginIp;
+@property(nonatomic,copy)NSString *lastLoginTime;
+@property(nonatomic,copy)NSString *loginStatus;
+@property(nonatomic,copy)NSString *password;
+@property(nonatomic,copy)NSString *status;
+@property(nonatomic,copy)NSString *telephone;
+@property(nonatomic,copy)NSString *updateTime;
+@property(nonatomic,copy)NSString *username;
+@property(nonatomic,copy)NSString *codeNumber;  //邀请码
 
 + (DFHLoginInfo *)analyticalDataWithDictionary:(NSDictionary *)dic;
 

@@ -17,5 +17,7 @@
 @property (assign,nonatomic) BOOL isLogin; // 是否登录
 
 + (DFHDataManager *)sharedInstance;
+- (void)logOut;
+
 
 @end

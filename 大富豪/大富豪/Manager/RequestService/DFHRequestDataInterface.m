@@ -13,11 +13,16 @@
 
 @implementation DFHRequestDataInterface
 
-+ (NSString *)makeRequestMemberRegister:(NSString *)telephone password:(NSString *)password code:(NSString *)code inviteName:(NSString *)inviteName
-{
-    NSString *url = DFH_MemberRegister;
-    NSString *urlStr = [NSString stringWithFormat:@"%@?telephone=%@&password=%@&code=%@&inviteName%@",url,telephone,[password md5String],code,inviteName];
-    return urlStr;
++ (NSDictionary *)makeRequestMemberRegister:(NSString *)telephone password:(NSString *)password code:(NSString *)code nickName:(NSString *)nickName inviteName:(NSString *)inviteName
+{//DFH_MemberRegister
+    NSDictionary *parametersDic = @{
+                          @"telephone"  :  telephone,
+                          @"password"   :  password,
+                          @"code"       :  code,
+                          @"nickname"   :  nickName,
+                          @"inviteName" : inviteName
+                          };
+    return parametersDic;
 }
 
 + (NSString *)makeRequestMemberLogin:(NSString *)telephone password:(NSString *)password

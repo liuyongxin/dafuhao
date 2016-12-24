@@ -1,5 +1,5 @@
 //
-//  DFHLoginViewController.h
+//  DFHInvitationCodeSelectionController.h
 //  大富豪
 //
 //  Created by Louis on 2016/10/25.
@@ -8,6 +8,6 @@
 
 #import "DFHBaseViewController.h"
 
-@interface DFHLoginViewController : DFHBaseViewController
+@interface DFHInvitationCodeSelectionController : DFHBaseViewController
 
 @end

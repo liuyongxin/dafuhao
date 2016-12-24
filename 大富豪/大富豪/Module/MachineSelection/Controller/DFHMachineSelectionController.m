@@ -30,7 +30,7 @@ static NSString *collectionCellID = @"collectionCellID";
 {
     [super viewWillAppear:animated];
     __weak typeof(self) weakSelf = self;
-    [_httpRequest postWithURLString:[DFHRequestDataInterface makeRequestMemberMachineList:@"731M"] parameters:nil success:^(id responseObject) {
+    [_httpRequest postWithURLString:[DFHRequestDataInterface makeRequestMemberMachineList:@"731"] parameters:nil success:^(id responseObject) {
         NSDictionary *dataDic = [JSONFormatFunc convertDictionary:responseObject];
         if ([dataDic isValidDictionary]) {
             NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:dataDic];
@@ -57,6 +57,7 @@ static NSString *collectionCellID = @"collectionCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+    self.nickName = @"体验玩家";
     [self prepareData];
     [self configUI];
 }
@@ -69,36 +70,38 @@ static NSString *collectionCellID = @"collectionCellID";
 
 -(void)configUI
 {
-    CGFloat bgW = 377*DFHSizeMinRatio;
-    CGFloat bgH = 196.5*DFHSizeMinRatio;
     CGFloat btnW = 90;
-    _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, bgW, bgH)];
+    CGFloat labelH = 30;
+    CGFloat xSpace = 30;
+    CGFloat ySpace = 10;
+    CGFloat contentW = btnW*3 + xSpace*2;
+    CGFloat lableW = contentW/3;
+    CGFloat xStart = (DFHScreenW - contentW)/2;
+    CGFloat yStart = (DFHScreenH - btnW)/2 - labelH - ySpace;
+    CGFloat yAxis = yStart;
+    _bgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, DFHScreenW, DFHScreenH)];
     _bgImageView.userInteractionEnabled = YES;
     _bgImageView.center = self.view.center;
     _bgImageView.image = [UIImage imageNamed:@"login_bg.png" bundle:DFHImageResourceBundle_Login];
     [self.view addSubview:_bgImageView];
-    
-    CGFloat space = 25;
-    CGFloat yAxis = space;
-    _playerTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(2*space, yAxis, (bgW - 5*space)/2, 30)];
-    _playerTypeLabel.text = @"体验玩家";
+
+    _playerTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(xStart, yAxis, lableW, labelH)];
+    _playerTypeLabel.text = _nickName;
     _playerTypeLabel.textAlignment = NSTextAlignmentRight;
     _playerTypeLabel.textColor = [UIColor redColor];
     [_bgImageView addSubview:_playerTypeLabel];
-    
-    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(3*space + (    bgW - 5*space)/2, yAxis, (bgW - 5*space)/2, 30)];
+    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(xStart + lableW*2, yAxis, lableW, labelH)];
     tipLabel.text = @"请选择机台";
     tipLabel.textAlignment = NSTextAlignmentLeft;
     tipLabel.textColor = [UIColor redColor];
     [_bgImageView addSubview:tipLabel];
-    yAxis += (30 + 5);
+    yAxis += labelH + ySpace;
     
-    CGFloat xSpace = 30;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.minimumLineSpacing =  (bgW - btnW*3 - xSpace*2)/2;
+    layout.minimumLineSpacing =  xSpace;
     layout.itemSize = CGSizeMake(btnW   , btnW);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(xSpace, yAxis, bgW - 2*xSpace,btnW) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(xStart, yAxis, contentW,btnW) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor clearColor];
@@ -106,12 +109,11 @@ static NSString *collectionCellID = @"collectionCellID";
     [_collectionView registerClass:[DFHMachineSelectionCollectionCell class] forCellWithReuseIdentifier:collectionCellID];
     yAxis += (btnW + 5);
     UIButton *backHomeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backHomeBtn.frame = CGRectMake((bgW - 150)/2, yAxis,150, 40);
+    backHomeBtn.frame = CGRectMake((DFHScreenW - 150)/2, yAxis,150, 40);
     [backHomeBtn setImage:[UIImage imageNamed:@"login_backNormal.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateNormal];
         [backHomeBtn setImage:[UIImage imageNamed:@"login_backSelected.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateSelected];
     [backHomeBtn addTarget:self action:@selector(backHomeAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bgImageView addSubview:backHomeBtn];
-    
 }
 
  - (void)resetCollectViewFrame
@@ -137,7 +139,7 @@ static NSString *collectionCellID = @"collectionCellID";
 
 - (void)backHomeAction:(UIButton *)btn
 {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)requestMemberChoiceMachine:(NSString *)memberId machineId:(NSString *)machineId

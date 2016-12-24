@@ -16,7 +16,8 @@
 //password	密码	必填，需要MD5加密
 //code	邀请码	必填
 //inviteName	邀请人姓名	可以为空
-+ (NSString *)makeRequestMemberRegister:(NSString *)telephone password:(NSString *)password code:(NSString *)code inviteName:(NSString *)inviteName;
+//DFH_MemberRegister
++ (NSDictionary *)makeRequestMemberRegister:(NSString *)telephone password:(NSString *)password code:(NSString *)code nickName:(NSString *)nickName inviteName:(NSString *)inviteName;
 
 #pragma mark - 用户登录 member/login
 //telephone	手机号	必填

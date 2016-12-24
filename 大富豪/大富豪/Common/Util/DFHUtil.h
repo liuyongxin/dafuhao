@@ -22,5 +22,7 @@
 +(NSString *)getBinaryByhex:(NSString *)hex;
 + (NSString *)stringFromHexString:(NSString *)hexString;
 + (NSString *)hexStringFromString:(NSString *)string;
+//判断手机号码格式是否正确
++ (BOOL)valiMobile:(NSString *)mobile;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import "DFHAppDelegate.h"
-#import "DFHEnterOptionViewController.h"
+#import "DFHGreatHallController.h"
+#import "DFHNavigationController.h"
 
 @interface DFHAppDelegate ()
 
@@ -19,8 +20,9 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    DFHEnterOptionViewController *tabBarCtr = [[DFHEnterOptionViewController alloc]init];
-    self.window.rootViewController = tabBarCtr;
+    DFHGreatHallController *greatHallCtr = [[DFHGreatHallController alloc]init];
+    DFHNavigationController *nav = [[DFHNavigationController alloc]initWithRootViewController:greatHallCtr];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }

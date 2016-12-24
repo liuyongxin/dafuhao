@@ -16,5 +16,6 @@ typedef NS_ENUM(NSInteger,IntoType)
 
 @property(nonatomic,assign)IntoType type;
 @property(nonatomic,copy)NSString *code;  //邀请码
+@property(nonatomic,copy)NSString *nickName; //昵称
 
 @end
