@@ -47,6 +47,13 @@
     }
 }
 
+- (void)reloadSingleViewData:(NSArray *)listData
+{
+    [_dataArray removeAllObjects];
+    [_dataArray addObjectsFromArray:listData];
+    [_mTableView reloadData];
+}
+
 #pragma UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

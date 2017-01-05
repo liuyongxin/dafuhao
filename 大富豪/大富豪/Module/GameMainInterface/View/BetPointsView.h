@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 typedef NS_ENUM(NSInteger,ClickBtnType)
 {
-    ClickBtnTypeSpades,
+    ClickBtnTypeNone = -1,
+    ClickBtnTypeSpades = 0,
     ClickBtnTypeHearts,
     ClickBtnTypeClubs,
     ClickBtnTypeDiamonds,

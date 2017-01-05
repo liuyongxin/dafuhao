@@ -39,6 +39,10 @@
 + (NSString *)makeRequestMachineSeting:(NSString *)machineId;
 
 #pragma mark - 修改押分接口(手游版)
+//参数：加密后字符串
+//加密前字符串为json
++ (NSString *)makeRequestModifyPoints:(NSString *)paramString;
+#pragma mark - 修改押分接口(手游版)
 //memberId	会员id	必填
 //score	押分	必填，数值类型
 //machineId	机台id	必填

@@ -14,5 +14,7 @@
 - (void)assignmentSignPoints:(NSString *)text;
 - (void)assignmentWinPoints:(NSString *)text;
 - (void)assignmentLastWinPoints:(NSString *)text;
+- (void)assignmentBalance:(NSString *)balanceText signPoints:(NSString *)signPointsText winPoints:(NSString *)winPointsText lastWinPoints:(NSString *)lastWinPointsText;
+
 
 @end

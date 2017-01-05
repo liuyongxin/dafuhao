@@ -40,9 +40,11 @@
         _nameButton.frame = CGRectZero;
         [_nameButton setBackgroundImage:[UIImage imageNamed:@"login_loginBtn.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateNormal];
         [_nameButton setBackgroundImage:[UIImage imageNamed:@"login_loginSelectedBtn.png" bundle:DFHImageResourceBundle_Login] forState:UIControlStateSelected];
-        _nameButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        _nameButton.titleLabel.textColor = [UIColor colorWithRed:0.16 green:0.01 blue:0.69 alpha:1.00];
+        _nameButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        [_nameButton setTitleColor:[UIColor colorWithRed:0.17 green:0.00 blue:0.98 alpha:1.00] forState:UIControlStateNormal];
+        _nameButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         [self.contentView addSubview:_nameButton];
+        _nameButton.userInteractionEnabled = NO;
     }
     return _nameButton;
 }

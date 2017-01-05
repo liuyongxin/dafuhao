@@ -11,11 +11,11 @@
 
 @interface BetPointsView()
 
-@property(nonatomic,retain)UIButton *spadesBtn;  //黑桃
-@property(nonatomic,retain)UIButton *heartsBtn;    //红桃
-@property(nonatomic,retain)UIButton *clubsBtn;         //梅花
-@property(nonatomic,retain)UIButton *diamondsBtn; //方块
-@property(nonatomic,retain)UIButton *kingBtn;         //王
+@property(nonatomic,retain)BetPointsButton *spadesBtn;  //黑桃
+@property(nonatomic,retain)BetPointsButton *heartsBtn;    //红桃
+@property(nonatomic,retain)BetPointsButton *clubsBtn;         //梅花
+@property(nonatomic,retain)BetPointsButton *diamondsBtn; //方块
+@property(nonatomic,retain)BetPointsButton *kingBtn;         //王
 @property(nonatomic,retain)UIButton *confirmBtn;   //确认
 
 @end
@@ -58,8 +58,6 @@
                                      [UIImage imageNamed:@"Main_ChargePoints_SelectedWang.png" bundle:DFHImageResourceBundle_Main_ChargePoints],
                                      [UIImage imageNamed:@"Main_ChargePoints_SelectedConfirm.png" bundle:DFHImageResourceBundle_Main_ChargePoints]];
     for (int i = 0; i < 5; i++) {
-//        BetPointsButton *btn = [BetPointsButton buttonWithType:UIButtonTypeCustom];
-//        btn.frame = CGRectMake(xAxis,yAxis, (size.width - btnWidth - xSpace*7)/5, size.height - 3);
          BetPointsButton *btn = [[BetPointsButton alloc]initWithFrame:CGRectMake(xAxis,yAxis, (size.width - btnWidth - xSpace*7)/5, size.height - 3)];
         [btn setBackgroundImage:normalImagesArray[i] forState:UIControlStateNormal];
         [btn setBackgroundImage:selectedImagesArray[i] forState:UIControlStateSelected];
@@ -69,7 +67,6 @@
         xAxis += xSpace + (size.width - btnWidth - xSpace*7)/5;
         if (i == 0) {
             _spadesBtn = btn;
-        
         }
         else if (i == 1)
         {
@@ -88,7 +85,6 @@
             _kingBtn = btn;
         }
     }
-    
     _confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _confirmBtn.frame = CGRectMake(xAxis + xSpace,(size.height - btnHeight)/2, btnWidth, btnHeight);
     [_confirmBtn setBackgroundImage:normalImagesArray[5] forState:UIControlStateNormal];
@@ -99,28 +95,40 @@
 
 - (void)btnAction:(UIButton *)btn
 {
+    ClickBtnType type = ClickBtnTypeNone;
     if (btn == _spadesBtn) {
-        
+        type = ClickBtnTypeSpades;
     }
     else if(btn == _heartsBtn)
     {
-    
+        type = ClickBtnTypeHearts;
     }
     else if(btn == _clubsBtn)
     {
-        
+        type = ClickBtnTypeClubs;
     }
     else if(btn == _diamondsBtn)
     {
-        
+        type = ClickBtnTypeDiamonds;
     }
     else if(btn == _kingBtn)
     {
-        
+        type = ClickBtnTypeKing;
     }
     else if(btn == _confirmBtn)
     {
         
+    }
+    if (type == ClickBtnTypeNone) {   //提交按钮
+        if (self.confirmAction) {
+            self.confirmAction();
+        }
+    }
+    else
+    {
+        if (self.betPointsAction) {
+            self.betPointsAction(type);
+        }
     }
 }
 

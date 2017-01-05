@@ -21,6 +21,7 @@
 		173E4A421DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3D1DC1D2DE0015B33D /* TPKeyboardAvoidingTableView.m */; };
 		173E4A431DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		173E4A461DC1FDA00015B33D /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 173E4A451DC1FDA00015B33D /* AES.m */; };
+		174401DC1E10EDC8007AF171 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 174401DB1E10EDC8007AF171 /* PopupView.m */; };
 		17CFD7461DBDE18400911455 /* DFHImageResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17CFD7451DBDE18400911455 /* DFHImageResource.bundle */; };
 		17E13AC01E0A2166000F95CE /* DFHGameMainInterFaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13A971E0A2166000F95CE /* DFHGameMainInterFaceController.m */; };
 		17E13AC11E0A2166000F95CE /* BetPointsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E13A9A1E0A2166000F95CE /* BetPointsButton.m */; };
@@ -119,6 +120,8 @@
 		173E4A3F1DC1D2DE0015B33D /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		173E4A441DC1FDA00015B33D /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		173E4A451DC1FDA00015B33D /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
+		174401DA1E10EDC8007AF171 /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
+		174401DB1E10EDC8007AF171 /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
 		17CFD7451DBDE18400911455 /* DFHImageResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DFHImageResource.bundle; sourceTree = "<group>"; };
 		17E13A961E0A2166000F95CE /* DFHGameMainInterFaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFHGameMainInterFaceController.h; sourceTree = "<group>"; };
 		17E13A971E0A2166000F95CE /* DFHGameMainInterFaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFHGameMainInterFaceController.m; sourceTree = "<group>"; };
@@ -370,6 +373,15 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		174401D91E10EDC8007AF171 /* PopupView */ = {
+			isa = PBXGroup;
+			children = (
+				174401DA1E10EDC8007AF171 /* PopupView.h */,
+				174401DB1E10EDC8007AF171 /* PopupView.m */,
+			);
+			path = PopupView;
+			sourceTree = "<group>";
+		};
 		1790B4171DC73BD200AAFF1D /* Default */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,7 +411,6 @@
 				17E13AD01E0A4CA0000F95CE /* InvitationCodeSelection */,
 				17E13A941E0A2166000F95CE /* GameMainInterface */,
 				17E13AAF1E0A2166000F95CE /* GreatHall */,
-				17E13AB31E0A2166000F95CE /* Login */,
 				17E13AB51E0A2166000F95CE /* MachineSelection */,
 				17E13ABC1E0A2166000F95CE /* Register */,
 			);
@@ -467,21 +478,6 @@
 			children = (
 				17E13AB11E0A2166000F95CE /* DFHGreatHallController.h */,
 				17E13AB21E0A2166000F95CE /* DFHGreatHallController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		17E13AB31E0A2166000F95CE /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				17E13AB41E0A2166000F95CE /* Controller */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		17E13AB41E0A2166000F95CE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -926,6 +922,7 @@
 		3C6A3FF91DBCCFAD00377929 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				174401D91E10EDC8007AF171 /* PopupView */,
 				173E4A371DC1D2DE0015B33D /* TPKeyboardAvoiding */,
 				173E4A331DC1A3D00015B33D /* PositionButton */,
 				3C6A3FFA1DBCCFAD00377929 /* Calendar */,
@@ -1041,8 +1038,8 @@
 				TargetAttributes = {
 					3C6A3E471DBCCF1700377929 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3RG4QMG6EY;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 8YC2YJDRHR;
+						ProvisioningStyle = Automatic;
 					};
 					3C6A3E601DBCCF1700377929 = {
 						CreatedOnToolsVersion = 8.0;
@@ -1216,6 +1213,7 @@
 				17E13AD81E0A4CA1000F95CE /* DFHInvitationCodeSelectionCollectionCell.m in Sources */,
 				17E13ACB1E0A2166000F95CE /* VideoDisplayView.m in Sources */,
 				3C6A40841DBCCFAD00377929 /* NSString+Base64.m in Sources */,
+				174401DC1E10EDC8007AF171 /* PopupView.m in Sources */,
 				3C6A409E1DBCD3C900377929 /* DFHTabBarController.m in Sources */,
 				173E4A411DC1D2DE0015B33D /* TPKeyboardAvoidingScrollView.m in Sources */,
 				17F794DE1DBDB06B00A73B4F /* DFHRequestBaseInterface.m in Sources */,
@@ -1361,8 +1359,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kun liu (4APAGAU8D5)";
-				DEVELOPMENT_TEAM = 3RG4QMG6EY;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8YC2YJDRHR;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/大富豪/DaFuHaoPrefixHeader.pch";
 				INFOPLIST_FILE = "大富豪/Info.plist";
@@ -1370,8 +1369,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dafuhao.game.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b912bb63-5886-49d6-ba5a-de617a80762e";
-				PROVISIONING_PROFILE_SPECIFIER = WTDevelopmentForDzHDebug20160707;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1381,8 +1380,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kun liu (4APAGAU8D5)";
-				DEVELOPMENT_TEAM = 3RG4QMG6EY;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8YC2YJDRHR;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/大富豪/DaFuHaoPrefixHeader.pch";
 				INFOPLIST_FILE = "大富豪/Info.plist";
@@ -1390,8 +1390,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dafuhao.game.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b912bb63-5886-49d6-ba5a-de617a80762e";
-				PROVISIONING_PROFILE_SPECIFIER = WTDevelopmentForDzHDebug20160707;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

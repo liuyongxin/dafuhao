@@ -10,6 +10,8 @@
 
 @interface SingleView : UIView
 
+- (void)reloadSingleViewData:(NSArray *)listData;
+
 @end
 
 

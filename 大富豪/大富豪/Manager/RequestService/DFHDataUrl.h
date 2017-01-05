@@ -16,8 +16,8 @@
 #define DFH_MemberLogin @"http://114.55.253.199:81/game/member/login"  //会员登录
 #define DFH_MachineSelectBycode @"http://114.55.253.199:81/game/machine/selectBycode"  //根据邀请码获取机台列表
 #define DFH_MemberChoiceMachine @"http://114.55.253.199:81/game/member/choiceMachine"  //会员选择机台接口
-#define DFH_MachinesetGetById @"http://114.55.253.199:81/game/machineset/getById"  //根据机器 id 获取机器设置
-
+#define DFH_MachinesetGetById @"http://114.55.253.199:81/game/machine/getById"  //根据机器 id 获取机器设置
+#define DFH_MemberUpdateStake @"http://114.55.253.199:81/game/member/updateStake"  //批量押分
 #define DFH_MachineUpdateStake @"http://114.55.253.199:81/game/machine/updateStake"  //修改押分
 #define DFH_MachineUpdateProfit @"http://114.55.253.199:81/game/machine/updateProfit"  //修改盈利
 

@@ -16,10 +16,17 @@
 #import "SingleView.h"
 #import "SettingView.h"
 #import "BetPointsView.h"
+#import "PopupView.h"
 
 @interface DFHGameMainInterFaceController ()
 {
     DFHHttpRequest *_httpRequest;
+    CGFloat _kickOffTime;  //开球时间
+    CGFloat _betTime;       //押分时间
+    CGFloat _readyTime;   //每局间隔时间
+    CGFloat _spaceTime;  //每轮间隔时间
+    CGFloat _showWinningInfoTime; //10秒用于展示中奖信息
+    CGFloat _minimumBetPoints; //切换最小押分
 }
 @property(nonatomic,retain)UIImageView *mainBGImageView;
 @property(nonatomic,retain)UILabel *timingLabel;
@@ -33,15 +40,25 @@
 @property(nonatomic,retain)RecordView *recordView;
 @property(nonatomic,retain)SingleView *singleView;
 @property(nonatomic,retain)BetPointsView *betPointsView;
+@property(nonatomic,retain)PopupView *popupView;
 
-@property(nonatomic,copy)NSString *rounds;
-@property(nonatomic,copy)NSString *bouts;
-@property(nonatomic,copy)NSString *status;
+@property(nonatomic,retain)NSTimer *getStatusTimer; //定时获取机器状态,每隔1s
+@property(nonatomic,assign)long roundsNum; //轮
+@property(nonatomic,assign)long boutsNum;  //局
+@property(nonatomic,assign)int currentStatus;
+@property(nonatomic,assign)CGFloat waitingTime;
 
 @end
 
 @implementation DFHGameMainInterFaceController
 
+- (void)dealloc
+{
+    if ([self.getStatusTimer isValid]) {
+        [self.getStatusTimer invalidate];
+        self.getStatusTimer = nil;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareData];
@@ -51,6 +68,9 @@
 - (void)prepareData
 {
     _httpRequest = [[DFHHttpRequest alloc]init];
+    self.getStatusTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(getLatestBrandRoad) userInfo:nil repeats:YES];
+    self.getStatusTimer.fireDate  = [NSDate distantFuture];
+    _showWinningInfoTime = 10.0f;  //展示中奖信息时间
 }
 
 - (void)configUI
@@ -83,8 +103,8 @@
     CGFloat xSpace = 5 *DFHSizeWidthRatio;
     CGFloat ySpace = 5*DFHSizeHeightRatio;
 
-    CGFloat startX = 2 * xSpace;//(DFHScreenW - VideoDisplayViewWidth - MachineStatusViewWidth - SingleViewWidth)/2;
-    CGFloat startY = 2 * ySpace;//(DFHScreenH - VideoDisplayViewHeight -ScoreStatisticsViewHeight - RoundInningViewHeight - TimingLabelHeight)/2;
+    CGFloat startX = 2 * xSpace;
+    CGFloat startY = 2 * ySpace;
     CGFloat xAxis = startX;
     CGFloat yAxis = startY;
     
@@ -152,14 +172,39 @@
 {
     [super viewWillAppear:animated];
     [self requestHistoryBrandRoad:self.machineId];
+    self.getStatusTimer.fireDate  = [NSDate distantPast];  //启动定时请求
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.getStatusTimer.fireDate = [NSDate distantFuture]; //暂停定时器
+}
+//获取最新牌路,每秒调用一次
+- (void)getLatestBrandRoad
+{
+    [self requestObtainSingleCard:self.machineId rounds:@"" bouts:@""];
 }
 
 #pragma mark - request
-//根据机器 id 获取机器设置接口
- - (void)requestMachineSeting:(NSString *)machineId
+//批量押分
+- (void)requestBatchPoints:(NSString *)memberId  machineId:(NSString *)machineId rounds:(long )rounds bouts:(long)bounts betPointsField:(NSArray *)betPointsArr
 {
-    NSString *urlStr = [DFHRequestDataInterface makeRequestMachineSeting:machineId];
+    PopupView *pView = [[PopupView alloc]initWithTitle:@"正在押分中,请稍候...." icon:nil description:nil];
+    [pView showInView:self.view targetView:nil animated:YES];
+//    __weak typeof(self) weakSelf = self;
+    NSString *token = [[NSString stringWithFormat:@"%@%ld%ld%@",machineId,rounds,bounts,memberId] md5String];
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionary];
+    [paramDic setObject:machineId forKey:@"machineId"]; //机器ID
+    [paramDic setObject:@(rounds) forKey:@"rounds"]; //轮数
+    [paramDic setObject:@(bounts) forKey:@"bouts"];   //局数
+    [paramDic setObject:memberId forKey:@"memberId"]; //用户ID
+    [paramDic setObject:token forKey:@"token"];
+    [paramDic setObject:betPointsArr forKey:@"field"];
+    NSString *paramString = [JSONFormatFunc formatJsonStrWithDictionary:paramDic];
+    NSString *urlStr = [DFHRequestDataInterface makeRequestModifyPoints:paramString];
     [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
+       [pView dismiss:NO];
         
     } failure:^(NSError *error) {
         
@@ -188,7 +233,7 @@
     }];
 }
 
-//获取单个牌路(请求返回为 aes 加密字符串)
+//获取单个牌路(请求返回为 aes 加密字符串) //每秒调用一次，用来实时获取当前牌路状态
 - (void)requestObtainSingleCard:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bouts
 {
     NSString *urlStr = [DFHRequestDataInterface makeRequestObtainSingleCard:machineId rounds:rounds bouts:bouts];
@@ -197,6 +242,35 @@
     } failure:^(NSError *error) {
         
     }];
+}
+//现在状态有3种：所有时间单位为秒
+//1初始化（洗球中,status=1）
+//等待时间是：机台设置的kickOffTime（开球时间）+20，20秒为机械运动时间（用于运行开球，运行到指定位置），之后status=2
+//2.押分status=2，时间是：机台设置的betTime，之后是status=4
+//3.结束status=4
+//第一种情况：下一局，时间是：机台设置的20+10，20秒为机械运动时间（用于开奖），10秒用于展示中奖信息；之后再次等待机台设置的readyTime，之后再次轮回，status=1
+//第二种情况：到达最大局，进入下一轮，机台设置的20+10，20秒为机械运动时间（用于开奖），10秒用于展示中奖信息；之后进入轮等待时间spaceTime，之后再次轮回，从下一轮的第一局开始，status=1
+//
+//注意：每轮结束（根据每轮局数gamesNum判断是否要进入下一轮），有轮间隔时间spaceTime
+//时间判断：当前时间 - 最后操作时间（即每局牌路中返回的updateTime） >= 需要等待的时间
+- (void)handDisplayAccordingStatus:(NSString *)status
+{
+    
+    if ([status isEqualToString:@"1"]) { //初始化
+        
+    }
+    else if ([status isEqualToString:@"2"]) //押分
+    {
+    
+    }
+    else if ([status isEqualToString:@"4"]) //结束
+    {
+        
+    }
+    else
+    {
+    
+    }
 }
 
 //修改某局状态接口(请求返回为 aes 加密字符串)
@@ -241,4 +315,5 @@
         
     }];
 }
+
 @end

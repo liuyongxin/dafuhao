@@ -53,6 +53,13 @@
     return urlStr;
 }
 
++ (NSString *)makeRequestModifyPoints:(NSString *)paramString
+{
+    NSString *url = DFH_MemberUpdateStake;
+    NSString *urlStr = [NSString stringWithFormat:@"%@?param=%@",url,paramString];
+    return urlStr;
+}
+
 + (NSString *)makeRequestModifyPoints:(NSString *)memberId score:(NSString *)score machineId:(NSString *)machineId rounds:(NSString *)rounds bouts:(NSString *)bounts color:(NSString *)color;
 {
     NSString *url = DFH_MachineUpdateStake;

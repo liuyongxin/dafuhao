@@ -31,7 +31,7 @@
 {
     CGFloat selfWidth = self.frame.size.width;
     CGFloat selfHeight = self.frame.size.height;
-    CGFloat space = 20;
+    CGFloat space = 10;
     CGFloat yAxis = space;
     CGFloat labelHeight = (selfHeight - space*2)/3;
     self.bgImageView.frame = CGRectMake(0, 0, selfWidth, selfHeight);
@@ -57,9 +57,10 @@
 {
     if (!_numLabel) {
         _numLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-        _numLabel.text = @" xx ";
+        _numLabel.text = @" -- ";
         _numLabel.adjustsFontSizeToFitWidth = YES;
         _numLabel.textAlignment = NSTextAlignmentCenter;
+        _numLabel.font = [UIFont systemFontOfSize:13];
         _numLabel.textColor = [UIColor redColor];
         [self.contentView addSubview:_numLabel];
     }
@@ -70,9 +71,10 @@
 {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-        _nameLabel.text = @" xxxx ";
+        _nameLabel.text = @" --";
         _nameLabel.adjustsFontSizeToFitWidth = YES;
         _nameLabel.textAlignment = NSTextAlignmentCenter;
+        _numLabel.font = [UIFont systemFontOfSize:15];
         _nameLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:_nameLabel];
     }
@@ -83,9 +85,10 @@
 {
     if (!_scaleLabel) {
         _scaleLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-        _scaleLabel.text = @" xx ";
+        _scaleLabel.text = @" -- ";
         _scaleLabel.adjustsFontSizeToFitWidth = YES;
         _scaleLabel.textAlignment = NSTextAlignmentCenter;
+        _scaleLabel.font = [UIFont systemFontOfSize:14];
         _scaleLabel.textColor = [UIColor blueColor];
         [self.contentView addSubview:_scaleLabel];
     }
@@ -96,7 +99,7 @@
 {
     NSDictionary *machineInfoDic = [JSONFormatFunc dictionaryValueForKey:@"machineInfo" ofDict:dataDic];
     NSDictionary *machineSetDic = [JSONFormatFunc dictionaryValueForKey:@"machineSet" ofDict:dataDic];
-    _numLabel.text = [NSString stringWithFormat:@"%@",[JSONFormatFunc strValueForKey:@"maxMember" ofDict:machineSetDic]];
+    _numLabel.text = [NSString stringWithFormat:@"%@",[JSONFormatFunc strValueForKey:@"fourLimitRed" ofDict:machineSetDic]];
     _nameLabel.text =  [NSString stringWithFormat:@"%@",[JSONFormatFunc strValueForKey:@"areaName" ofDict:machineInfoDic]];
     _scaleLabel.text = [NSString stringWithFormat:@"1:%@",[JSONFormatFunc strValueForKey:@"currencyRatio" ofDict:machineSetDic]];
 }

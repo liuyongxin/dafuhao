@@ -34,8 +34,6 @@
 #pragma mark - 组合要发送的数据
 + (NSMutableDictionary *)makeSendData:(int)packageType reqType:(NSString *)reqName param:(NSMutableDictionary *)param rspClass:(Class)rspClass
 {
-    // 设置请求参数中公共参数
-    NSMutableDictionary *wholeParam = [NSMutableDictionary dictionaryWithDictionary:param];
     if (packageType == 0x0c) {
         // 请求参数中的token
     }

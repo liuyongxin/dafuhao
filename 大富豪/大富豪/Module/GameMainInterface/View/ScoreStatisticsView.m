@@ -102,4 +102,13 @@
 {
     _lastWinPointsLabel.text = text;
 }
+
+- (void)assignmentBalance:(NSString *)balanceText signPoints:(NSString *)signPointsText winPoints:(NSString *)winPointsText lastWinPoints:(NSString *)lastWinPointsText
+{
+    _balanceLabel.text = balanceText;
+    _signPointsLabel.text = signPointsText;
+    _winPointsLabel.text = winPointsText;
+    _lastWinPointsLabel.text = lastWinPointsText;
+}
+
 @end

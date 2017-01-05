@@ -51,8 +51,10 @@
     }
     return _titleTwoLabel;
 }
+
 - (void)assignmentTitleOneLabel
 {
 
 }
+
 @end

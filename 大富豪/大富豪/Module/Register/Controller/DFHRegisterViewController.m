@@ -11,6 +11,7 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "DFHMachineSelectionController.h"
 #import "DFHInvitationCodeSelectionController.h"
+#import "PopupView.h"
 
 @interface DFHRegisterViewController ()
 {
@@ -40,7 +41,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self defaultSeting:self.type];
 }
 
 - (void)viewDidLoad {
@@ -48,6 +48,13 @@
     self.view.backgroundColor = [UIColor blackColor];
     [self prepareData];
     [self configUI];
+    [self defaultSeting:self.type];
+    if (_oldyMemberBtn.isSelected && [DFHDataManager sharedInstance].accountInfo) {
+        DFHAccountInfo *accountInfo = [DFHDataManager sharedInstance].accountInfo;
+        _phoneNumberTextField.text = accountInfo.phoneNumber;
+        _nicknameTextField.text = accountInfo.userName;
+        _passwordTextField.text = accountInfo.passkey;
+    }
 }
 
 - (void)prepareData
@@ -240,20 +247,22 @@
 
 - (void)defaultSeting:(ListType )type
 {
-    if (type == LoginListType) {
-        //设置默认选中登陆
+    if (type == LoginListType) {         //选中登陆时
         _oldyMemberBtn.selected = YES;
         _newlyMemberBtn.selected = NO;
+        _oldyMemberBtn.userInteractionEnabled = NO;
+        _newlyMemberBtn.userInteractionEnabled = YES;
         _confirmPasswordLabel.hidden = YES;
         _confirmPasswordTextField.hidden = YES;
         _invitationCodeLabel.hidden = YES;
         _invitationCodeTextField.hidden = YES;
     }
-    else if (type == RegisterListType)
+    else if (type == RegisterListType) //选中注册时
     {
-        //设置默认选中登陆
         _oldyMemberBtn.selected = NO;
         _newlyMemberBtn.selected = YES;
+        _oldyMemberBtn.userInteractionEnabled = YES;
+        _newlyMemberBtn.userInteractionEnabled = NO;
         _confirmPasswordLabel.hidden = NO;
         _confirmPasswordTextField.hidden = NO;
         _invitationCodeLabel.hidden = NO;
@@ -275,21 +284,11 @@
 {
     [self clearData];
     if (btn == _oldyMemberBtn && btn.selected == NO) {
-        _newlyMemberBtn.selected = _oldyMemberBtn.selected;
-        _oldyMemberBtn.selected = !_oldyMemberBtn.selected;
-        _confirmPasswordLabel.hidden = YES;
-        _confirmPasswordTextField.hidden = YES;
-        _invitationCodeLabel.hidden = YES;
-        _invitationCodeTextField.hidden = YES;
+        [self defaultSeting:LoginListType];
     }
     else if (btn == _newlyMemberBtn && btn.selected == NO)
     {
-        _oldyMemberBtn.selected = _newlyMemberBtn.selected;
-        _newlyMemberBtn.selected = !_newlyMemberBtn.selected;
-        _confirmPasswordLabel.hidden = NO;
-        _confirmPasswordTextField.hidden = NO;
-        _invitationCodeLabel.hidden = NO;
-        _invitationCodeTextField.hidden = NO;
+        [self defaultSeting:RegisterListType];
     }
 }
 
@@ -297,6 +296,7 @@
 {
     if ([self detectionOfLegitimacy])
     {
+        [[DFHDataManager sharedInstance] logOut];
         if(_newlyMemberBtn.selected)
         {
             [self requestMemberRegister];
@@ -310,10 +310,12 @@
 
  - (void)requestMemberLogin
 {
+    PopupView *pView = [[PopupView alloc]initWithTitle:@"正在登录中,请稍候...." icon:nil description:nil];
+    [pView showInView:self.view targetView:nil animated:YES];
     __weak typeof(self) weakSelf = self;
     NSString*urlStr = [DFHRequestDataInterface makeRequestMemberLogin:_nicknameTextField.text password:_passwordTextField.text];
     [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
-        [weakSelf hideHudDefault];
+        [pView dismiss:NO];
         NSDictionary *dataDic = [JSONFormatFunc convertDictionary:responseObject];
         if ([dataDic isValidDictionary]) {
             NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:dataDic];
@@ -321,9 +323,11 @@
                 NSDictionary *result = [JSONFormatFunc dictionaryValueForKey:@"result" ofDict:dataDic];
                 if ([result isValidDictionary]) {
                     DFHAccountInfo *accountInfo = [[DFHAccountInfo alloc]init];
+                    accountInfo.phoneNumber = _phoneNumberTextField.text;
                     accountInfo.userName = _nicknameTextField.text;
                     accountInfo.passkey = _passwordTextField.text;
                     [DFHDataManager sharedInstance].accountInfo = accountInfo;
+                    [DFHDataManager sharedInstance].isLogin = YES;
                     [DFHDataManager sharedInstance].loginInfo = [DFHLoginInfo analyticalDataWithDictionary:result];
                     DFHInvitationCodeSelectionController *controller = [[DFHInvitationCodeSelectionController alloc]init];
                     [weakSelf.navigationController pushViewController:controller animated:YES];
@@ -338,7 +342,7 @@
     } failure:^(NSError *error) {
 
     }];
-    [self showHudWithAnimation:YES];
+//    [self showHudWithAnimation:YES];
 }
 
 - (void)requestMemberRegister
@@ -354,16 +358,21 @@
                 NSDictionary *result = [JSONFormatFunc dictionaryValueForKey:@"result" ofDict:dataDic];
                 if ([result isValidDictionary]) {
                     DFHAccountInfo *accountInfo = [[DFHAccountInfo alloc]init];
+                    accountInfo.phoneNumber = _phoneNumberTextField.text;
                     accountInfo.userName = _nicknameTextField.text;
                     accountInfo.passkey = _passwordTextField.text;
                     [DFHDataManager sharedInstance].accountInfo = accountInfo;
+                    [DFHDataManager sharedInstance].isLogin = YES;
                     [DFHDataManager sharedInstance].loginInfo = [DFHLoginInfo analyticalDataWithDictionary:result];
                     DFHInvitationCodeSelectionController *controller = [[DFHInvitationCodeSelectionController alloc]init];
                     [weakSelf.navigationController pushViewController:controller animated:YES];
                 }
             }
+            else
+            {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示信息" message:[JSONFormatFunc strValueForKey:@"msg" ofDict:dataDic] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
                 [alert show];
+            }
         }
     } failure:^(NSError *error) {
 
@@ -376,7 +385,7 @@
     if (_phoneNumberTextField.text.length == 0) {
         msg = @"手机号不能为空";
     }
-    else if ( [DFHUtil valiMobile:_phoneNumberTextField.text]) {
+    else if ( ![DFHUtil validMobile:_phoneNumberTextField.text]) {
         msg = @"请输入正确的手机号";
     }
     else if (_passwordTextField.text.length == 0)

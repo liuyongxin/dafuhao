@@ -211,38 +211,74 @@
 } 
 
 //判断手机号码格式是否正确
-+ (BOOL)valiMobile:(NSString *)mobile
++ (BOOL)validMobile:(NSString *)mobile
 {
     mobile = [mobile stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (mobile.length != 11)
     {
         return NO;
-        
     }else{
         /**
-         * 移动号段正则表达式
+         * 手机号码:
+         * 13[0-9], 14[5,7], 15[0, 1, 2, 3, 5, 6, 7, 8, 9], 17[6, 7, 8], 18[0-9], 170[0-9]
+         * 移动号段: 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
+         * 联通号段: 130,131,132,155,156,185,186,145,176,1709
+         * 电信号段: 133,153,180,181,189,177,1700
          */
-        NSString *CM_NUM = @"^((13[4-9])|(147)|(15[0-2,7-9])|(178)|(18[2-4,7-8]))\\d{8}|(1705)\\d{7}$";
+        NSString *MOBILE_NUM = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|70)\\d{8}$";
         /**
-         * 联通号段正则表达式
+         * 中国移动：China Mobile
+         * 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
          */
-        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(176)|(18[5,6]))\\d{8}|(1709)\\d{7}$";
+        NSString *CM_NUM = @"(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
         /**
-         * 电信号段正则表达式
+         * 中国联通：China Unicom
+         * 130,131,132,155,156,185,186,145,176,1709
          */
-        NSString *CT_NUM = @"^((133)|(153)|(177)|(18[0,1,9]))\\d{8}$";
+        NSString *CU_NUM = @"(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
+        /**
+         * 中国电信：China Telecom
+         * 133,153,180,181,189,177,1700
+         */  
+        NSString *CT_NUM = @"(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
         
+        NSPredicate *pred0 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE_NUM];
+        BOOL isMatch0 = [pred0 evaluateWithObject:mobile];
         NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM_NUM];
         BOOL isMatch1 = [pred1 evaluateWithObject:mobile];
         NSPredicate *pred2 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU_NUM];
         BOOL isMatch2 = [pred2 evaluateWithObject:mobile];
         NSPredicate *pred3 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT_NUM];
         BOOL isMatch3 = [pred3 evaluateWithObject:mobile];
-        if (isMatch1 || isMatch2 || isMatch3) {
+        if (isMatch0 || isMatch1 || isMatch2 || isMatch3) {
             return YES;
         }else{
             return NO;
         }
+    }
+}
+
+//计算字符串尺寸
++ (CGSize)stringBoundingRectWithSize:(CGSize)size withFont:(UIFont *)font withDescription:(NSString *)text
+{
+    CGSize s=CGSizeMake(size.width, size.height);
+    //ios7.0之前
+    if([[[UIDevice currentDevice] systemVersion]  floatValue]<7.0)
+    {
+        CGSize sizeToFit = [text sizeWithFont:font constrainedToSize:s lineBreakMode:NSLineBreakByWordWrapping]; //此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
+        return CGSizeMake(sizeToFit.width, sizeToFit.height);
+    }
+    else
+    {
+        NSDictionary *attribute = @{NSFontAttributeName: font};
+        CGSize retSize = [text boundingRectWithSize:s    //该方法支持 ios 7.0以上系统
+                                            options:
+                          NSStringDrawingTruncatesLastVisibleLine |
+                          NSStringDrawingUsesLineFragmentOrigin |
+                          NSStringDrawingUsesFontLeading
+                                         attributes:attribute
+                                            context:nil].size;
+        return CGSizeMake(retSize.width, retSize.height);
     }
 }
 

@@ -23,6 +23,7 @@
 + (NSString *)stringFromHexString:(NSString *)hexString;
 + (NSString *)hexStringFromString:(NSString *)string;
 //判断手机号码格式是否正确
-+ (BOOL)valiMobile:(NSString *)mobile;
++ (BOOL)validMobile:(NSString *)mobile;
++ (CGSize)stringBoundingRectWithSize:(CGSize)size withFont:(UIFont *)font withDescription:(NSString *)text;
 
 @end

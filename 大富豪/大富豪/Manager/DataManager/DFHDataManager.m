@@ -26,8 +26,30 @@ static DFHDataManager*sharedMNDataManager = nil;
 
 - (void)logOut
 {
-    self.accountInfo = nil;
     self.loginInfo = nil;
+    self.isLogin = NO;
+}
+
+- (UIViewController *)currentVisibleViewControler
+{
+    UIViewController *vc = [UIApplication sharedApplication].delegate.window.rootViewController;
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)vc;
+        return nav.topViewController;
+    }else{
+        return vc;
+    }
+}
+
+- (UINavigationController *)currentNavigationViewControler
+{
+    UIViewController *vc = [UIApplication sharedApplication].delegate.window.rootViewController;
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)vc;
+        return nav;
+    }else{
+        return nil;
+    }
 }
 
 @end

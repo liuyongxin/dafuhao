@@ -8,7 +8,6 @@
 
 #import "DFHAppDelegate.h"
 #import "DFHGreatHallController.h"
-#import "DFHNavigationController.h"
 
 @interface DFHAppDelegate ()
 
@@ -25,11 +24,12 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
+
 }
 
 - (void)initAppContext
 {
-
+    [DFHDataManager sharedInstance];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

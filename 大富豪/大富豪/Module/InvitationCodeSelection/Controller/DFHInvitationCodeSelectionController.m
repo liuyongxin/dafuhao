@@ -34,6 +34,7 @@ static NSString *collectionCellID = @"collectionCellID";
     }
     [_dataArray addObjectsFromArray:@[codeNumber,@"体验帐号"]];
     [self resetCollectViewFrame];
+    [_collectionView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -108,7 +109,6 @@ static NSString *collectionCellID = @"collectionCellID";
         }
         _collectionView.frame = rect;
     }
-    [_collectionView reloadData];
 }
 
 - (void)backHomeAction:(UIButton *)btn

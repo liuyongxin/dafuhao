@@ -39,8 +39,8 @@ static NSString *collectionCellID = @"collectionCellID";
                 if ([result isValidArray]) {
                    [weakSelf.dataArray removeAllObjects];
                     [weakSelf.dataArray addObjectsFromArray:result];
-                    [weakSelf.collectionView reloadData];
                     [weakSelf resetCollectViewFrame];
+                    [weakSelf.collectionView reloadData];
                 }
             }
             else if([code isEqualToString:@"-1"])
@@ -119,19 +119,17 @@ static NSString *collectionCellID = @"collectionCellID";
  - (void)resetCollectViewFrame
 {
     if ([_dataArray isValidArray]) {
-        CGFloat bgW = 377*DFHSizeMinRatio;
         CGFloat btnW = 90;
         CGFloat xSpace = 30;
         CGRect rect = _collectionView.frame;
         if (_dataArray.count < 3) {
-           UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
+            UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)_collectionView.collectionViewLayout;
             rect.size.width = layout.minimumLineSpacing*(_dataArray.count - 1) + btnW*_dataArray.count;
-            rect.origin.x = (bgW - rect.size.width)/2;
+            rect.origin.x = (DFHScreenW - rect.size.width)/2;
         }
         else
         {
-          rect.origin.x = xSpace;
-           rect.size.width= bgW - 2*xSpace;
+            rect.size.width= btnW*3 + 2*xSpace;
         }
         _collectionView.frame = rect;
     }
@@ -149,8 +147,15 @@ static NSString *collectionCellID = @"collectionCellID";
     [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
     [weakSelf hideHudDefault];
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            weakSelf.memberInfo = responseObject;
-            [weakSelf requestMachineSeting:machineId];
+            NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:responseObject];
+            if ([code isEqualToString:@"0"]) {
+                weakSelf.memberInfo = responseObject;
+                [weakSelf requestMachineSeting:machineId];
+            }
+            else if([code isEqualToString:@"-1"])
+            {
+                [weakSelf showAlertViewTip:[JSONFormatFunc strValueForKey:@"msg" ofDict:responseObject]];
+            }
         }
     } failure:^(NSError *error) {
         [weakSelf hideHudDefault];
@@ -165,11 +170,18 @@ static NSString *collectionCellID = @"collectionCellID";
     [_httpRequest postWithURLString:urlStr parameters:nil success:^(id responseObject) {
     [weakSelf hideHudDefault];
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
-            controller.memberInfo = weakSelf.memberInfo;
-            controller.machinesetInfo = responseObject;
-            controller.machineId = machineId;
-            [weakSelf presentViewController:controller animated:NO completion:nil];
+            NSString *code = [JSONFormatFunc strValueForKey:@"code" ofDict:responseObject];
+            if ([code isEqualToString:@"0"]) {
+                DFHGameMainInterFaceController *controller = [[DFHGameMainInterFaceController alloc]init];
+                controller.memberInfo = weakSelf.memberInfo;
+                controller.machinesetInfo = responseObject;
+                controller.machineId = machineId;
+                [weakSelf.navigationController pushViewController:controller animated:YES];
+            }
+            else if([code isEqualToString:@"-1"])
+            {
+                [weakSelf showAlertViewTip:[JSONFormatFunc strValueForKey:@"msg" ofDict:responseObject]];
+            }
         }
     } failure:^(NSError *error) {
     [weakSelf hideHudDefault];
@@ -177,6 +189,11 @@ static NSString *collectionCellID = @"collectionCellID";
     [self showHudWithAnimation:YES];
 }
 
+- (void)showAlertViewTip:(NSString *)tipStr
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:tipStr delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alert show];
+}
 #pragma mark -- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {

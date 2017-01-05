@@ -129,12 +129,17 @@ static NSString *headerViewID = @"headerViewID";
 - (void)btnAction:(UIButton *)btn
 {
     if (btn.tag == 100) { //取消
-        
+        if (self.cancelBetPointsAction) {
+            self.cancelBetPointsAction(btn);
+        }
     }
     else if (btn.tag == 101)//切换
     {
         NSInteger n = rand()%1000;
         [self assignmentBetPoints:n];
+        if (self.switchBetPointsAction) {
+            self.switchBetPointsAction(btn);
+        }
     }
 }
 

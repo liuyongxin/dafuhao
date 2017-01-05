@@ -129,7 +129,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        self.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         [self.calendar setLocale:[NSLocale currentLocale]]; 
         [self.calendar setFirstWeekday:self.calendarStartDay];
         self.cellWidth = DEFAULT_CELL_WIDTH;
@@ -455,7 +455,7 @@
 {
     CAKeyframeAnimation *popAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     popAnimation.duration = 0.4;
-    popAnimation.delegate=self;
+    popAnimation.delegate = self;
     popAnimation.removedOnCompletion = NO;
     popAnimation.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.01f, 0.01f, 1.0f)],
                             [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.1f, 1.1f, 1.0f)],
@@ -504,7 +504,7 @@
 #pragma mark - Calendar helpers
 
 - (NSDate *)firstDayOfMonthContainingDate:(NSDate *)date {
-    NSDateComponents *comps = [self.calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:date];
+    NSDateComponents *comps = [self.calendar components:( NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
     [comps setDay:1];
     return [self.calendar dateFromComponents:comps];
 }
@@ -524,13 +524,13 @@
 }
 
 - (NSInteger)dayOfWeekForDate:(NSDate *)date {
-    NSDateComponents *comps = [self.calendar components:NSWeekdayCalendarUnit fromDate:date];
+    NSDateComponents *comps = [self.calendar components:NSCalendarUnitWeekday fromDate:date];
     return comps.weekday;
 }
 
 - (BOOL)dateIsToday:(NSDate *)date {
-    NSDateComponents *otherDay = [self.calendar components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
-    NSDateComponents *today = [self.calendar components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *otherDay = [self.calendar components:NSCalendarUnitEra|NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:date];
+    NSDateComponents *today = [self.calendar components:NSCalendarUnitEra|NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:[NSDate date]];
     return ([today day] == [otherDay day] &&
             [today month] == [otherDay month] &&
             [today year] == [otherDay year] &&
@@ -538,17 +538,17 @@
 }
 
 - (NSInteger)weekNumberInMonthForDate:(NSDate *)date {
-    NSDateComponents *comps = [self.calendar components:(NSWeekOfMonthCalendarUnit) fromDate:date];
+    NSDateComponents *comps = [self.calendar components:(NSCalendarUnitWeekOfMonth) fromDate:date];
     return comps.weekOfMonth;
 }
 
 - (NSInteger)numberOfWeeksInMonthContainingDate:(NSDate *)date {
-    return [self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSMonthCalendarUnit forDate:date].length;
+    return [self.calendar rangeOfUnit:NSCalendarUnitWeekOfMonth inUnit:NSCalendarUnitMonth forDate:date].length;
 }
 
 - (BOOL)dateIsInMonthShowing:(NSDate *)date {
-    NSDateComponents *comps1 = [self.calendar components:(NSMonthCalendarUnit) fromDate:self.monthShowing];
-    NSDateComponents *comps2 = [self.calendar components:(NSMonthCalendarUnit) fromDate:date];
+    NSDateComponents *comps1 = [self.calendar components:(NSCalendarUnitMonth) fromDate:self.monthShowing];
+    NSDateComponents *comps2 = [self.calendar components:(NSCalendarUnitMonth) fromDate:date];
     return comps1.month == comps2.month;
 }
 

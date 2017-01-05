@@ -24,8 +24,8 @@
     if (self) {
         self.frame = CGRectMake(0, 0, DFHScreenW, DFHScreenH);
         UIView *view = [[UIView alloc]initWithFrame:self.frame];
-        view.backgroundColor = [UIColor whiteColor];
-        view.alpha = 0.5;
+        view.backgroundColor = [UIColor blackColor];
+        view.alpha = 0.3;
         [self addSubview:view];
         [self configUI];
     }
@@ -82,6 +82,8 @@
     }
     else if (btn.tag == 103)//退出游戏
     {
+        [DFHSharedDataManager.currentNavigationViewControler popToRootViewControllerAnimated:YES];
+        [DFHSharedDataManager logOut];
     }
     else if (btn.tag == 104)//取消
     {

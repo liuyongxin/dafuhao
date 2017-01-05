@@ -10,6 +10,9 @@
 
 @interface RecordView : UIView
 
+@property(nonatomic,copy)void(^cancelBetPointsAction)(UIButton *);  //取消押分
+@property(nonatomic,copy)void(^switchBetPointsAction)(UIButton *);  //切换最低押分
+
 - (void)assignmentBetPoints:(NSInteger )num;
 - (void)refreshRecordData:(NSArray *)dataArray;
 

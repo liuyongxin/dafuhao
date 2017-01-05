@@ -15,6 +15,8 @@
 @property(nonatomic,retain)DFHAccountInfo *accountInfo;  //账户登录信息
 @property(nonatomic,retain)DFHLoginInfo   *loginInfo;    //账户登录返回信息
 @property (assign,nonatomic) BOOL isLogin; // 是否登录
+@property(nonatomic,readonly)UIViewController *currentVisibleViewControler; //当前视图
+@property(nonatomic,readonly)UINavigationController *currentNavigationViewControler;//当前试图控制器
 
 + (DFHDataManager *)sharedInstance;
 - (void)logOut;
